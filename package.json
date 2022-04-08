@@ -1,0 +1,53 @@
+{
+  "name": "hackathon-starter",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite build && vite preview",
+    "lint": "eslint .",
+    "types": "tsc && echo 'Type-checking passed'",
+    "prepare": "husky install && rm -rf .git/hooks && ln -s ../.husky .git/hooks"
+  },
+  "dependencies": {
+    "@nivo/core": "^0.79.0",
+    "@nivo/geo": "^0.79.1",
+    "@types/node": "^16.11.0",
+    "@types/react": "^17.0.33",
+    "@types/react-dom": "^17.0.10",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "@vitejs/plugin-react": "^1.3.0",
+    "baseui": "^10.12.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.26.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.2.3",
+    "postcss-nested": "^5.0.6",
+    "prettier": "2.4.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.3.0",
+    "sass": "^1.49.11",
+    "styletron-engine-atomic": "^1.4.8",
+    "styletron-engine-monolithic": "^0.0.6",
+    "styletron-react": "^6.0.2",
+    "typescript": "^4.5.4",
+    "vite": "^2.9.0",
+    "vite-plugin-compress": "^2.1.1",
+    "vite-plugin-pages": "^0.22.0",
+    "vite-tsconfig-paths": "^3.3.17"
+  },
+  "devDependencies": {
+    "@types/styletron-engine-atomic": "^1.1.1",
+    "@types/styletron-react": "^5.0.3",
+    "eslint": "^8.12.0",
+    "eslint-plugin-unicorn": "^42.0.0",
+    "stylelint": "^14.6.1",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard": "^25.0.0"
+  }
+}

@@ -1,0 +1,91 @@
+pre,
+code,
+kbd,
+samp,
+var,
+output {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 0.8em;
+}
+
+code,
+kbd {
+  background: var(--accent100);
+  border-radius: 4px;
+  color: var(--accent600);
+  display: inline-block;
+  font-size: 0.8em;
+  padding: 0.034em 0.35em 0;
+  vertical-align: baseline;
+  transform: translateY(-0.05em);
+}
+
+kbd {
+  background: var(--accent600);
+  color: #fff;
+}
+
+pre {
+  border-left: 2px solid var(--accent600);
+  line-height: 1.4em;
+  overflow: auto;
+  padding-left: 18px;
+
+  code {
+    /* To avoid pre code = font-size: 0.64em */
+    font-size: 1em;
+    background: none;
+    border: 0;
+    line-height: 1.65em;
+    padding: 0;
+  }
+}
+
+mark {
+  background: #ffc;
+  padding: 0 0.2em;
+}
+
+ol,
+ul {
+  margin-left: 0;
+  padding-left: 2em;
+}
+
+blockquote {
+  margin-left: 0;
+  padding-left: 1em;
+  border-left: 2px solid var(--accent600);
+}
+
+var,
+em,
+i {
+  font-style: italic;
+}
+
+del,
+s {
+  text-decoration: line-through;
+}
+
+ins,
+u {
+  text-decoration: underline;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}

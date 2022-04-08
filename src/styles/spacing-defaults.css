@@ -1,0 +1,82 @@
+main {
+  address,
+  article,
+  aside,
+  blockquote,
+  details,
+  dialog,
+  dd,
+  dl,
+  dt,
+  fieldset,
+  figcaption,
+  figure,
+  footer,
+  form,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  header,
+  hgroup,
+  nav,
+  ol,
+  p,
+  pre,
+  section,
+  table,
+  ul {
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+
+    > :first-child {
+      margin-top: 0;
+    }
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  hr {
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+    border: 0;
+    border-bottom: 2px solid var(--mono400);
+  }
+
+  li {
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+
+    > :first-child {
+      margin-top: 0;
+    }
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  li > ul:first-child,
+  li > ol:first-child {
+    margin-top: 0.2em;
+    margin-bottom: 0.3em;
+  }
+
+  .rm-margin {
+    > :first-child {
+      margin-top: 0;
+    }
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .grid > * {
+    margin: 0;
+  }
+}

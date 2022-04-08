@@ -1,0 +1,20 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-config-prettier"],
+  "rules": {
+    "property-no-unknown": [
+      true,
+      {
+        "ignoreProperties": [
+          "/colour/",
+          "/behaviour/",
+          "/maths/",
+          "/mitrelimit/",
+          "/centre/",
+          "/capitalise/",
+          "/grey/"
+        ]
+      }
+    ],
+    "custom-property-pattern": null
+  }
+}
