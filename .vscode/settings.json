@@ -22,7 +22,7 @@
     "**/package-lock.json": true,
     "**/tsconfig.json": true,
     "**/tsconfig.node.json": true,
-    "**/.lintstagedrc.js": true,
+    "**/.lintstagedrc.cjs": true,
     "**/.prettierrc.cjs": true,
     "**/postcss.config.cjs": true,
     "**/vite.config.ts": true,
