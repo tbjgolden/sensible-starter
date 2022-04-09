@@ -2,8 +2,8 @@
 
 - [Overview](#overview)
   - [Philosophy](#philosophy)
-  - [Inline HTML](#html)
-  - [Automatic Escaping for Special Characters](#autoescape)
+  - [Inline HTML](#inline-html)
+  - [Automatic Escaping for Special Characters](#automatic-escaping-for-special-characters)
 - [Block Elements](#block)
   - [Paragraphs and Line Breaks](#p)
   - [Headers](#header)
@@ -27,9 +27,9 @@ can [see the source for it by adding '.text' to the URL][src].
 
 ---
 
-## Overview
+## **Overview**
 
-<h3 id="philosophy">Philosophy</h3>
+### Philosophy
 
 Markdown is intended to be as easy-to-read and easy-to-write as is feasible.
 
@@ -55,7 +55,7 @@ look like \*emphasis\*. Markdown lists look like, well, lists. Even
 blockquotes look like quoted passages of text, assuming you've ever
 used email.
 
-<h3 id="html">Inline HTML</h3>
+### Inline HTML
 
 Markdown's syntax is intended for one purpose: to be used as a
 format for _writing_ for the web.
@@ -105,7 +105,7 @@ link or image syntax, go right ahead.
 Unlike block-level HTML tags, Markdown syntax _is_ processed within
 span-level tags.
 
-<h3 id="autoescape">Automatic Escaping for Special Characters</h3>
+### Automatic Escaping for Special Characters
 
 In HTML, there are two characters that demand special treatment: `<`
 and `&`. Left angle brackets are used to start tags; ampersands are

@@ -77,19 +77,22 @@ async function main() {
           return { ...a, ...b };
         }, {});
         const template = await fs.readFile(templatePath, "utf8");
+
+        const withoutExtraImports = template
+          .replace(`<Slot />`, tsx)
+          .replace(/\/\*+\s*THIS FILE IS A TEMPLATE[\s\S]*?(?:\*\/)/g, "")
+          .replace(/ComponentName/g, componentName);
+
+        const withImports = withoutExtraImports.replace(
+          `import Slot from "slot";\n`,
+          withoutExtraImports.includes("</Link>")
+            ? `import { Link } from "_c/Link";\n`
+            : ""
+        );
+
         await fs.writeFile(
           tsxFile,
-          await prettierFormat(
-            await eslintFix(
-              template
-                .replace(`import Slot from "slot";\n`, "")
-                .replace(`<Slot />`, tsx)
-                .replace(/\/\*+\s*THIS FILE IS A TEMPLATE[\s\S]*?(?:\*\/)/g, "")
-                .replace(/ComponentName/g, componentName),
-              tsxFile
-            ),
-            tsxFile
-          )
+          await prettierFormat(await eslintFix(withImports, tsxFile), tsxFile)
         );
         console.log(dedent`
             ${path.relative(pagesRoot, file)} → ${path.relative(pagesRoot, tsxFile)}
@@ -143,7 +146,7 @@ const phrasingContentToTSX = (p) => {
       return `<del>${phrasingContentArrayToTSX(p.children)}</del>`;
     }
     case "link": {
-      return `<a href="${p.url}">${phrasingContentArrayToTSX(p.children)}</a>`;
+      return `<Link to="${p.url}">${phrasingContentArrayToTSX(p.children)}</Link>`;
     }
     case "inlineCode": {
       return `<code>${escapeJSString(p.value)}</code>`;
@@ -159,6 +162,7 @@ const phrasingContentToTSX = (p) => {
     }
   }
 };
+
 const mdBlockToTSX = (root) => {
   const frontMatterArray = [];
   let output = "";
@@ -166,7 +170,11 @@ const mdBlockToTSX = (root) => {
     // console.log(child.type);
     switch (c.type) {
       case "heading": {
-        output += `<h${c.depth}>${phrasingContentArrayToTSX(c.children)}</h${c.depth}>`;
+        const tsx = phrasingContentArrayToTSX(c.children);
+        const uniqueId = headingContentToId(tsx);
+        output += `<h${c.depth}${uniqueId ? ` id="${uniqueId}"` : ""}>${tsx}</h${
+          c.depth
+        }>`;
         break;
       }
       case "paragraph": {
@@ -244,4 +252,18 @@ const escapeHtml = (unsafe) => {
 };
 const escapeJSString = (unsafe) => {
   return `{\`${unsafe.replace(/\\/g, "\\\\").replace(/`/g, "\\`")}\`}`;
+};
+const TSX_REGEX = /<([a-zA-Z][a-zA-Z0-9]+)[^>]*>([\s\S]*?)(<\/\1>)/g;
+const APOS_REGEX = /\'+/g;
+const NON_ALPHANUM = /[^a-zA-Z0-9]+/g;
+const SPACE = / /g;
+const headingContentToId = (content) => {
+  return content
+    .replace(TSX_REGEX, "$2")
+    .slice(0, 128)
+    .replace(APOS_REGEX, "")
+    .replace(NON_ALPHANUM, " ")
+    .trim()
+    .replace(SPACE, "-")
+    .toLowerCase();
 };

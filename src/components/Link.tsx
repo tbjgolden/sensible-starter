@@ -2,6 +2,7 @@ import {
   useHref,
   useLinkClickHandler,
   LinkProps as RouterLinkProps,
+  useLocation,
 } from "react-router-dom";
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports
 import { StyledLink, LinkProps as UILinkProps } from "baseui/link";
@@ -17,16 +18,22 @@ export const Link = ({
   to,
   ...rest
 }: LinkProps) => {
+  const location = useLocation();
   const href = useHref(to);
+
+  const withHash = `${location.pathname}#`;
+  const isHashLink = href.startsWith(withHash);
+
   const internalOnClick = useLinkClickHandler(to, { replace, state, target });
   function handleClick(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
     if (onClick) onClick(event);
-    if (!event.defaultPrevented && !reloadDocument) {
+    if (!event.defaultPrevented && !reloadDocument && !isHashLink) {
       internalOnClick(event);
     }
   }
 
-  const isExternal = new URL(to, location.origin).origin !== location.origin;
+  const isExternal =
+    new URL(to, window.location.origin).origin !== window.location.origin;
 
   return isExternal ? (
     <StyledLink

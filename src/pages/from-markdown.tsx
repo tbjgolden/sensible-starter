@@ -1,109 +1,112 @@
 import { MenuLayout } from "_c/Layouts";
+import { Link } from "_c/Link";
 
 const FromMarkdown = () => {
   return (
     <MenuLayout>
-      <h1>Markdown: Syntax</h1>
+      <h1 id="markdown-syntax">Markdown: Syntax</h1>
       <ul>
         <li>
           <p>
-            <a href="#overview">Overview</a>
+            <Link to="#overview">Overview</Link>
           </p>
           <ul>
             <li>
               <p>
-                <a href="#philosophy">Philosophy</a>
+                <Link to="#philosophy">Philosophy</Link>
               </p>
             </li>
             <li>
               <p>
-                <a href="#html">Inline HTML</a>
+                <Link to="#inline-html">Inline HTML</Link>
               </p>
             </li>
             <li>
               <p>
-                <a href="#autoescape">Automatic Escaping for Special Characters</a>
+                <Link to="#automatic-escaping-for-special-characters">
+                  Automatic Escaping for Special Characters
+                </Link>
               </p>
             </li>
           </ul>
         </li>
         <li>
           <p>
-            <a href="#block">Block Elements</a>
+            <Link to="#block">Block Elements</Link>
           </p>
           <ul>
             <li>
               <p>
-                <a href="#p">Paragraphs and Line Breaks</a>
+                <Link to="#p">Paragraphs and Line Breaks</Link>
               </p>
             </li>
             <li>
               <p>
-                <a href="#header">Headers</a>
+                <Link to="#header">Headers</Link>
               </p>
             </li>
             <li>
               <p>
-                <a href="#blockquote">Blockquotes</a>
+                <Link to="#blockquote">Blockquotes</Link>
               </p>
             </li>
             <li>
               <p>
-                <a href="#list">Lists</a>
+                <Link to="#list">Lists</Link>
               </p>
             </li>
             <li>
               <p>
-                <a href="#precode">Code Blocks</a>
+                <Link to="#precode">Code Blocks</Link>
               </p>
             </li>
             <li>
               <p>
-                <a href="#hr">Horizontal Rules</a>
+                <Link to="#hr">Horizontal Rules</Link>
               </p>
             </li>
           </ul>
         </li>
         <li>
           <p>
-            <a href="#span">Span Elements</a>
+            <Link to="#span">Span Elements</Link>
           </p>
           <ul>
             <li>
               <p>
-                <a href="#link">Links</a>
+                <Link to="#link">Links</Link>
               </p>
             </li>
             <li>
               <p>
-                <a href="#em">Emphasis</a>
+                <Link to="#em">Emphasis</Link>
               </p>
             </li>
             <li>
               <p>
-                <a href="#code">Code</a>
+                <Link to="#code">Code</Link>
               </p>
             </li>
             <li>
               <p>
-                <a href="#img">Images</a>
+                <Link to="#img">Images</Link>
               </p>
             </li>
           </ul>
         </li>
         <li>
           <p>
-            <a href="#misc">Miscellaneous</a>
+            <Link to="#misc">Miscellaneous</Link>
           </p>
           <ul>
             <li>
               <p>
-                <a href="#backslash">Backslash Escapes</a>
+                <Link to="#backslash">Backslash Escapes</Link>
               </p>
             </li>
             <li>
               <p>
-                <a href="#autolink">Automatic Links</a>
+                <Link to="#autolink">Automatic Links</Link>
               </p>
             </li>
           </ul>
@@ -113,7 +116,9 @@ const FromMarkdown = () => {
         <strong>Note:</strong> This document is itself written using Markdown; you can .
       </p>
       <hr />
-      <h2>Overview</h2>
+      <h2 id="overview">
+        <strong>Overview</strong>
+      </h2>
       <h3 id="philosophy">Philosophy</h3>
       <p>Markdown is intended to be as easy-to-read and easy-to-write as is feasible.</p>
       <p>
@@ -132,7 +137,7 @@ const FromMarkdown = () => {
         Markdown lists look like, well, lists. Even blockquotes look like quoted passages
         of text, assuming you&#039;ve ever used email.
       </p>
-      <h3 id="html">Inline HTML</h3>
+      <h3 id="inline-html">Inline HTML</h3>
       <p>
         Markdown&#039;s syntax is intended for one purpose: to be used as a format for{" "}
         <em>writing</em> for the web.
@@ -189,7 +194,9 @@ This is another regular paragraph.`}</code>
         Unlike block-level HTML tags, Markdown syntax <em>is</em> processed within
         span-level tags.
       </p>
-      <h3 id="autoescape">Automatic Escaping for Special Characters</h3>
+      <h3 id="automatic-escaping-for-special-characters">
+        Automatic Escaping for Special Characters
+      </h3>
       <p>
         In HTML, there are two characters that demand special treatment:{" "}
         <code>{`<`}</code>
@@ -234,9 +241,9 @@ This is another regular paragraph.`}</code>
         <code>{`AT&amp;T`}</code>
       </pre>
       <p>
-        Similarly, because Markdown supports <a href="#html">inline HTML</a>, if you use
-        angle brackets as delimiters for HTML tags, Markdown will treat them as such. But
-        if you write:
+        Similarly, because Markdown supports <Link to="#html">inline HTML</Link>, if you
+        use angle brackets as delimiters for HTML tags, Markdown will treat them as such.
+        But if you write:
       </p>
       <pre>
         <code>{`4 < 5`}</code>
