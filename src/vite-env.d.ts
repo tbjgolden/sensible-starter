@@ -1,6 +1,12 @@
 /// <reference types="vite/client" />
 /// <reference types="vite-plugin-pages/client-react" />
 
+declare module "slot" {
+  import { ReactElement } from "react";
+
+  export default ReactElement();
+}
+
 // Type definitions for styletron-engine-monolithic
 // PR opened for DefinitelyTyped
 declare module "styletron-engine-monolithic" {
@@ -41,7 +47,11 @@ declare module "styletron-engine-monolithic" {
     onNewCache: (key: string, cache: Cache<T>, insertAtIndex: number) => any;
     onNewValue: (cache: Cache<T>, id: string, value: T) => any;
     sortedCacheKeys: string[];
-    constructor(idGenerator: SequentialIDGenerator, onNewCache: () => any, onNewValue: () => any);
+    constructor(
+      idGenerator: SequentialIDGenerator,
+      onNewCache: () => any,
+      onNewValue: () => any
+    );
     getCache(key: string): Cache<T>;
     getSortedCacheKeys(): string[];
   }

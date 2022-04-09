@@ -86,30 +86,27 @@ const Index = () => {
         Edit <code>src/pages/index.tsx</code> and save to test hot reload.
       </p>
 
-      <p className="P">
-        <Link to="/map">Nivo Chart</Link> &middot; <Link to="/html-test">HTML Test</Link>
-      </p>
-
-      <p className="P">
-        There{"'"}s also some fun bonuses hidden in the configs.
-        <ol>
-          <li>In CSS files, you can nest rules like in Sass.</li>
-          <li>
-            You can also use the correct UK spellings (colour, behaviour, maths, mitre,
-            centre, capitalise, grey) instead of US ones if you so choose.
-          </li>
-          <li>
-            Included is a Link component that merges the logic of React Router with the
-            presentation of Baseweb. It will detect if the URL passed in is external for
-            you.
-          </li>
-          <li>
-            Default HTML styles are active; meaning HTML should look good out of the box.
-            Adding <code>className=&quot;reset&quot;</code> will make tags completely
-            unstyled.
-          </li>
-        </ol>
-      </p>
+      <p className="P">There{"'"}s also some fun bonuses hidden in the configs.</p>
+      <ol>
+        <li>
+          You can convert pages from Markdown to TSX with <code>npm run md-to-tsx</code>.
+        </li>
+        <li>In CSS files, you can nest rules like in Sass.</li>
+        <li>
+          You can also use the correct UK spellings (colour, behaviour, maths, mitre,
+          centre, capitalise, grey) instead of US ones if you so choose.
+        </li>
+        <li>
+          Included is a Link component that merges the logic of React Router with the
+          presentation of Baseweb. It will detect if the URL passed in is external for
+          you.
+        </li>
+        <li>
+          Default HTML styles are active; meaning HTML should look good out of the box.
+          Adding <code>className=&quot;reset&quot;</code> will make tags completely
+          unstyled.
+        </li>
+      </ol>
 
       <p className="P">
         Edit <code>App.tsx</code> and save to test HMR updates.

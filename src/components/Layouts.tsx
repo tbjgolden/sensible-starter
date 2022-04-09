@@ -31,6 +31,10 @@ const MENU_ITEMS: Item[] = [
     title: "HTML Test",
     itemId: "/html-test",
   },
+  {
+    title: "From Markdown",
+    itemId: "/from-markdown",
+  },
 ];
 
 const isBigMQ = matchMedia("(min-width: 720px)");

@@ -68,7 +68,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: "*.js",
+      files: ["*.js", "*.cjs"],
       rules: {
         "unicorn/prefer-module": "off",
         "@typescript-eslint/no-var-requires": "off",

@@ -16,15 +16,15 @@
     "**/.editorconfig": true,
     "**/.eslintcache": true,
     "**/.eslintignore": true,
-    "**/.eslintrc.js": true,
+    "**/.eslintrc.cjs": true,
     "**/.stylelintrc.json": true,
     "**/.prettierignore": true,
     "**/package-lock.json": true,
     "**/tsconfig.json": true,
     "**/tsconfig.node.json": true,
     "**/.lintstagedrc.js": true,
-    "**/.prettierrc.js": true,
-    "**/postcss.config.js": true,
+    "**/.prettierrc.cjs": true,
+    "**/postcss.config.cjs": true,
     "**/vite.config.ts": true,
     "**/vite-env.d.ts": true
   }
