@@ -6,6 +6,8 @@
     "wraith13.unsaved-files-vscode",
     "Uber.baseweb",
     "csstools.postcss",
-    "stylelint.vscode-stylelint"
+    "stylelint.vscode-stylelint",
+    "Prisma.prisma",
+    "GraphQL.vscode-graphql"
   ]
 }

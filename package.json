@@ -2,17 +2,24 @@
   "name": "hackathon-starter",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently --raw \"vite\" \"sleep 1 && esr ./src/api/server.ts\"",
     "build": "tsc && vite build",
-    "md-to-tsx": "node ./.scripts/md-to-tsx.js",
     "preview": "vite build && vite preview",
     "lint": "eslint .",
     "types": "tsc && echo 'Type-checking passed'",
-    "prepare": "husky install && rm -rf .git/hooks && ln -s ../.husky .git/hooks"
+    "md-to-tsx": "node ./.scripts/md-to-tsx.mjs",
+    "prepare": "husky install && rm -rf .git/hooks && ln -s ../.husky .git/hooks",
+    "---": "---",
+    "key:dev": "PORT=3001 keystone dev",
+    "key:start": "PORT=3001 keystone start",
+    "key:build": "keystone build",
+    "key:postinstall": "keystone postinstall"
   },
   "dependencies": {
+    "@keystone-6/auth": "^2.0.0",
+    "@keystone-6/core": "^1.1.0",
+    "@keystone-6/fields-document": "^2.0.0",
     "@nivo/core": "^0.79.0",
     "@nivo/geo": "^0.79.1",
     "@types/dedent": "^0.7.0",
@@ -23,11 +30,14 @@
     "@typescript-eslint/parser": "^5.0.0",
     "@vitejs/plugin-react": "^1.3.0",
     "baseui": "^10.12.1",
+    "concurrently": "^7.1.0",
     "dedent": "^0.7.0",
+    "esbuild-runner": "^2.2.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "fastify": "^3.28.0",
     "husky": "^7.0.2",
     "lint-staged": "^11.2.3",
     "mdast-util-from-markdown": "^1.2.0",
@@ -41,7 +51,6 @@
     "styletron-engine-monolithic": "^0.0.6",
     "styletron-react": "^6.0.2",
     "typescript": "^4.5.4",
-    "vite": "^2.9.0",
     "vite-plugin-compress": "^2.1.1",
     "vite-plugin-pages": "^0.22.0",
     "vite-tsconfig-paths": "^3.3.17"
@@ -63,6 +72,7 @@
     "prettier-eslint": "^13.0.0",
     "stylelint": "^14.6.1",
     "stylelint-config-prettier": "^9.0.3",
-    "stylelint-config-standard": "^25.0.0"
+    "stylelint-config-standard": "^25.0.0",
+    "vite": "^2.9.5"
   }
 }
