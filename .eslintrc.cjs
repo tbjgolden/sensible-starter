@@ -11,9 +11,10 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:unicorn/recommended",
+    "plugin:baseui/recommended",
     "prettier",
   ],
-  plugins: ["react", "unicorn", "prettier"],
+  plugins: ["react", "unicorn", "baseui", "prettier"],
   settings: {
     react: {
       version: "detect",

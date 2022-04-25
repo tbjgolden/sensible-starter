@@ -9,6 +9,9 @@ import { MenuLayout } from "_c/Layouts";
 import routes from "~react-pages";
 import "_/global.css";
 
+// eslint-disable-next-line baseui/deprecated-component-api
+import { Spinner } from "baseui/spinner";
+
 // Make baseweb primitives available as CSS properties
 const styleEl = document.createElement("style");
 let customPropertiesCSS = "";
@@ -32,7 +35,7 @@ const LoadingIndicator = () => {
       clearTimeout(timeout);
     };
   }, []);
-  return isLoadingIndicatorVisible ? <div>Loading...</div> : null;
+  return isLoadingIndicatorVisible ? <Spinner $size={100} /> : null;
 };
 
 const App = () => {

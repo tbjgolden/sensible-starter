@@ -85,7 +85,7 @@ export const MenuLayout = ({ children }: { children: ReactNode }) => {
                 style: {
                   paddingTop: 0,
                   paddingBottom: 0,
-                  borderBottom: 0,
+                  borderBottomWidth: 0,
                 },
               },
             }}
