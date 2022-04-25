@@ -113,7 +113,8 @@ const FromMarkdown = () => {
         </li>
       </ul>
       <p>
-        <strong>Note:</strong> This document is itself written using Markdown; you can .
+        <strong>Note:</strong> This document is itself written using Markdown; it&#039;s a
+        modified version of the original Markdown documentation.
       </p>
       <hr />
       <h2 id="overview">
@@ -125,10 +126,9 @@ const FromMarkdown = () => {
         Readability, however, is emphasized above all else. A Markdown-formatted document
         should be publishable as-is, as plain text, without looking like it&#039;s been
         marked up with tags or formatting instructions. While Markdown&#039;s syntax has
-        been influenced by several existing text-to-HTML filters -- including [Setext] ,
-        [atx] , [Textile] , [reStructuredText] , [Grutatext] , and [EtText] -- the single
-        biggest source of inspiration for Markdown&#039;s syntax is the format of plain
-        text email.
+        been influenced by several existing text-to-HTML filters -- including Setext, atx,
+        Textile, reStructuredText, Grutatext, and EtText -- the single biggest source of
+        inspiration for Markdown&#039;s syntax is the format of plain text email.
       </p>
       <p>
         To this end, Markdown&#039;s syntax is comprised entirely of punctuation
@@ -282,11 +282,12 @@ This is another regular paragraph.`}</code>
       <p>
         Yes, this takes a tad more effort to create a <code>{`<br />`}</code>, but a
         simplistic &quot;every line break is a <code>{`<br />`}</code>&quot; rule
-        wouldn&#039;t work for Markdown. Markdown&#039;s email-style and multi-paragraph
-        work best -- and look better -- when you format them with hard breaks.
+        wouldn&#039;t work for Markdown. Markdown&#039;s email-style
+        [blockquoting][#blockquote] and multi-paragraph [list items][#list] work best --
+        and look better -- when you format them with hard breaks.
       </p>
       <h3 id="header">Headers</h3>
-      <p>Markdown supports two styles of headers, [Setext] and [atx] .</p>
+      <p>Markdown supports two styles of headers, [Setext] [1] and [atx] [2].</p>
       <p>
         Setext-style headers are &quot;underlined&quot; using equal signs (for first-level
         headers) and dashes (for second-level headers). For example:
@@ -679,155 +680,9 @@ title attribute.</p>`}</code>
         <code>{`See my [About](/about/) page for details.`}</code>
       </pre>
       <p>
-        Reference-style links use a second set of square brackets, inside which you place
-        a label of your choosing to identify the link:
-      </p>
-      <pre>
-        <code>{`This is [an example][id] reference-style link.`}</code>
-      </pre>
-      <p>You can optionally use a space to separate the sets of brackets:</p>
-      <pre>
-        <code>{`This is [an example] [id] reference-style link.`}</code>
-      </pre>
-      <p>
-        Then, anywhere in the document, you define your link label like this, on a line by
-        itself:
-      </p>
-      <pre>
-        <code>{`[id]: http://example.com/  "Optional Title Here"`}</code>
-      </pre>
-      <p>That is:</p>
-      <ul>
-        <li>
-          <p>
-            Square brackets containing the link identifier (optionally indented from the
-            left margin using up to three spaces);
-          </p>
-        </li>
-        <li>
-          <p>followed by a colon;</p>
-        </li>
-        <li>
-          <p>followed by one or more spaces (or tabs);</p>
-        </li>
-        <li>
-          <p>followed by the URL for the link;</p>
-        </li>
-        <li>
-          <p>
-            optionally followed by a title attribute for the link, enclosed in double or
-            single quotes, or enclosed in parentheses.
-          </p>
-        </li>
-      </ul>
-      <p>The following three link definitions are equivalent:</p>
-      <pre>
-        <code>{`[foo]: http://example.com/  "Optional Title Here"
-[foo]: http://example.com/  'Optional Title Here'
-[foo]: http://example.com/  (Optional Title Here)`}</code>
-      </pre>
-      <p>
-        <strong>Note:</strong> There is a known bug in Markdown.pl 1.0.1 which prevents
-        single quotes from being used to delimit link titles.
-      </p>
-      <p>The link URL may, optionally, be surrounded by angle brackets:</p>
-      <pre>
-        <code>{`[id]: <http://example.com/>  "Optional Title Here"`}</code>
-      </pre>
-      <p>
-        You can put the title attribute on the next line and use extra spaces or tabs for
-        padding, which tends to look better with longer URLs:
-      </p>
-      <pre>
-        <code>{`[id]: http://example.com/longish/path/to/resource/here
-    "Optional Title Here"`}</code>
-      </pre>
-      <p>
-        Link definitions are only used for creating links during Markdown processing, and
-        are stripped from your document in the HTML output.
-      </p>
-      <p>
-        Link definition names may consist of letters, numbers, spaces, and punctuation --
-        but they are <em>not</em> case sensitive. E.g. these two links:
-      </p>
-      <pre>
-        <code>{`[link text][a]
-[link text][A]`}</code>
-      </pre>
-      <p>are equivalent.</p>
-      <p>
-        The <em>implicit link name</em> shortcut allows you to omit the name of the link,
-        in which case the link text itself is used as the name. Just use an empty set of
-        square brackets -- e.g., to link the word &quot;Google&quot; to the google.com web
-        site, you could simply write:
-      </p>
-      <pre>
-        <code>{`[Google][]`}</code>
-      </pre>
-      <p>And then define the link:</p>
-      <pre>
-        <code>{`[Google]: http://google.com/`}</code>
-      </pre>
-      <p>
-        Because link names may contain spaces, this shortcut even works for multiple words
-        in the link text:
-      </p>
-      <pre>
-        <code>{`Visit [Daring Fireball][] for more information.`}</code>
-      </pre>
-      <p>And then define the link: [Daring Fireball]: http://daringfireball.net/</p>
-      <p>
         Link definitions can be placed anywhere in your Markdown document. I tend to put
         them immediately after each paragraph in which they&#039;re used, but if you want,
         you can put them all at the end of your document, sort of like footnotes.
-      </p>
-      <p>Here&#039;s an example of reference links in action:</p>
-      <pre>
-        <code>{`I get 10 times more traffic from [Google] [1] than from
-[Yahoo] [2] or [MSN] [3].
-
-  [1]: http://google.com/        "Google"
-  [2]: http://search.yahoo.com/  "Yahoo Search"
-  [3]: http://search.msn.com/    "MSN Search"`}</code>
-      </pre>
-      <p>Using the implicit link name shortcut, you could instead write:</p>
-      <pre>
-        <code>{`I get 10 times more traffic from [Google][] than from
-[Yahoo][] or [MSN][].
-
-  [google]: http://google.com/        "Google"
-  [yahoo]:  http://search.yahoo.com/  "Yahoo Search"
-  [msn]:    http://search.msn.com/    "MSN Search"`}</code>
-      </pre>
-      <p>Both of the above examples will produce the following HTML output:</p>
-      <pre>
-        <code>{`<p>I get 10 times more traffic from <a href="http://google.com/"
-title="Google">Google</a> than from
-<a href="http://search.yahoo.com/" title="Yahoo Search">Yahoo</a>
-or <a href="http://search.msn.com/" title="MSN Search">MSN</a>.</p>`}</code>
-      </pre>
-      <p>
-        For comparison, here is the same paragraph written using Markdown&#039;s inline
-        link style:
-      </p>
-      <pre>
-        <code>{`I get 10 times more traffic from [Google](http://google.com/ "Google")
-than from [Yahoo](http://search.yahoo.com/ "Yahoo Search") or
-[MSN](http://search.msn.com/ "MSN Search").`}</code>
-      </pre>
-      <p>
-        The point of reference-style links is not that they&#039;re easier to write. The
-        point is that with reference-style links, your document source is vastly more
-        readable. Compare the above examples: using reference-style links, the paragraph
-        itself is only 81 characters long; with inline-style links, it&#039;s 176
-        characters; and as raw HTML, it&#039;s 234 characters. In the raw HTML,
-        there&#039;s more markup than there is text.
-      </p>
-      <p>
-        With Markdown&#039;s reference-style links, a source document much more closely
-        resembles the final output, as rendered in a browser. By allowing you to move the
-        markup-related metadata out of the paragraph, you can add links without
-        interrupting the narrative flow of your prose.
       </p>
       <h3 id="em">Emphasis</h3>
       <p>
@@ -943,10 +798,9 @@ equivalent of <code>&amp;mdash;</code>.</p>`}</code>
         placing images into a plain text document format.
       </p>
       <p>
-        Markdown uses an image syntax that is intended to resemble the syntax for links,
-        allowing for two styles: <em>inline</em> and <em>reference</em>.
+        Markdown uses an image syntax that is intended to resemble the syntax for links.
       </p>
-      <p>Inline image syntax looks like this:</p>
+      <p>Image syntax looks like this:</p>
       <pre>
         <code>{`![Alt text](/path/to/img.jpg)
 
@@ -973,17 +827,6 @@ equivalent of <code>&amp;mdash;</code>.</p>`}</code>
           </p>
         </li>
       </ul>
-      <p>Reference-style image syntax looks like this:</p>
-      <pre>
-        <code>{`![Alt text][id]`}</code>
-      </pre>
-      <p>
-        Where &quot;id&quot; is the name of a defined image reference. Image references
-        are defined using syntax identical to link references:
-      </p>
-      <pre>
-        <code>{`[id]: url/to/image  "Optional title attribute"`}</code>
-      </pre>
       <p>
         As of this writing, Markdown has no syntax for specifying the dimensions of an
         image; if this is important to you, you can simply use regular HTML{" "}

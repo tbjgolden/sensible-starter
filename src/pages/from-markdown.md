@@ -20,10 +20,7 @@
   - [Backslash Escapes](#backslash)
   - [Automatic Links](#autolink)
 
-**Note:** This document is itself written using Markdown; you
-can [see the source for it by adding '.text' to the URL][src].
-
-[src]: /projects/markdown/syntax.text
+**Note:** This document is itself written using Markdown; it's a modified version of the original Markdown documentation.
 
 ---
 
@@ -37,16 +34,9 @@ Readability, however, is emphasized above all else. A Markdown-formatted
 document should be publishable as-is, as plain text, without looking
 like it's been marked up with tags or formatting instructions. While
 Markdown's syntax has been influenced by several existing text-to-HTML
-filters -- including [Setext] [1], [atx] [2], [Textile] [3], [reStructuredText] [4],
-[Grutatext] [5], and [EtText] [6] -- the single biggest source of
+filters -- including Setext, atx, Textile, reStructuredText,
+Grutatext, and EtText -- the single biggest source of
 inspiration for Markdown's syntax is the format of plain text email.
-
-[1]: http://docutils.sourceforge.net/mirror/setext.html
-[2]: http://www.aaronsw.com/2002/atx/
-[3]: http://textism.com/tools/textile/
-[4]: http://docutils.sourceforge.net/rst.html
-[5]: http://www.triptico.com/software/grutatxt.html
-[6]: http://ettext.taint.org/doc/
 
 To this end, Markdown's syntax is comprised entirely of punctuation
 characters, which punctuation characters have been carefully chosen so
@@ -182,11 +172,8 @@ end a line with two or more spaces, then type return.
 
 Yes, this takes a tad more effort to create a `<br />`, but a simplistic
 "every line break is a `<br />`" rule wouldn't work for Markdown.
-Markdown's email-style [blockquoting][bq] and multi-paragraph [list items][l]
+Markdown's email-style [blockquoting][#blockquote] and multi-paragraph [list items][#list]
 work best -- and look better -- when you format them with hard breaks.
-
-[bq]: #blockquote
-[l]: #list
 
 <h3 id="header">Headers</h3>
 
@@ -542,130 +529,10 @@ use relative paths:
 
     See my [About](/about/) page for details.
 
-Reference-style links use a second set of square brackets, inside
-which you place a label of your choosing to identify the link:
-
-    This is [an example][id] reference-style link.
-
-You can optionally use a space to separate the sets of brackets:
-
-    This is [an example] [id] reference-style link.
-
-Then, anywhere in the document, you define your link label like this,
-on a line by itself:
-
-    [id]: http://example.com/  "Optional Title Here"
-
-That is:
-
-- Square brackets containing the link identifier (optionally
-  indented from the left margin using up to three spaces);
-- followed by a colon;
-- followed by one or more spaces (or tabs);
-- followed by the URL for the link;
-- optionally followed by a title attribute for the link, enclosed
-  in double or single quotes, or enclosed in parentheses.
-
-The following three link definitions are equivalent:
-
-    [foo]: http://example.com/  "Optional Title Here"
-    [foo]: http://example.com/  'Optional Title Here'
-    [foo]: http://example.com/  (Optional Title Here)
-
-**Note:** There is a known bug in Markdown.pl 1.0.1 which prevents
-single quotes from being used to delimit link titles.
-
-The link URL may, optionally, be surrounded by angle brackets:
-
-    [id]: <http://example.com/>  "Optional Title Here"
-
-You can put the title attribute on the next line and use extra spaces
-or tabs for padding, which tends to look better with longer URLs:
-
-    [id]: http://example.com/longish/path/to/resource/here
-        "Optional Title Here"
-
-Link definitions are only used for creating links during Markdown
-processing, and are stripped from your document in the HTML output.
-
-Link definition names may consist of letters, numbers, spaces, and
-punctuation -- but they are _not_ case sensitive. E.g. these two
-links:
-
-    [link text][a]
-    [link text][A]
-
-are equivalent.
-
-The _implicit link name_ shortcut allows you to omit the name of the
-link, in which case the link text itself is used as the name.
-Just use an empty set of square brackets -- e.g., to link the word
-"Google" to the google.com web site, you could simply write:
-
-    [Google][]
-
-And then define the link:
-
-    [Google]: http://google.com/
-
-Because link names may contain spaces, this shortcut even works for
-multiple words in the link text:
-
-    Visit [Daring Fireball][] for more information.
-
-And then define the link:
-[Daring Fireball]: http://daringfireball.net/
-
 Link definitions can be placed anywhere in your Markdown document. I
 tend to put them immediately after each paragraph in which they're
 used, but if you want, you can put them all at the end of your
 document, sort of like footnotes.
-
-Here's an example of reference links in action:
-
-    I get 10 times more traffic from [Google] [1] than from
-    [Yahoo] [2] or [MSN] [3].
-
-      [1]: http://google.com/        "Google"
-      [2]: http://search.yahoo.com/  "Yahoo Search"
-      [3]: http://search.msn.com/    "MSN Search"
-
-Using the implicit link name shortcut, you could instead write:
-
-    I get 10 times more traffic from [Google][] than from
-    [Yahoo][] or [MSN][].
-
-      [google]: http://google.com/        "Google"
-      [yahoo]:  http://search.yahoo.com/  "Yahoo Search"
-      [msn]:    http://search.msn.com/    "MSN Search"
-
-Both of the above examples will produce the following HTML output:
-
-    <p>I get 10 times more traffic from <a href="http://google.com/"
-    title="Google">Google</a> than from
-    <a href="http://search.yahoo.com/" title="Yahoo Search">Yahoo</a>
-    or <a href="http://search.msn.com/" title="MSN Search">MSN</a>.</p>
-
-For comparison, here is the same paragraph written using
-Markdown's inline link style:
-
-    I get 10 times more traffic from [Google](http://google.com/ "Google")
-    than from [Yahoo](http://search.yahoo.com/ "Yahoo Search") or
-    [MSN](http://search.msn.com/ "MSN Search").
-
-The point of reference-style links is not that they're easier to
-write. The point is that with reference-style links, your document
-source is vastly more readable. Compare the above examples: using
-reference-style links, the paragraph itself is only 81 characters
-long; with inline-style links, it's 176 characters; and as raw HTML,
-it's 234 characters. In the raw HTML, there's more markup than there
-is text.
-
-With Markdown's reference-style links, a source document much more
-closely resembles the final output, as rendered in a browser. By
-allowing you to move the markup-related metadata out of the paragraph,
-you can add links without interrupting the narrative flow of your
-prose.
 
 <h3 id="em">Emphasis</h3>
 
@@ -768,9 +635,9 @@ Admittedly, it's fairly difficult to devise a "natural" syntax for
 placing images into a plain text document format.
 
 Markdown uses an image syntax that is intended to resemble the syntax
-for links, allowing for two styles: _inline_ and _reference_.
+for links.
 
-Inline image syntax looks like this:
+Image syntax looks like this:
 
     ![Alt text](/path/to/img.jpg)
 
@@ -784,15 +651,6 @@ That is:
 - followed by a set of parentheses, containing the URL or path to
   the image, and an optional `title` attribute enclosed in double
   or single quotes.
-
-Reference-style image syntax looks like this:
-
-    ![Alt text][id]
-
-Where "id" is the name of a defined image reference. Image references
-are defined using syntax identical to link references:
-
-    [id]: url/to/image  "Optional title attribute"
 
 As of this writing, Markdown has no syntax for specifying the
 dimensions of an image; if this is important to you, you can simply

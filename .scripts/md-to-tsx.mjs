@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 import { promises as fs } from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { fromMarkdown } from "mdast-util-from-markdown";
 import HTMLToJSX from "htmltojsx";
-import path from "node:path";
 import dedent from "dedent";
 import yaml, { JSON_SCHEMA } from "js-yaml";
 import prettier from "prettier";
 import { ESLint } from "eslint";
-import { fileURLToPath } from "node:url";
 import { frontmatter } from "micromark-extension-frontmatter";
 import { frontmatterFromMarkdown } from "mdast-util-frontmatter";
 const args = new Set(process.argv.slice(2));

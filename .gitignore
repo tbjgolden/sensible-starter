@@ -10,3 +10,4 @@ coverage
 .keystone/admin
 keystone.db
 *.log
+.env
