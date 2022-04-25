@@ -27,7 +27,9 @@
     "**/postcss.config.cjs": true,
     "**/vite.config.ts": true,
     "**/vite-env.d.ts": true,
+    "**/dist": true,
     "**/.keystone": true,
-    "**/keystone.db": true
+    "**/keystone.db": true,
+    "**/.env*": true
   }
 }

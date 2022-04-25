@@ -20,8 +20,9 @@ export default defineConfig({
   },
   plugins: [
     react(),
+    // compress assets, brotli compression done at later stage
     compress({ brotli: false }),
+    // needed for filesystem routing / bundling
     pages(),
-    //
   ],
 });

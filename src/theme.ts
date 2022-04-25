@@ -168,9 +168,6 @@ export const primitives: ThemePrimitives = {
   mono800: colours.grey600,
   mono900: colours.grey700,
   mono1000: colours.black,
-  // Rating Palette
-  rating200: colours.yellow200,
-  rating400: colours.yellow400,
   // Font Family
   primaryFontFamily:
     '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
