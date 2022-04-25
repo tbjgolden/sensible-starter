@@ -25,7 +25,7 @@
     "**/.lintstagedrc.cjs": true,
     "**/.prettierrc.cjs": true,
     "**/postcss.config.cjs": true,
-    "**/vite.config.ts": true,
+    // "**/vite.config.ts": true,
     "**/vite-env.d.ts": true
   }
 }

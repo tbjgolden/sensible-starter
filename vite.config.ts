@@ -6,6 +6,11 @@ import pages from "vite-plugin-pages";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  server: {
+    watch: {
+      ignored: ["**/tsconfig.json"],
+    },
+  },
   resolve: {
     alias: [
       { find: "_", replacement: path.resolve(process.cwd(), "src") },

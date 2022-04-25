@@ -3,18 +3,13 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "concurrently --raw \"vite\" \"sleep 1 && esr ./src/api/server.ts\"",
-    "build": "tsc && vite build",
+    "dev": "concurrently --raw \"vite\" \"PORT=3001 keystone dev\"",
+    "build": "tsc && vite build && keystone build",
     "preview": "vite build && vite preview",
     "lint": "eslint .",
     "types": "tsc && echo 'Type-checking passed'",
     "md-to-tsx": "node ./.scripts/md-to-tsx.mjs",
-    "prepare": "husky install && rm -rf .git/hooks && ln -s ../.husky .git/hooks",
-    "---": "---",
-    "key:dev": "PORT=3001 keystone dev",
-    "key:start": "PORT=3001 keystone start",
-    "key:build": "keystone build",
-    "key:postinstall": "keystone postinstall"
+    "prepare": "husky install && rm -rf .git/hooks && ln -s ../.husky .git/hooks"
   },
   "dependencies": {
     "@keystone-6/auth": "^2.0.0",
