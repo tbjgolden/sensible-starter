@@ -23,7 +23,7 @@ const HTMLTest = () => {
 
   return (
     <MenuLayout>
-      <h1>Test file</h1>
+      <h1>Components</h1>
       <h2>Forms</h2>
       <p>
         Forms should use{" "}

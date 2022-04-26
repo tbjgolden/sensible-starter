@@ -16,8 +16,8 @@ strong {
 
 /**
   D = Display [L,M,S,XS]
-  As a guide, use it where Google would use their Google Sans font.
-  Display text is often shown in serif 'fancy' fonts
+  Display text is often shown in a different font to provide contrast
+  to the main copy font
 */
 .D-L {
   font-size: 64px;
@@ -154,6 +154,7 @@ p {
   C = Caption
   title or brief explanation accompanying something else
 */
+.C-M,
 .C {
   font-size: 12px;
   font-weight: 400;
@@ -248,6 +249,7 @@ p {
     font-size: 12px;
   }
 
+  .C-M,
   .C {
     font-size: 12px;
   }

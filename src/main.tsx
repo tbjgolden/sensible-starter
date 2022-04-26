@@ -47,7 +47,17 @@ const App = () => {
         </MenuLayout>
       }
     >
-      {useRoutes(routes)}
+      {useRoutes([
+        ...routes,
+        {
+          path: "*",
+          element: (
+            <MenuLayout>
+              <h1 style={{ color: "var(--mono600)" }}>Page Not Found</h1>
+            </MenuLayout>
+          ),
+        },
+      ])}
     </Suspense>
   );
 };

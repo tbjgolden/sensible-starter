@@ -28,12 +28,16 @@ const MENU_ITEMS: Item[] = [
     itemId: "/map",
   },
   {
-    title: "HTML Test",
-    itemId: "/html-test",
+    title: "Components",
+    itemId: "/components",
   },
   {
-    title: "From Markdown",
-    itemId: "/from-markdown",
+    title: "Markdown Generated",
+    itemId: "/markdown-generated",
+  },
+  {
+    title: "CSS Utilities",
+    itemId: "/css-utilities",
   },
 ];
 

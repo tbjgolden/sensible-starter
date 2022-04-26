@@ -1,3 +1,9 @@
+> This page is generated from the markdown file located at `src/pages/markdown-generated.md`.
+> To convert a markdown file to a page, run `npm run md-to-tsx`.
+> This creates a `.tsx` file of the same path.
+>
+> Keeping the original `.md` file in `src/pages` doesn't affect build output (only `.tsx` files do), so unless you're making any changes to the generated file, keep it in the tree.
+
 # Markdown: Syntax
 
 - [Overview](#overview)

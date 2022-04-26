@@ -155,7 +155,7 @@ const phrasingContentToTSX = (p) => {
       return HTMLToJSXConverter.convert(p.value);
     }
     case "image": {
-      return `<img url="${p.url}" alt="${encodeURIComponent(p.alt ?? "")}" />`;
+      return `<img src="${p.url}" alt="${p.alt ?? ""}" />`;
     }
     default: {
       return ``;
