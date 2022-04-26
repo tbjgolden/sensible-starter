@@ -8,4 +8,6 @@ TODOs:
 - [x] reads markdown page files and converts them to tsx files
 - [x] integrate keystone.js
 - [x] cleanup scripts
+- [x] 404
+- [x] css utils docs
 - [ ] give it a test run
