@@ -12,3 +12,6 @@
 
 /* Spacing scale */
 @import "./styles/spacing-scale.css";
+
+/* Custom CSS */
+@import "./styles/custom.css";
