@@ -15,4 +15,6 @@ TODOs:
 - [x] sort out unused var eslint rules
 - [x] unicorn/no-new-array is annoying
 - [ ] error boundary around whole app would be nice
+  - [ ] only in prod
+  - [ ] send the errors to keystone
 - [ ] give it a test run
