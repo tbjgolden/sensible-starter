@@ -11,8 +11,8 @@ TODOs:
 - [x] 404
 - [x] css utils docs
 - [ ] add proxy server and devise a way to reuse in prod
-- [ ] hide schema files
-- [ ] sort out unused var eslint rules
-- [ ] unicorn/no-new-array is annoying
+- [x] hide schema files
+- [x] sort out unused var eslint rules
+- [x] unicorn/no-new-array is annoying
 - [ ] error boundary around whole app would be nice
 - [ ] give it a test run

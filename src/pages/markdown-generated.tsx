@@ -162,9 +162,8 @@ const MarkdownGenerated = () => {
         <em>not</em> to create a syntax that makes it easier to insert HTML tags. In my
         opinion, HTML tags are already easy to insert. The idea for Markdown is to make it
         easy to read, write, and edit prose. HTML is a <em>publishing</em> format;
-        Markdown is a <em>writing</em>
-        format. Thus, Markdown&#039;s formatting syntax only addresses issues that can be
-        conveyed in plain text.
+        Markdown is a <em>writing</em> format. Thus, Markdown&#039;s formatting syntax
+        only addresses issues that can be conveyed in plain text.
       </p>
       <p>
         For any markup that is not covered by Markdown&#039;s syntax, you simply use HTML
@@ -283,11 +282,11 @@ This is another regular paragraph.`}</code>
         should not be indented with spaces or tabs.
       </p>
       <p>
-        The implication of the &quot;one or more consecutive lines of text&quot; rule is
-        that Markdown supports &quot;hard-wrapped&quot; text paragraphs. This differs
-        significantly from most other text-to-HTML formatters (including Movable
-        Type&#039;s &quot;Convert Line Breaks&quot; option) which translate every line
-        break character in a paragraph into a <code>{`<br />`}</code> tag.
+        The implication of the "one or more consecutive lines of text" rule is that
+        Markdown supports "hard-wrapped" text paragraphs. This differs significantly from
+        most other text-to-HTML formatters (including Movable Type&#039;s "Convert Line
+        Breaks" option) which translate every line break character in a paragraph into a{" "}
+        <code>{`<br />`}</code> tag.
       </p>
       <p>
         When you <em>do</em> want to insert a <code>{`<br />`}</code> break tag using
@@ -295,16 +294,16 @@ This is another regular paragraph.`}</code>
       </p>
       <p>
         Yes, this takes a tad more effort to create a <code>{`<br />`}</code>, but a
-        simplistic &quot;every line break is a <code>{`<br />`}</code>&quot; rule
-        wouldn&#039;t work for Markdown. Markdown&#039;s email-style
-        [blockquoting][#blockquote] and multi-paragraph [list items][#list] work best --
-        and look better -- when you format them with hard breaks.
+        simplistic "every line break is a <code>{`<br />`}</code>" rule wouldn&#039;t work
+        for Markdown. Markdown&#039;s email-style [blockquoting][#blockquote] and
+        multi-paragraph [list items][#list] work best -- and look better -- when you
+        format them with hard breaks.
       </p>
       <h3 id="header">Headers</h3>
       <p>Markdown supports two styles of headers, [Setext] [1] and [atx] [2].</p>
       <p>
-        Setext-style headers are &quot;underlined&quot; using equal signs (for first-level
-        headers) and dashes (for second-level headers). For example:
+        Setext-style headers are "underlined" using equal signs (for first-level headers)
+        and dashes (for second-level headers). For example:
       </p>
       <pre>
         <code>{`This is an H1
@@ -329,10 +328,10 @@ This is an H2
 ###### This is an H6`}</code>
       </pre>
       <p>
-        Optionally, you may &quot;close&quot; atx-style headers. This is purely cosmetic
-        -- you can use this if you think it looks better. The closing hashes don&#039;t
-        even need to match the number of hashes used to open the header. (The number of
-        opening hashes determines the header level.) :
+        Optionally, you may "close" atx-style headers. This is purely cosmetic -- you can
+        use this if you think it looks better. The closing hashes don&#039;t even need to
+        match the number of hashes used to open the header. (The number of opening hashes
+        determines the header level.) :
       </p>
       <pre>
         <code>{`# This is an H1 #
@@ -808,8 +807,8 @@ equivalent of <code>&amp;mdash;</code>.</p>`}</code>
       </pre>
       <h3 id="img">Images</h3>
       <p>
-        Admittedly, it&#039;s fairly difficult to devise a &quot;natural&quot; syntax for
-        placing images into a plain text document format.
+        Admittedly, it&#039;s fairly difficult to devise a "natural" syntax for placing
+        images into a plain text document format.
       </p>
       <p>
         Markdown uses an image syntax that is intended to resemble the syntax for links.
@@ -850,10 +849,10 @@ equivalent of <code>&amp;mdash;</code>.</p>`}</code>
       <h2 id="misc">Miscellaneous</h2>
       <h3 id="autolink">Automatic Links</h3>
       <p>
-        Markdown supports a shortcut style for creating &quot;automatic&quot; links for
-        URLs and email addresses: simply surround the URL or email address with angle
-        brackets. What this means is that if you want to show the actual text of a URL or
-        email address, and also have it be a clickable link, you can do this:
+        Markdown supports a shortcut style for creating "automatic" links for URLs and
+        email addresses: simply surround the URL or email address with angle brackets.
+        What this means is that if you want to show the actual text of a URL or email
+        address, and also have it be a clickable link, you can do this:
       </p>
       <pre>
         <code>{`<http://example.com/>`}</code>
@@ -877,10 +876,7 @@ equivalent of <code>&amp;mdash;</code>.</p>`}</code>
 &#109;">&#x61;&#x64;&#x64;&#x72;&#x65;&#115;&#115;&#64;&#101;&#120;&#x61;
 &#109;&#x70;&#x6C;e&#x2E;&#99;&#111;&#109;</a>`}</code>
       </pre>
-      <p>
-        which will render in a browser as a clickable link to
-        &quot;address@example.com&quot;.
-      </p>
+      <p>which will render in a browser as a clickable link to "address@example.com".</p>
       <p>
         (This sort of entity-encoding trick will indeed fool many, if not most,
         address-harvesting bots, but it definitely won&#039;t fool all of them. It&#039;s

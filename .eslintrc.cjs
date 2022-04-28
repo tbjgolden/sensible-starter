@@ -1,3 +1,17 @@
+const fs = require("fs");
+const path = require("path");
+
+// Use gitignore as eslintignore (single source of truth)
+const ignorePatterns = fs
+  .readFileSync(path.join(__dirname, ".gitignore"), "utf8")
+  .split("\n")
+  .map((line) => {
+    return line.split("#")[0].trim();
+  })
+  .filter((withoutComment) => {
+    return withoutComment.length > 0;
+  });
+
 module.exports = {
   env: {
     browser: true,
@@ -20,9 +34,14 @@ module.exports = {
       version: "detect",
     },
   },
+  ignorePatterns,
   rules: {
     "arrow-body-style": ["warn", "always"],
+    "no-array-constructor": "off",
+    //
     "react/react-in-jsx-scope": "off",
+    "react/no-unescaped-entities": [1, { forbid: [">", "}"] }],
+    //
     "@typescript-eslint/no-restricted-imports": [
       "error",
       {
@@ -39,6 +58,20 @@ module.exports = {
         ],
       },
     ],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        vars: "all",
+        args: "after-used",
+        ignoreRestSiblings: false,
+        varsIgnorePattern: "^_",
+        argsIgnorePattern: "^_",
+        destructuredArrayIgnorePattern: "^_",
+        caughtErrorsIgnorePattern: "^(_|error$)",
+      },
+    ],
+    "@typescript-eslint/no-array-constructor": ["error"],
+    //
     "unicorn/filename-case": [
       "error",
       {
@@ -66,10 +99,11 @@ module.exports = {
       },
     ],
     "unicorn/prefer-switch": ["error", { minimumCases: 5 }],
+    "unicorn/no-new-array": "off",
   },
   overrides: [
     {
-      files: ["*.js", "*.cjs"],
+      files: ["*.cjs"],
       rules: {
         "unicorn/prefer-module": "off",
         "@typescript-eslint/no-var-requires": "off",

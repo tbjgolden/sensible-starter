@@ -86,7 +86,7 @@ const Index = () => {
         Edit <code>src/pages/index.tsx</code> and save to test hot reload.
       </p>
 
-      <p className="P">There{"'"}s also some fun bonuses hidden in the configs.</p>
+      <p className="P">There's also some fun bonuses hidden in the configs.</p>
       <ol>
         <li>
           You can convert pages from Markdown to TSX with <code>npm run md-to-tsx</code>.
@@ -103,8 +103,7 @@ const Index = () => {
         </li>
         <li>
           Default HTML styles are active; meaning HTML should look good out of the box.
-          Adding <code>className=&quot;reset&quot;</code> will make tags completely
-          unstyled.
+          Adding <code>className="reset"</code> will make tags completely unstyled.
         </li>
       </ol>
 

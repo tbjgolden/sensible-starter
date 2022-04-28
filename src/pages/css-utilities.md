@@ -12,7 +12,8 @@ These classes are documented both inside their source files and here.
 [#](#tags) `src/styles/tags.css` - tweak defaults for ugly unstyled HTML tags<br>
 [#](#typography) `src/styles/typography.css` - type scale and related utility classes<br>
 [#](#spacing-defaults) `src/styles/spacing-defaults.css` - spacing defaults<br>
-[#](#spacing-scale) `src/styles/spacing-scale.css` - spacing scale
+[#](#spacing-scale) `src/styles/spacing-scale.css` - spacing scale<br>
+[#](#custom) `src/styles/custom.css` - custom styles
 
 ## Reset
 
@@ -173,3 +174,7 @@ To keep things consistent, plenty of utility classes have been added for this pu
 
 > Horizontally centre a div:
 > <br>`.mh-auto { margin-left: auto; margin-right: auto }`
+
+## Custom
+
+You can use this file for custom CSS.

@@ -178,6 +178,7 @@ export const MenuLayout = ({ children }: { children: ReactNode }) => {
             position: "fixed",
             zIndex: 999,
             left: 0,
+            overflowY: "auto",
           }}
         >
           <div className="H-M ph24 pv12" style={{ border: "2px solid transparent" }}>
@@ -195,7 +196,12 @@ export const MenuLayout = ({ children }: { children: ReactNode }) => {
       )}
       <main
         className={`phx ${isSmall ? "pv32" : "pv64"}`}
-        style={{ flexGrow: 1, flexShrink: 1, marginTop: isSmall ? 72 : 0 }}
+        style={{
+          flexGrow: 1,
+          flexShrink: 1,
+          marginTop: isSmall ? 72 : 0,
+          maxWidth: "100%",
+        }}
       >
         <div className="mw-copy mh-auto rm-margin">{children}</div>
       </main>

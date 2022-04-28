@@ -61,8 +61,7 @@ syntax is very small, corresponding only to a very small subset of
 HTML tags. The idea is _not_ to create a syntax that makes it easier
 to insert HTML tags. In my opinion, HTML tags are already easy to
 insert. The idea for Markdown is to make it easy to read, write, and
-edit prose. HTML is a _publishing_ format; Markdown is a _writing_
-format. Thus, Markdown's formatting syntax only addresses issues that
+edit prose. HTML is a _publishing_ format; Markdown is a _writing_ format. Thus, Markdown's formatting syntax only addresses issues that
 can be conveyed in plain text.
 
 For any markup that is not covered by Markdown's syntax, you simply

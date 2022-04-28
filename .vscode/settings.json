@@ -16,7 +16,7 @@
     "**/.editorconfig": true,
     "**/.eslintcache": true,
     "**/.eslintignore": true,
-    "**/.eslintrc.cjs": true,
+    // "**/.eslintrc.cjs": true,
     "**/.stylelintrc.json": true,
     "**/.prettierignore": true,
     "**/package-lock.json": true,
@@ -30,6 +30,8 @@
     "**/dist": true,
     "**/.keystone": true,
     "**/keystone.db": true,
-    "**/.env*": true
+    "**/.env*": true,
+    "**/schema.graphql": true,
+    "**/schema.prisma": true
   }
 }

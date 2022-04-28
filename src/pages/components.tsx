@@ -176,8 +176,8 @@ const HTMLTest = () => {
       <h4>Paragraph</h4>
       <p>
         Other tags <em>should</em> generally display in the{" "}
-        <strong>the way you{"'"}d expect</strong>. For example, the <code>&lt;u&gt;</code>{" "}
-        tag will <u>display an underline</u>, the <code>&lt;del&gt;</code> tag will{" "}
+        <strong>the way you'd expect</strong>. For example, the <code>&lt;u&gt;</code> tag
+        will <u>display an underline</u>, the <code>&lt;del&gt;</code> tag will{" "}
         <del>display an strikethrough</del>, etc.
       </p>
       <h4>Code block</h4>

@@ -28,6 +28,8 @@ const CssUtilities = () => {
         <Link to="#spacing-scale">
           #
         </Link> <code>{`src/styles/spacing-scale.css`}</code> - spacing scale
+        <br />
+        <Link to="#custom">#</Link> <code>{`src/styles/custom.css`}</code> - custom styles
       </p>
       <h2 id="reset">Reset</h2>
       <p>Similar to common normalise stylesheets, but with one major difference:</p>
@@ -332,6 +334,8 @@ C  | Caption         | M`}</code>
           <code>{`.mh-auto { margin-left: auto; margin-right: auto }`}</code>
         </p>
       </blockquote>
+      <h2 id="custom">Custom</h2>
+      <p>You can use this file for custom CSS.</p>
     </MenuLayout>
   );
 };
