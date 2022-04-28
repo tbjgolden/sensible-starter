@@ -32,6 +32,10 @@ const MENU_ITEMS: Item[] = [
     itemId: "/components",
   },
   {
+    title: "List w/ API",
+    itemId: "/list",
+  },
+  {
     title: "Markdown Generated",
     itemId: "/markdown-generated",
   },

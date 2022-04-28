@@ -10,6 +10,11 @@ export default defineConfig({
     watch: {
       ignored: ["**/tsconfig.json"],
     },
+    proxy: {
+      "/api": {
+        target: "http://localhost:3001",
+      },
+    },
   },
   resolve: {
     alias: [

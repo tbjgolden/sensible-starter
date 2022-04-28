@@ -7,7 +7,13 @@ import { BaseProvider } from "baseui";
 import { theme, primitives } from "_/theme";
 import { MenuLayout } from "_c/Layouts";
 import routes from "~react-pages";
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import "_/global.css";
+
+const client = new ApolloClient({
+  uri: "/api/graphql",
+  cache: new InMemoryCache(),
+});
 
 // eslint-disable-next-line baseui/deprecated-component-api
 import { Spinner } from "baseui/spinner";
@@ -65,11 +71,13 @@ const App = () => {
 ReactDOM.render(
   <StyletronProvider value={engine}>
     <BaseProvider theme={theme}>
-      <React.StrictMode>
-        <Router>
-          <App />
-        </Router>
-      </React.StrictMode>
+      <ApolloProvider client={client}>
+        <React.StrictMode>
+          <Router>
+            <App />
+          </Router>
+        </React.StrictMode>
+      </ApolloProvider>
     </BaseProvider>
   </StyletronProvider>,
   document.querySelector("#root")

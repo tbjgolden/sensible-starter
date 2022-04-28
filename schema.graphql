@@ -6,13 +6,6 @@ type User {
   name: String
   email: String
   password: PasswordState
-  posts(
-    where: PostWhereInput! = {}
-    orderBy: [PostOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [Post!]
-  postsCount(where: PostWhereInput! = {}): Int
 }
 
 type PasswordState {
@@ -31,7 +24,6 @@ input UserWhereInput {
   id: IDFilter
   name: StringFilter
   email: StringFilter
-  posts: PostManyRelationFilter
 }
 
 input IDFilter {
@@ -73,12 +65,6 @@ input NestedStringFilter {
   not: NestedStringFilter
 }
 
-input PostManyRelationFilter {
-  every: PostWhereInput
-  some: PostWhereInput
-  none: PostWhereInput
-}
-
 input UserOrderByInput {
   id: OrderDirection
   name: OrderDirection
@@ -94,14 +80,6 @@ input UserUpdateInput {
   name: String
   email: String
   password: String
-  posts: PostRelateToManyForUpdateInput
-}
-
-input PostRelateToManyForUpdateInput {
-  disconnect: [PostWhereUniqueInput!]
-  set: [PostWhereUniqueInput!]
-  create: [PostCreateInput!]
-  connect: [PostWhereUniqueInput!]
 }
 
 input UserUpdateArgs {
@@ -113,79 +91,37 @@ input UserCreateInput {
   name: String
   email: String
   password: String
-  posts: PostRelateToManyForCreateInput
 }
 
-input PostRelateToManyForCreateInput {
-  create: [PostCreateInput!]
-  connect: [PostWhereUniqueInput!]
-}
-
-type Post {
+type ListItem {
   id: ID!
-  title: String
-  status: String
-  content: Post_content_Document
-  publishDate: DateTime
-  author: User
-  tags(
-    where: TagWhereInput! = {}
-    orderBy: [TagOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [Tag!]
-  tagsCount(where: TagWhereInput! = {}): Int
-}
-
-type Post_content_Document {
-  document(hydrateRelationships: Boolean! = false): JSON!
+  name: String
+  checked: Boolean
+  updatedAt: DateTime
+  createdAt: DateTime
 }
 
 scalar DateTime
   @specifiedBy(url: "https://datatracker.ietf.org/doc/html/rfc3339#section-5.6")
 
-input PostWhereUniqueInput {
+input ListItemWhereUniqueInput {
   id: ID
 }
 
-input PostWhereInput {
-  AND: [PostWhereInput!]
-  OR: [PostWhereInput!]
-  NOT: [PostWhereInput!]
+input ListItemWhereInput {
+  AND: [ListItemWhereInput!]
+  OR: [ListItemWhereInput!]
+  NOT: [ListItemWhereInput!]
   id: IDFilter
-  title: StringFilter
-  status: StringNullableFilter
-  publishDate: DateTimeNullableFilter
-  author: UserWhereInput
-  tags: TagManyRelationFilter
+  name: StringFilter
+  checked: BooleanFilter
+  updatedAt: DateTimeNullableFilter
+  createdAt: DateTimeNullableFilter
 }
 
-input StringNullableFilter {
-  equals: String
-  in: [String!]
-  notIn: [String!]
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  contains: String
-  startsWith: String
-  endsWith: String
-  not: NestedStringNullableFilter
-}
-
-input NestedStringNullableFilter {
-  equals: String
-  in: [String!]
-  notIn: [String!]
-  lt: String
-  lte: String
-  gt: String
-  gte: String
-  contains: String
-  startsWith: String
-  endsWith: String
-  not: NestedStringNullableFilter
+input BooleanFilter {
+  equals: Boolean
+  not: BooleanFilter
 }
 
 input DateTimeNullableFilter {
@@ -199,108 +135,31 @@ input DateTimeNullableFilter {
   not: DateTimeNullableFilter
 }
 
-input TagManyRelationFilter {
-  every: TagWhereInput
-  some: TagWhereInput
-  none: TagWhereInput
-}
-
-input PostOrderByInput {
-  id: OrderDirection
-  title: OrderDirection
-  status: OrderDirection
-  publishDate: OrderDirection
-}
-
-input PostUpdateInput {
-  title: String
-  status: String
-  content: JSON
-  publishDate: DateTime
-  author: UserRelateToOneForUpdateInput
-  tags: TagRelateToManyForUpdateInput
-}
-
-input UserRelateToOneForUpdateInput {
-  create: UserCreateInput
-  connect: UserWhereUniqueInput
-  disconnect: Boolean
-}
-
-input TagRelateToManyForUpdateInput {
-  disconnect: [TagWhereUniqueInput!]
-  set: [TagWhereUniqueInput!]
-  create: [TagCreateInput!]
-  connect: [TagWhereUniqueInput!]
-}
-
-input PostUpdateArgs {
-  where: PostWhereUniqueInput!
-  data: PostUpdateInput!
-}
-
-input PostCreateInput {
-  title: String
-  status: String
-  content: JSON
-  publishDate: DateTime
-  author: UserRelateToOneForCreateInput
-  tags: TagRelateToManyForCreateInput
-}
-
-input UserRelateToOneForCreateInput {
-  create: UserCreateInput
-  connect: UserWhereUniqueInput
-}
-
-input TagRelateToManyForCreateInput {
-  create: [TagCreateInput!]
-  connect: [TagWhereUniqueInput!]
-}
-
-type Tag {
-  id: ID!
-  name: String
-  posts(
-    where: PostWhereInput! = {}
-    orderBy: [PostOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [Post!]
-  postsCount(where: PostWhereInput! = {}): Int
-}
-
-input TagWhereUniqueInput {
-  id: ID
-}
-
-input TagWhereInput {
-  AND: [TagWhereInput!]
-  OR: [TagWhereInput!]
-  NOT: [TagWhereInput!]
-  id: IDFilter
-  name: StringFilter
-  posts: PostManyRelationFilter
-}
-
-input TagOrderByInput {
+input ListItemOrderByInput {
   id: OrderDirection
   name: OrderDirection
+  checked: OrderDirection
+  updatedAt: OrderDirection
+  createdAt: OrderDirection
 }
 
-input TagUpdateInput {
+input ListItemUpdateInput {
   name: String
-  posts: PostRelateToManyForUpdateInput
+  checked: Boolean
+  updatedAt: DateTime
+  createdAt: DateTime
 }
 
-input TagUpdateArgs {
-  where: TagWhereUniqueInput!
-  data: TagUpdateInput!
+input ListItemUpdateArgs {
+  where: ListItemWhereUniqueInput!
+  data: ListItemUpdateInput!
 }
 
-input TagCreateInput {
+input ListItemCreateInput {
   name: String
-  posts: PostRelateToManyForCreateInput
+  checked: Boolean
+  updatedAt: DateTime
+  createdAt: DateTime
 }
 
 """
@@ -318,18 +177,15 @@ type Mutation {
   updateUsers(data: [UserUpdateArgs!]!): [User]
   deleteUser(where: UserWhereUniqueInput!): User
   deleteUsers(where: [UserWhereUniqueInput!]!): [User]
-  createPost(data: PostCreateInput!): Post
-  createPosts(data: [PostCreateInput!]!): [Post]
-  updatePost(where: PostWhereUniqueInput!, data: PostUpdateInput!): Post
-  updatePosts(data: [PostUpdateArgs!]!): [Post]
-  deletePost(where: PostWhereUniqueInput!): Post
-  deletePosts(where: [PostWhereUniqueInput!]!): [Post]
-  createTag(data: TagCreateInput!): Tag
-  createTags(data: [TagCreateInput!]!): [Tag]
-  updateTag(where: TagWhereUniqueInput!, data: TagUpdateInput!): Tag
-  updateTags(data: [TagUpdateArgs!]!): [Tag]
-  deleteTag(where: TagWhereUniqueInput!): Tag
-  deleteTags(where: [TagWhereUniqueInput!]!): [Tag]
+  createListItem(data: ListItemCreateInput!): ListItem
+  createListItems(data: [ListItemCreateInput!]!): [ListItem]
+  updateListItem(
+    where: ListItemWhereUniqueInput!
+    data: ListItemUpdateInput!
+  ): ListItem
+  updateListItems(data: [ListItemUpdateArgs!]!): [ListItem]
+  deleteListItem(where: ListItemWhereUniqueInput!): ListItem
+  deleteListItems(where: [ListItemWhereUniqueInput!]!): [ListItem]
   endSession: Boolean!
   authenticateUserWithPassword(
     email: String!
@@ -368,22 +224,14 @@ type Query {
   ): [User!]
   user(where: UserWhereUniqueInput!): User
   usersCount(where: UserWhereInput! = {}): Int
-  posts(
-    where: PostWhereInput! = {}
-    orderBy: [PostOrderByInput!]! = []
+  listItems(
+    where: ListItemWhereInput! = {}
+    orderBy: [ListItemOrderByInput!]! = []
     take: Int
     skip: Int! = 0
-  ): [Post!]
-  post(where: PostWhereUniqueInput!): Post
-  postsCount(where: PostWhereInput! = {}): Int
-  tags(
-    where: TagWhereInput! = {}
-    orderBy: [TagOrderByInput!]! = []
-    take: Int
-    skip: Int! = 0
-  ): [Tag!]
-  tag(where: TagWhereUniqueInput!): Tag
-  tagsCount(where: TagWhereInput! = {}): Int
+  ): [ListItem!]
+  listItem(where: ListItemWhereUniqueInput!): ListItem
+  listItemsCount(where: ListItemWhereInput! = {}): Int
   keystone: KeystoneMeta!
   authenticatedItem: AuthenticatedItem
 }

@@ -1,7 +1,6 @@
 import "dotenv/config";
 import { config, list } from "@keystone-6/core";
-import { text, relationship, password, timestamp, select } from "@keystone-6/core/fields";
-import { document } from "@keystone-6/fields-document";
+import { text, password, timestamp, checkbox } from "@keystone-6/core/fields";
 import { createAuth } from "@keystone-6/auth";
 import { statelessSessions } from "@keystone-6/core/session";
 
@@ -40,50 +39,30 @@ export default createAuth({
             isFilterable: true,
           }),
           password: password({ validation: { isRequired: true } }),
-          posts: relationship({ ref: "Post.author", many: true }),
-        },
-        ui: {
-          listView: {
-            initialColumns: ["name", "posts"],
-          },
+          // relationships can also be added to keystone
+          // listItems: relationship({ ref: "ListItem.author", many: true }),
         },
       }),
-      Post: list({
-        fields: {
-          title: text(),
-          status: select({
-            options: [
-              { label: "Published", value: "published" },
-              { label: "Draft", value: "draft" },
-            ],
-            defaultValue: "draft",
-            ui: {
-              displayMode: "segmented-control",
-            },
-          }),
-          content: document({
-            formatting: true,
-            layouts: [],
-            links: true,
-            dividers: true,
-          }),
-          publishDate: timestamp(),
-          author: relationship({
-            ref: "User.posts",
-          }),
-          tags: relationship({
-            ref: "Tag.posts",
-            many: true,
-          }),
-        },
-      }),
-      Tag: list({
-        ui: {
-          isHidden: true,
-        },
+      ListItem: list({
         fields: {
           name: text(),
-          posts: relationship({ ref: "Post.tags", many: true }),
+          checked: checkbox(),
+          updatedAt: timestamp({
+            defaultValue: { kind: "now" },
+            ui: {
+              createView: {
+                fieldMode: "hidden",
+              },
+            },
+          }),
+          createdAt: timestamp({
+            defaultValue: { kind: "now" },
+            ui: {
+              createView: {
+                fieldMode: "hidden",
+              },
+            },
+          }),
         },
       }),
     },

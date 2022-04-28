@@ -5,6 +5,9 @@ import express from "express";
 import morgan from "morgan";
 import helmet from "helmet";
 import compression from "compression";
+import httpProxy from "http-proxy";
+
+const apiProxy = httpProxy.createProxyServer();
 
 const PORT = process.env.PORT || 3000;
 const projectRoot = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -21,6 +24,9 @@ app.use(
     },
   })
 );
+app.get("/api/*", function (req, res) {
+  apiProxy.web(req, res, { target: "http://localhost:3001" });
+});
 app.use(express.static(path.join(projectRoot, "dist")));
 app.use(function (req, res, next) {
   if (req.method === "GET") {
