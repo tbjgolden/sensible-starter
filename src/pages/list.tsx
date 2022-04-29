@@ -3,8 +3,10 @@ import { TableBuilder, TableBuilderColumn } from "baseui/table-semantic";
 import { MenuLayout } from "_c/Layouts";
 
 import { gql, useMutation, useQuery } from "@apollo/client";
-import { ChangeEvent } from "react";
+import { ChangeEvent, useState } from "react";
 import { Link } from "_c/Link";
+import { Button } from "baseui/button";
+import { Modal, ModalHeader, ModalBody, ModalFooter, ModalButton } from "baseui/modal";
 
 const LIST_ITEMS_QUERY = gql`
   {
@@ -26,13 +28,15 @@ const UPDATE_ITEM_CHECKED_MUTATION = gql`
 `;
 
 const List = () => {
+  const [isErrorAlertOpen, setIsErrorAlertOpen] = useState(false);
+
   const { loading, error, data } = useQuery(LIST_ITEMS_QUERY);
   const [updateItemChecked] = useMutation(UPDATE_ITEM_CHECKED_MUTATION, {
     refetchQueries: [LIST_ITEMS_QUERY],
   });
 
   if (loading) {
-    return <MenuLayout>{""}</MenuLayout>;
+    return <MenuLayout />;
   } else if (error) {
     return (
       <MenuLayout>
@@ -110,6 +114,40 @@ const List = () => {
             seamless and it connects to a Postgres or SQLite database.
           </p>
         </blockquote>
+        <p>
+          Client errors are sent to Keystone. To intentionally throw a client error, click
+          this button.
+        </p>
+        <Button
+          onClick={() => {
+            setIsErrorAlertOpen(true);
+            (undefined as unknown as Record<string, unknown>).aDeliberateError;
+          }}
+        >
+          Deliberately Throw Error
+        </Button>
+        <Modal
+          onClose={() => {
+            setIsErrorAlertOpen(false);
+          }}
+          closeable
+          isOpen={isErrorAlertOpen}
+          animate
+          autoFocus
+          role="alertdialog"
+        >
+          <ModalHeader>Error thrown</ModalHeader>
+          <ModalBody>Error sent to Keystone</ModalBody>
+          <ModalFooter>
+            <ModalButton
+              onClick={() => {
+                setIsErrorAlertOpen(false);
+              }}
+            >
+              Close
+            </ModalButton>
+          </ModalFooter>
+        </Modal>
       </MenuLayout>
     );
   }

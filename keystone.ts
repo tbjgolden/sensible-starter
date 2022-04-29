@@ -1,6 +1,6 @@
 import "dotenv/config";
 import { config, list } from "@keystone-6/core";
-import { text, password, timestamp, checkbox } from "@keystone-6/core/fields";
+import { text, password, timestamp, checkbox, integer } from "@keystone-6/core/fields";
 import { createAuth } from "@keystone-6/auth";
 import { statelessSessions } from "@keystone-6/core/session";
 
@@ -23,6 +23,11 @@ export default createAuth({
     db: {
       provider: "sqlite",
       url: "file:./keystone.db",
+    },
+    server: {
+      cors: {
+        origin: "http://localhost:3000",
+      },
     },
     ui: {
       isAccessAllowed: (context) => {
@@ -55,6 +60,24 @@ export default createAuth({
               },
             },
           }),
+          createdAt: timestamp({
+            defaultValue: { kind: "now" },
+            ui: {
+              createView: {
+                fieldMode: "hidden",
+              },
+            },
+          }),
+        },
+      }),
+      Error: list({
+        fields: {
+          message: text({ validation: { isRequired: true } }),
+          stack: text({ validation: { isRequired: true } }),
+          userAgent: text({ validation: { isRequired: true } }),
+          fileName: text({ validation: { isRequired: true } }),
+          lineNum: integer({ validation: { isRequired: true } }),
+          colNum: integer({ validation: { isRequired: true } }),
           createdAt: timestamp({
             defaultValue: { kind: "now" },
             ui: {

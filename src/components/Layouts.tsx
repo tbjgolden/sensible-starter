@@ -11,7 +11,7 @@ import {
 import { Drawer } from "baseui/drawer";
 import { Button } from "baseui/button";
 
-export const EmptyLayout = ({ children }: { children: ReactNode }) => {
+export const EmptyLayout = ({ children }: { children?: ReactNode }) => {
   return (
     <div className="px">
       <div className="mw-copy mh-auto">{children}</div>
@@ -47,7 +47,7 @@ const MENU_ITEMS: Item[] = [
 
 const isBigMQ = matchMedia("(min-width: 720px)");
 
-export const MenuLayout = ({ children }: { children: ReactNode }) => {
+export const MenuLayout = ({ children }: { children?: ReactNode }) => {
   const containerElRef = useRef<HTMLDivElement | null>(null);
   const navigate = useNavigate();
   const [isSmall, setIsSmall] = useState(!isBigMQ.matches);

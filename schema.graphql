@@ -162,6 +162,82 @@ input ListItemCreateInput {
   createdAt: DateTime
 }
 
+type Error {
+  id: ID!
+  message: String
+  stack: String
+  userAgent: String
+  fileName: String
+  lineNum: Int
+  colNum: Int
+  createdAt: DateTime
+}
+
+input ErrorWhereUniqueInput {
+  id: ID
+}
+
+input ErrorWhereInput {
+  AND: [ErrorWhereInput!]
+  OR: [ErrorWhereInput!]
+  NOT: [ErrorWhereInput!]
+  id: IDFilter
+  message: StringFilter
+  stack: StringFilter
+  userAgent: StringFilter
+  fileName: StringFilter
+  lineNum: IntFilter
+  colNum: IntFilter
+  createdAt: DateTimeNullableFilter
+}
+
+input IntFilter {
+  equals: Int
+  in: [Int!]
+  notIn: [Int!]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: IntFilter
+}
+
+input ErrorOrderByInput {
+  id: OrderDirection
+  message: OrderDirection
+  stack: OrderDirection
+  userAgent: OrderDirection
+  fileName: OrderDirection
+  lineNum: OrderDirection
+  colNum: OrderDirection
+  createdAt: OrderDirection
+}
+
+input ErrorUpdateInput {
+  message: String
+  stack: String
+  userAgent: String
+  fileName: String
+  lineNum: Int
+  colNum: Int
+  createdAt: DateTime
+}
+
+input ErrorUpdateArgs {
+  where: ErrorWhereUniqueInput!
+  data: ErrorUpdateInput!
+}
+
+input ErrorCreateInput {
+  message: String
+  stack: String
+  userAgent: String
+  fileName: String
+  lineNum: Int
+  colNum: Int
+  createdAt: DateTime
+}
+
 """
 The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
 """
@@ -186,6 +262,12 @@ type Mutation {
   updateListItems(data: [ListItemUpdateArgs!]!): [ListItem]
   deleteListItem(where: ListItemWhereUniqueInput!): ListItem
   deleteListItems(where: [ListItemWhereUniqueInput!]!): [ListItem]
+  createError(data: ErrorCreateInput!): Error
+  createErrors(data: [ErrorCreateInput!]!): [Error]
+  updateError(where: ErrorWhereUniqueInput!, data: ErrorUpdateInput!): Error
+  updateErrors(data: [ErrorUpdateArgs!]!): [Error]
+  deleteError(where: ErrorWhereUniqueInput!): Error
+  deleteErrors(where: [ErrorWhereUniqueInput!]!): [Error]
   endSession: Boolean!
   authenticateUserWithPassword(
     email: String!
@@ -232,6 +314,14 @@ type Query {
   ): [ListItem!]
   listItem(where: ListItemWhereUniqueInput!): ListItem
   listItemsCount(where: ListItemWhereInput! = {}): Int
+  errors(
+    where: ErrorWhereInput! = {}
+    orderBy: [ErrorOrderByInput!]! = []
+    take: Int
+    skip: Int! = 0
+  ): [Error!]
+  error(where: ErrorWhereUniqueInput!): Error
+  errorsCount(where: ErrorWhereInput! = {}): Int
   keystone: KeystoneMeta!
   authenticatedItem: AuthenticatedItem
 }

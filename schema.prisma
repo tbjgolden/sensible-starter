@@ -25,3 +25,14 @@ model ListItem {
   updatedAt DateTime? @default(now())
   createdAt DateTime? @default(now())
 }
+
+model Error {
+  id        String    @id @default(cuid())
+  message   String    @default("")
+  stack     String    @default("")
+  userAgent String    @default("")
+  fileName  String    @default("")
+  lineNum   Int
+  colNum    Int
+  createdAt DateTime? @default(now())
+}
