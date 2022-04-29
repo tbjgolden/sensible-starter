@@ -7,7 +7,7 @@
     "help:dev": "echo 'Start development environment'",
     "dev": "concurrently --raw \"vite\" \"PORT=3001 keystone dev\"",
     "help:prod": "echo 'Start production environment'",
-    "prod": "concurrently --kill-others-on-fail \"npm run types\" \"npm run lint\" \"vite build\" \"keystone build\" && concurrently -k \"node ./.scripts/prod-client.mjs\" \"PORT=3001 keystone start\"",
+    "prod": "NODE_ENV=production concurrently --kill-others-on-fail \"npm run types\" \"npm run lint\" \"vite build\" \"keystone build\" && concurrently -k \"node ./.scripts/prod-client.mjs\" \"PORT=3001 keystone start\"",
     "help:md-to-tsx": "echo 'Generate a page from all markdown files (src/pages/**/*.md)'",
     "md-to-tsx": "node ./.scripts/md-to-tsx.mjs",
     "help:lint": "echo 'Lint all files, output to stdout'",
@@ -60,6 +60,7 @@
     "styletron-react": "^6.0.2",
     "typescript": "^4.5.4",
     "vite-plugin-compress": "^2.1.1",
+    "vite-plugin-html": "^3.2.0",
     "vite-plugin-pages": "^0.22.0",
     "vite-tsconfig-paths": "^3.3.17"
   },

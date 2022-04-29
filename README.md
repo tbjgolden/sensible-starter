@@ -16,5 +16,5 @@ TODOs:
 - [x] unicorn/no-new-array is annoying
 - [x] error boundary around whole app would be nice
   - [x] send the errors to keystone
-  - [ ] only in prod
+  - [x] only in prod
 - [ ] give it a test run

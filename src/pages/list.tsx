@@ -144,7 +144,10 @@ const List = () => {
           }}
         >
           <ModalHeader>Error thrown</ModalHeader>
-          <ModalBody>Error sent to Keystone</ModalBody>
+          <ModalBody>
+            <p>In production, this sends an error to Keystone.</p>
+            <p>In development, it does nothing.</p>
+          </ModalBody>
           <ModalFooter>
             <ModalButton
               onClick={() => {
