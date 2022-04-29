@@ -176,7 +176,7 @@ export const MenuLayout = ({ children }: { children?: ReactNode }) => {
             background: "#fff",
             borderRight: "1px solid var(--mono500)",
             position: "fixed",
-            zIndex: 999,
+            zIndex: 998,
             left: 0,
             overflowY: "auto",
           }}

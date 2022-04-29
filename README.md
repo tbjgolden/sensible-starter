@@ -10,11 +10,11 @@ TODOs:
 - [x] cleanup scripts
 - [x] 404
 - [x] css utils docs
-- [ ] add proxy server and devise a way to reuse in prod
+- [x] add proxy server and devise a way to reuse in prod
 - [x] hide schema files
 - [x] sort out unused var eslint rules
 - [x] unicorn/no-new-array is annoying
-- [ ] error boundary around whole app would be nice
+- [x] error boundary around whole app would be nice
+  - [x] send the errors to keystone
   - [ ] only in prod
-  - [ ] send the errors to keystone
 - [ ] give it a test run

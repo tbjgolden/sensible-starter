@@ -10,8 +10,11 @@
     <link rel="stylesheet" src="/src/global.css" />
   </head>
   <body>
+    <!-- react root -->
     <div id="root"></div>
-    <script type="module" src="/src/errors.ts"></script>
+    <!-- error catcher --><!-- prettier-ignore -->
+    <script>var e=20;function t(e){return JSON.stringify(JSON.stringify(e)).slice(1,-1)}var r=Object.create(null),n=Object.create(null);window.addEventListener("error",(function(i){try{if(!i.message.includes("ResizeObserver loop")){var a=i.message||"",s=i.filename||"",o=i.lineno||0,c=i.colno||0,l=JSON.stringify([s,o,c,a]);if(n[l]!==r&&e-- >0){n[l]=r;var u=window.XMLHttpRequest?new XMLHttpRequest:new ActiveXObject("Microsoft.XMLHTTP");u.open("POST","//localhost:3001/api/graphql"),u.setRequestHeader("Content-Type","application/json"),u.send('{"query":"mutation{createError(data:{message:'+t(a)+",stack:"+t((i.error&&i.error.stack||"").split("\n").slice(0,3).join("\n"))+",userAgent:"+t(navigator.userAgent||"")+",fileName:"+t(s)+",lineNum:"+o+",colNum:"+c+'}){id}}","variables":{}}')}}}catch(e){}}))</script>
+    <!-- logic -->
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

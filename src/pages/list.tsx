@@ -135,6 +135,13 @@ const List = () => {
           animate
           autoFocus
           role="alertdialog"
+          overrides={{
+            Root: {
+              style: {
+                zIndex: 999,
+              },
+            },
+          }}
         >
           <ModalHeader>Error thrown</ModalHeader>
           <ModalBody>Error sent to Keystone</ModalBody>
