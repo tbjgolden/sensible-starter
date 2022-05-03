@@ -9,6 +9,7 @@ import { StyledLink, LinkProps as UILinkProps } from "baseui/link";
 
 export type LinkProps = RouterLinkProps & UILinkProps & { to: string };
 
+/* Shares same API as React Router Link: https://reactrouter.com/docs/en/v6/api#link */
 export const Link = ({
   onClick,
   reloadDocument,

@@ -11,6 +11,7 @@ import {
 import { Drawer } from "baseui/drawer";
 import { Button } from "baseui/button";
 
+/* Empty Page (No Nav) */
 export const EmptyLayout = ({ children }: { children?: ReactNode }) => {
   return (
     <div className="px">
@@ -47,6 +48,7 @@ const MENU_ITEMS: Item[] = [
 
 const isBigMQ = matchMedia("(min-width: 720px)");
 
+/* Responsive Nav Page */
 export const MenuLayout = ({ children }: { children?: ReactNode }) => {
   const containerElRef = useRef<HTMLDivElement | null>(null);
   const navigate = useNavigate();
@@ -57,7 +59,10 @@ export const MenuLayout = ({ children }: { children?: ReactNode }) => {
     const onChange = () => {
       const isSmall = !isBigMQ.matches;
       setIsSmall(isSmall);
-      // close menu when resizing from small->big->small
+
+      // close menu when resizing from big->small
+      // e.g. if a user opens the mobile menu, resizes to desktop, then
+      // resizes back to mobile, they'd expect the mobile menu to be closed
       if (!isSmall) {
         setIsMobileNavOpen(false);
       }
