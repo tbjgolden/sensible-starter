@@ -1,16 +1,25 @@
 #!/usr/bin/env node
-import { promises as fs } from "node:fs";
+/* eslint-disable no-console */
+import fs from "node:fs/promises";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
+import { getProjectRoot } from "./deps/project.mjs";
 
-const projectRoot = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
-
-const bold = (str) => `\x1b[1m${str}\x1b[0m`;
-const yellow = (str) => `\x1b[33m${str}\x1b[0m`;
-const red = (str) => `\x1b[31m${str}\x1b[0m`;
-const grey = (str) => `\x1b[2m${str}\x1b[0m`;
+const bold = (str) => {
+  return `\u001B[1m${str}\u001B[0m`;
+};
+const yellow = (str) => {
+  return `\u001B[33m${str}\u001B[0m`;
+};
+const red = (str) => {
+  return `\u001B[31m${str}\u001B[0m`;
+};
+const grey = (str) => {
+  return `\u001B[2m${str}\u001B[0m`;
+};
 
 const main = async () => {
+  const projectRoot = await getProjectRoot();
+
   try {
     const packageJSON = JSON.parse(
       await fs.readFile(path.join(projectRoot, "package.json"), "utf8")
@@ -25,8 +34,10 @@ const main = async () => {
     }
     console.log(`Available scripts (${bold(yellow("npm run"))} ...):`);
     console.log(
-      Array.from(map.entries())
-        .filter(([script]) => script !== "help")
+      [...map.entries()]
+        .filter(([script]) => {
+          return script !== "help";
+        })
         .map(([script, [help, command]]) => {
           return `  ${bold(yellow(script))}\n    ${
             help ? help : red(`Missing help text; add "help:${script}" to package.json`)
@@ -42,9 +53,9 @@ const main = async () => {
     try {
       const statNodeModules = await fs.stat(path.join(projectRoot, "node_modules"));
       if (!statNodeModules.isDirectory()) {
-        throw new Error();
+        throw new Error("node_modules is not a directory");
       }
-    } catch (err) {
+    } catch {
       console.log(
         `\n${red(`You probably need to install dependencies with "`)}${red(
           bold(`npm install`)
@@ -55,17 +66,17 @@ const main = async () => {
     try {
       const linkPath = await fs.readlink(path.join(projectRoot, ".git/hooks"));
       if (linkPath !== "../.husky") {
-        throw new Error();
+        throw new Error("git hooks not correctly set up");
       }
-    } catch (err) {
+    } catch {
       console.log(
         `\n${red(`You probably need to install git hooks with "`)}${red(
           bold(`npm run prepare`)
         )}${red('"')}`
       );
     }
-  } catch (err) {
-    console.error(err);
+  } catch (error) {
+    console.error(error);
     process.exit(1);
   }
 };

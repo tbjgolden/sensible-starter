@@ -5,8 +5,6 @@
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": false,
     "skipLibCheck": true,
-    "esModuleInterop": false,
-    "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "module": "ESNext",
@@ -15,13 +13,16 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "baseUrl": "src",
+    "baseUrl": ".",
     "paths": {
-      "_c/*": ["./components/*"],
-      "_u/*": ["./utilities/*"],
-      "_/*": ["./*"]
-    }
+      "_c/*": ["./src/components/*"],
+      "_u/*": ["./src/utilities/*"],
+      "_/*": ["./src/*"]
+    },
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "importHelpers": true
   },
-  "include": ["src", "src/vite-env.d.ts"],
+  "include": ["src", "src/vite-env.d.ts", ".scripts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
