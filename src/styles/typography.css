@@ -1,17 +1,3 @@
-.b,
-b,
-strong {
-  font-weight: 600;
-}
-
-/**
-  by default colour inherits from parent
-  if this causes an issue, add the 'c' class
-*/
-.c {
-  colour: var(--primaryA);
-}
-
 /* stylelint-disable selector-class-pattern */
 
 /**
@@ -20,28 +6,37 @@ strong {
   to the main copy font
 */
 .D-L {
+  font-family: GDS, sans-serif;
   font-size: 64px;
   font-weight: 500;
-  line-height: 1.2;
+  line-height: 1.15;
 }
 
 .D-M,
 .D {
+  font-family: GDS, sans-serif;
   font-size: 40px;
   font-weight: 500;
-  line-height: 1.2;
+  line-height: 1.15;
 }
 
 .D-S {
+  font-family: GDS, sans-serif;
   font-size: 32px;
   font-weight: 500;
   line-height: 1.2;
 }
 
 .D-XS {
+  font-family: GDS, sans-serif;
   font-size: 27px;
   font-weight: 500;
   line-height: 1.2;
+}
+
+@font-face {
+  font-family: GDS;
+  src: url("/GDS.woff2") format("woff2");
 }
 
 /**
@@ -150,6 +145,10 @@ p {
   line-height: 1.45;
 }
 
+.c {
+  colour: var(--primaryA);
+}
+
 /**
   C = Caption
   title or brief explanation accompanying something else
@@ -253,4 +252,10 @@ p {
   .C {
     font-size: 12px;
   }
+}
+
+.b,
+b,
+strong {
+  font-weight: 600 !please;
 }

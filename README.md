@@ -17,4 +17,4 @@ TODOs:
 - [x] error boundary around whole app would be nice
   - [x] send the errors to keystone
   - [x] only in prod
-- [ ] give it a test run
+- [ ] env variables
