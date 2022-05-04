@@ -4,7 +4,6 @@ import { BrowserRouter as Router, useRoutes } from "react-router-dom";
 import { Client as Styletron } from "styletron-engine-monolithic";
 import { Provider as StyletronProvider } from "styletron-react";
 import { BaseProvider } from "baseui";
-import { Unstable_A11y as A11y } from "baseui/a11y";
 import { theme, primitives } from "_/theme";
 import { MenuLayout } from "_c/Layouts";
 import routes from "~react-pages";
@@ -45,10 +44,6 @@ const LoadingIndicator = () => {
   return isLoadingIndicatorVisible ? <Spinner $size={100} /> : null;
 };
 
-const AccessibilityChecker = ({ children }: { children?: ReactNode }): JSX.Element => {
-  return import.meta.env.PROD ? <>{children}</> : <A11y>{children}</A11y>;
-};
-
 const AppWrappers = ({ children }: { children?: ReactNode }) => {
   return (
     // Enables styletron magic
@@ -57,14 +52,11 @@ const AppWrappers = ({ children }: { children?: ReactNode }) => {
       <BaseProvider theme={theme}>
         {/* Enables apollo caching logic */}
         <ApolloProvider client={client}>
-          {/* Warns of accessibility errors (unless in prod) */}
-          <AccessibilityChecker>
-            {/* Opt-out of legacy React nonsense */}
-            <React.StrictMode>
-              {/* Enables react-router logic */}
-              <Router>{children}</Router>
-            </React.StrictMode>
-          </AccessibilityChecker>
+          {/* Opt-out of legacy React nonsense */}
+          <React.StrictMode>
+            {/* Enables react-router logic */}
+            <Router>{children}</Router>
+          </React.StrictMode>
         </ApolloProvider>
       </BaseProvider>
     </StyletronProvider>
