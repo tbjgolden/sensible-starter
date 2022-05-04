@@ -18,3 +18,4 @@ TODOs:
   - [x] send the errors to keystone
   - [x] only in prod
 - [ ] env variables
+- [ ] shadow baseweb components
