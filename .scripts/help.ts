@@ -2,7 +2,7 @@
 /* eslint-disable no-console */
 import fs from "node:fs/promises";
 import path from "node:path";
-import { getProjectRoot } from "./lib/project.mjs";
+import { getProjectRoot } from "./lib/project";
 
 const bold = (str: string): string => {
   return `\u001B[1m${str}\u001B[0m`;

@@ -5,7 +5,7 @@ import path from "node:path";
 import { defineConfig } from "vite";
 import pages from "vite-plugin-pages";
 import { createHtmlPlugin as injectHtml } from "vite-plugin-html";
-import { parseHost } from "./.scripts/deps/url.mjs";
+import { parseHost } from "./.scripts/lib/url";
 
 const NODE_ENV = process.env.NODE_ENV ?? "development";
 

@@ -8,7 +8,7 @@ import express from "express";
 import morgan from "morgan";
 import helmet from "helmet";
 import compression from "compression";
-import { parseHost } from "./lib/url.mjs";
+import { parseHost } from "./lib/url";
 
 const DEV_SECRET = "---------- DEV SECRET ----------";
 const sessionSecret = process.env.SESSION_SECRET || DEV_SECRET;
