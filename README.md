@@ -18,7 +18,9 @@ TODOs:
   - [x] send the errors to keystone
   - [x] only in prod
 - [x] convert scripts to ts
-- [x] remove markdown logic, causing other issues
+- [ ] remove markdown logic, causing other issues
 - [x] env variables
-- [ ] improved scripts logic to allow writing in ts, need dev mode too
-  - perhaps compile if src files are newer than dist files?
+- [x] improved scripts logic to allow writing scripts in ts
+- [ ] find better alternative to nivo
+  - [ ] chart.js for simple
+  - [ ] react > requestAnimationFrame > svg for complex
