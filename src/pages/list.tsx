@@ -97,8 +97,8 @@ const List = () => {
         )}
 
         <p>
-          It is mostly here to test the built-in prod-client proxy logic, but it also
-          serves to show a simple example of using Keystone.
+          It is mostly here to test the built-in prod proxy logic, but it also serves to
+          show a simple example of using Keystone.
         </p>
         <p>
           You can modify the data{" "}

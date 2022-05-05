@@ -117,7 +117,7 @@ const HTMLTest = () => {
           <Radio value="auto">(auto)</Radio>
           <Radio value="left">left</Radio>
           <Radio value="right">right</Radio>
-          <Radio value="centre">centre</Radio>
+          <Radio value="center">center</Radio>
           <Radio value="stretched">stretched</Radio>
           <Radio value="justified">justified</Radio>
         </RadioGroup>

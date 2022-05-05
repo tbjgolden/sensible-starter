@@ -9,7 +9,7 @@ import {
 } from "react";
 
 type ValidNumberOfColumns = 1 | 2 | 3 | 4 | 5 | 6;
-export type GridAlign = "left" | "right" | "centre" | "stretched" | "justified";
+export type GridAlign = "left" | "right" | "center" | "stretched" | "justified";
 
 export const Grid = ({
   cellWidth = 288,
@@ -64,7 +64,7 @@ export const Grid = ({
           break;
         }
         case "center": {
-          setAutoAlign("centre");
+          setAutoAlign("center");
 
           break;
         }
@@ -141,7 +141,7 @@ export const Layout = ({
       justifyContent = "start";
     } else if (align === "right") {
       justifyContent = "end";
-    } else if (align === "centre") {
+    } else if (align === "center") {
       justifyContent = "center";
     } else if (align === "justified") {
       justifyContent = "space-between";
@@ -150,7 +150,7 @@ export const Layout = ({
     const bottomRowLength = childArray.length % canFit;
     const order = childArray.length - bottomRowLength - 1;
     let bottomRowSpacerColumns = 0;
-    if (align === "centre") {
+    if (align === "center") {
       bottomRowSpacerColumns = canFit - bottomRowLength;
     } else if (align === "right") {
       bottomRowSpacerColumns = 2 * (canFit - bottomRowLength);

@@ -93,10 +93,6 @@ const Index = () => {
         </li>
         <li>In CSS files, you can nest rules like in Sass.</li>
         <li>
-          You can also use the correct UK spellings (colour, behaviour, maths, mitre,
-          centre, capitalise, grey) instead of US ones if you so choose.
-        </li>
-        <li>
           Included is a Link component that merges the logic of React Router with the
           presentation of Baseweb. It will detect if the URL passed in is external for
           you.

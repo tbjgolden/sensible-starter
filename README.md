@@ -19,6 +19,6 @@ TODOs:
   - [x] only in prod
 - [x] convert scripts to ts
 - [x] remove markdown logic, causing other issues
-- [ ] env variables
+- [x] env variables
 - [ ] improved scripts logic to allow writing in ts, need dev mode too
   - perhaps compile if src files are newer than dist files?

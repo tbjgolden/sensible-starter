@@ -12,3 +12,4 @@ keystone.db
 *.log
 .env
 *.tsbuildinfo
+!.scripts

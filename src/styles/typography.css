@@ -146,7 +146,7 @@ p {
 }
 
 .c {
-  colour: var(--primaryA);
+  color: var(--primaryA);
 }
 
 /**
@@ -160,7 +160,7 @@ p {
   line-height: 1.4;
 
   &.c {
-    colour: var(--mono800);
+    color: var(--mono800);
   }
 }
 

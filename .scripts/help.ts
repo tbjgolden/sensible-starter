@@ -2,18 +2,18 @@
 /* eslint-disable no-console */
 import fs from "node:fs/promises";
 import path from "node:path";
-import { getProjectRoot } from "./deps/project.mjs";
+import { getProjectRoot } from "./lib/project.mjs";
 
-const bold = (str) => {
+const bold = (str: string): string => {
   return `\u001B[1m${str}\u001B[0m`;
 };
-const yellow = (str) => {
+const yellow = (str: string): string => {
   return `\u001B[33m${str}\u001B[0m`;
 };
-const red = (str) => {
+const red = (str: string): string => {
   return `\u001B[31m${str}\u001B[0m`;
 };
-const grey = (str) => {
+const faded = (str: string): string => {
   return `\u001B[2m${str}\u001B[0m`;
 };
 
@@ -21,9 +21,12 @@ const main = async () => {
   const projectRoot = await getProjectRoot();
 
   try {
-    const packageJSON = JSON.parse(
-      await fs.readFile(path.join(projectRoot, "package.json"), "utf8")
-    );
+    const packageJSON: {
+      scripts: {
+        [key: string]: string;
+      };
+      [key: string]: unknown;
+    } = JSON.parse(await fs.readFile(path.join(projectRoot, "package.json"), "utf8"));
     const map = new Map();
     for (const [k, v] of Object.entries(packageJSON.scripts)) {
       const isHelp = k.startsWith("help:");
@@ -43,7 +46,7 @@ const main = async () => {
             help ? help : red(`Missing help text; add "help:${script}" to package.json`)
           }\n    ${
             command
-              ? grey(command.split(" && ").join("\n      && "))
+              ? faded(command.split(" && ").join("\n      && "))
               : red("Not implemented")
           }`;
         })
