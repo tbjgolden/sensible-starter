@@ -6,16 +6,7 @@ const MarkdownGenerated = () => {
     <MenuLayout>
       <blockquote>
         <p>
-          This page is generated from the markdown file located at{" "}
-          <code>{`src/pages/markdown-generated.md`}</code>. To convert a markdown file to
-          a page, run <code>{`npm run md-to-tsx`}</code>. This creates a{" "}
-          <code>{`.tsx`}</code> file of the same path.
-        </p>
-        <p>
-          Keeping the original <code>{`.md`}</code> file in <code>{`src/pages`}</code>{" "}
-          doesn&#039;t affect build output (only <code>{`.tsx`}</code> files do), so
-          unless you&#039;re making any changes to the generated file, keep it in the
-          tree.
+          This page is to check that jsx generated from markdown is displayed properly.
         </p>
       </blockquote>
       <h1 id="markdown-syntax">Markdown: Syntax</h1>

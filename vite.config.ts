@@ -1,13 +1,12 @@
 import react from "@vitejs/plugin-react";
 import path from "node:path";
 import { defineConfig } from "vite";
-import compress from "vite-plugin-compress";
 import pages from "vite-plugin-pages";
 import dotenv from "dotenv";
 import { createHtmlPlugin as injectHtml } from "vite-plugin-html";
 
 const { parsed } = dotenv.config();
-const NODE_ENV = parsed.NODE_ENV ?? process.env.NODE_ENV ?? "development";
+const NODE_ENV = parsed?.NODE_ENV ?? process.env.NODE_ENV ?? "development";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -25,8 +24,6 @@ export default defineConfig({
   },
   plugins: [
     react(),
-    // compress assets, brotli compression done at later stage
-    compress({ brotli: false }),
     // needed for filesystem routing / bundling
     pages(),
     // replace errorCatcher in index.html according to NODE_ENV

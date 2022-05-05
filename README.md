@@ -17,6 +17,6 @@ TODOs:
 - [x] error boundary around whole app would be nice
   - [x] send the errors to keystone
   - [x] only in prod
-- [ ] convert scripts to ts
+- [x] convert scripts to ts
 - [ ] env variables
 - [ ] shadow baseweb components
