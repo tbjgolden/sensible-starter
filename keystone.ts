@@ -1,14 +1,18 @@
+/* eslint-disable no-console */
 import "dotenv/config";
 import { config, list } from "@keystone-6/core";
 import { text, password, timestamp, checkbox, integer } from "@keystone-6/core/fields";
 import { createAuth } from "@keystone-6/auth";
 import { statelessSessions } from "@keystone-6/core/session";
+import { URL } from "node:url";
 
 const DEV_SECRET = "---------- DEV SECRET ----------";
 const sessionSecret = process.env.SESSION_SECRET || DEV_SECRET;
 if (process.env.NODE_ENV === "production" && sessionSecret === DEV_SECRET) {
   throw new Error("The SESSION_SECRET environment variable must be set in production");
 }
+
+const keystoneHost = parseHost(process.env.VITE_KEYSTONE_HOST ?? "http://localhost:3001");
 
 export default createAuth({
   listKey: "User",
@@ -26,8 +30,9 @@ export default createAuth({
     },
     server: {
       cors: {
-        origin: "http://localhost:3000",
+        origin: process.env.VITE_FRONTEND_HOST ?? "http://localhost:3000",
       },
+      port: keystoneHost.port,
     },
     ui: {
       isAccessAllowed: (context) => {
@@ -95,3 +100,40 @@ export default createAuth({
     }),
   })
 );
+
+function parseHost(
+  host: string,
+  ensureNoPath = true
+): {
+  origin: string;
+  protocol: string;
+  host: string;
+  pathname: string;
+  search: string;
+  hash: string;
+  port: number;
+} {
+  let url: URL;
+  try {
+    url = new URL(host);
+  } catch (error) {
+    console.error(`${host} is not a complete/valid host url`);
+    throw error;
+  }
+  const port =
+    Number.parseInt(url.port || (url.protocol === "https:" ? "443" : "80")) || 80;
+
+  if (ensureNoPath && url.pathname !== "/") {
+    throw new Error(`${host} must not include a path`);
+  }
+
+  return {
+    origin: url.origin,
+    protocol: url.protocol,
+    host: url.host,
+    pathname: url.pathname,
+    search: url.search,
+    hash: url.hash,
+    port,
+  };
+}

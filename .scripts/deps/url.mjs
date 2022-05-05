@@ -3,7 +3,7 @@ import { URL } from "node:url";
 /**
  * @param {string} host
  * @param {boolean?} ensureNoPath
- * @returns {{ origin: string, protocol: string, host: string, pathname: string, search: URLSearchParams, hash: string, port: number }}
+ * @returns {{ origin: string, protocol: string, host: string, pathname: string, search: string, hash: string, port: number }}
  */
 export const parseHost = (host, ensureNoPath = true) => {
   let url;
@@ -13,9 +13,7 @@ export const parseHost = (host, ensureNoPath = true) => {
     console.error(`${host} is not a complete/valid host url`);
     throw error;
   }
-  console.log(url);
   const port = parseInt(url.port || (url.protocol === "https:" ? "443" : "80")) || 80;
-  console.log(port);
 
   if (ensureNoPath && url.pathname !== "/") {
     throw new Error(`${host} must not include a path`);

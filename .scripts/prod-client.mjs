@@ -16,10 +16,7 @@ if (sessionSecret === DEV_SECRET) {
   process.exit(1);
 }
 
-const PORT = parseHost(process.env.FRONTEND_HOST);
-console.log(PORT);
-
-process.env.PORT || 3000;
+const frontEndHost = parseHost(process.env.VITE_FRONTEND_HOST ?? "http://localhost:3000");
 const projectRoot = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 
 const app = express();
@@ -57,6 +54,6 @@ app.use((req, res, next) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Started: http://localhost:${PORT}`);
+app.listen(frontEndHost.port, () => {
+  console.log(`Started: ${frontEndHost.host}`);
 });

@@ -11,3 +11,4 @@ coverage
 keystone.db
 *.log
 .env
+*.tsbuildinfo

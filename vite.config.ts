@@ -1,12 +1,15 @@
+import "dotenv/config";
+
 import react from "@vitejs/plugin-react";
 import path from "node:path";
 import { defineConfig } from "vite";
 import pages from "vite-plugin-pages";
-import dotenv from "dotenv";
 import { createHtmlPlugin as injectHtml } from "vite-plugin-html";
+import { parseHost } from "./.scripts/deps/url.mjs";
 
-const { parsed } = dotenv.config();
-const NODE_ENV = parsed?.NODE_ENV ?? process.env.NODE_ENV ?? "development";
+const NODE_ENV = process.env.NODE_ENV ?? "development";
+
+const frontEndHost = parseHost(process.env.VITE_FRONTEND_HOST ?? "http://localhost:3000");
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -14,6 +17,7 @@ export default defineConfig({
     watch: {
       ignored: ["**/tsconfig.json"],
     },
+    port: frontEndHost.port,
   },
   resolve: {
     alias: [

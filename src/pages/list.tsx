@@ -86,7 +86,11 @@ const List = () => {
           </TableBuilder>
         ) : (
           <h6>
-            <Link to="http://localhost:3001/list-items">
+            <Link
+              to={`${
+                import.meta.env.VITE_KEYSTONE_HOST ?? "http://localhost:3001"
+              }/list-items`}
+            >
               Working, but looks like you need to add some test data
             </Link>
           </h6>
@@ -98,7 +102,10 @@ const List = () => {
         </p>
         <p>
           You can modify the data{" "}
-          <Link to="http://localhost:3001" target="_blank">
+          <Link
+            to={import.meta.env.VITE_KEYSTONE_HOST ?? "http://localhost:3001"}
+            target="_blank"
+          >
             here
           </Link>
           .

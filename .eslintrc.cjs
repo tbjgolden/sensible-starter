@@ -38,6 +38,7 @@ module.exports = {
   rules: {
     "arrow-body-style": ["warn", "always"],
     "no-array-constructor": "off",
+    "no-console": "warn",
     //
     "react/react-in-jsx-scope": "off",
     "react/no-unescaped-entities": [1, { forbid: [">", "}"] }],

@@ -11,7 +11,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import "_/global.css";
 
 const client = new ApolloClient({
-  uri: "//localhost:3001/api/graphql",
+  uri: `${import.meta.env.VITE_KEYSTONE_HOST ?? "http://localhost:3001"}/api/graphql`,
   cache: new InMemoryCache(),
 });
 
