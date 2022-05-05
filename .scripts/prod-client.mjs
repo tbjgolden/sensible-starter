@@ -1,12 +1,25 @@
 #!/usr/bin/env node
+import "dotenv/config";
+
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 import express from "express";
 import morgan from "morgan";
 import helmet from "helmet";
 import compression from "compression";
+import { parseHost } from "./deps/url.mjs";
 
-const PORT = process.env.PORT || 3000;
+const DEV_SECRET = "---------- DEV SECRET ----------";
+const sessionSecret = process.env.SESSION_SECRET || DEV_SECRET;
+if (sessionSecret === DEV_SECRET) {
+  console.error("Copy .env.example to .env and edit the variables");
+  process.exit(1);
+}
+
+const PORT = parseHost(process.env.FRONTEND_HOST);
+console.log(PORT);
+
+process.env.PORT || 3000;
 const projectRoot = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 
 const app = express();

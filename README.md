@@ -18,5 +18,7 @@ TODOs:
   - [x] send the errors to keystone
   - [x] only in prod
 - [x] convert scripts to ts
+- [x] remove markdown logic, causing other issues
 - [ ] env variables
-- [ ] shadow baseweb components
+- [ ] improved scripts logic to allow writing in ts, need dev mode too
+  - perhaps compile if src files are newer than dist files?
