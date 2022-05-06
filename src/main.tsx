@@ -5,7 +5,7 @@ import { Client as Styletron } from "styletron-engine-monolithic";
 import { Provider as StyletronProvider } from "styletron-react";
 import { BaseProvider } from "baseui";
 import { theme, primitives } from "_/theme";
-import { MenuLayout } from "_c/Layouts";
+import { MenuLayout } from "_/components/Layouts";
 import routes from "~react-pages";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import "_/global.css";

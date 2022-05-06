@@ -49,12 +49,12 @@ module.exports = {
         paths: [
           {
             name: "baseui/link",
-            message: "Use \"import { Link } from '_c/Link'\" instead.",
+            message: "Use \"import { Link } from '_/components/Link'\" instead.",
           },
           {
             name: "react-router-dom",
             importNames: ["Link"],
-            message: "Use \"import { Link } from '_c/Link'\" instead.",
+            message: "Use \"import { Link } from '_/components/Link'\" instead.",
           },
         ],
       },

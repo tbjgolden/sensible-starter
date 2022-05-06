@@ -1,10 +1,10 @@
 import { Checkbox } from "baseui/checkbox";
 import { TableBuilder, TableBuilderColumn } from "baseui/table-semantic";
-import { MenuLayout } from "_c/Layouts";
+import { MenuLayout } from "_/components/Layouts";
 
 import { gql, useMutation, useQuery } from "@apollo/client";
 import { ChangeEvent, useState } from "react";
-import { Link } from "_c/Link";
+import { Link } from "_/components/Link";
 import { Button } from "baseui/button";
 import { Modal, ModalHeader, ModalBody, ModalFooter, ModalButton } from "baseui/modal";
 

@@ -1,5 +1,5 @@
-import { MenuLayout } from "_c/Layouts";
-import { Link } from "_c/Link";
+import { MenuLayout } from "_/components/Layouts";
+import { Link } from "_/components/Link";
 
 const MarkdownGenerated = () => {
   return (

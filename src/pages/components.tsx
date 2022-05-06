@@ -1,12 +1,12 @@
-import { Link } from "_c/Link";
+import { Link } from "_/components/Link";
 
 import { FormControl } from "baseui/form-control";
 import { Input } from "baseui/input";
 import { Table } from "baseui/table-semantic";
 import { RadioGroup, Radio } from "baseui/radio";
 import { Slider } from "baseui/slider";
-import { MenuLayout } from "_c/Layouts";
-import { Grid, GridAlign } from "_c/Grid";
+import { MenuLayout } from "_/components/Layouts";
+import { Grid, GridAlign } from "_/components/Grid";
 import { useState } from "react";
 
 const COLUMNS = ["Name", "Age", "Address"];

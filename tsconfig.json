@@ -23,8 +23,6 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "_c/*": ["./src/components/*"],
-      "_u/*": ["./src/utilities/*"],
       "_/*": ["./src/*"]
     },
     "esModuleInterop": true,

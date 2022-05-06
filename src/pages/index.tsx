@@ -1,8 +1,8 @@
 import { Button } from "baseui/button";
 import { useState } from "react";
-import { MenuLayout } from "_c/Layouts";
-import { Link } from "_c/Link";
-import { getPublicURL } from "_u/urls";
+import { MenuLayout } from "_/components/Layouts";
+import { Link } from "_/components/Link";
+import { getPublicURL } from "_/utilities/urls";
 
 const Index = () => {
   const [count, setCount] = useState(0);

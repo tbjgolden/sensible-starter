@@ -1,6 +1,6 @@
 import { ResponsiveChoropleth } from "@nivo/geo";
 import { data, worldGeo } from "_/demoData";
-import { MenuLayout } from "_c/Layouts";
+import { MenuLayout } from "_/components/Layouts";
 
 const Map = () => {
   return (
