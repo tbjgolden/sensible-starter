@@ -20,11 +20,7 @@ export default defineConfig({
     port: frontEndHost.port,
   },
   resolve: {
-    alias: [
-      { find: "_", replacement: path.resolve(process.cwd(), "src") },
-      { find: "_c", replacement: path.resolve(process.cwd(), "src", "components") },
-      { find: "_u", replacement: path.resolve(process.cwd(), "src", "utilities") },
-    ],
+    alias: [{ find: "_", replacement: path.resolve(process.cwd(), "src") }],
   },
   plugins: [
     react(),

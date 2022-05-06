@@ -1,15 +1,11 @@
 import { MenuLayout } from "_/components/Layouts";
 import { Link } from "_/components/Link";
 
-const MarkdownGenerated = () => {
+const HTMLTest = () => {
   return (
     <MenuLayout>
-      <blockquote>
-        <p>
-          This page is to check that jsx generated from markdown is displayed properly.
-        </p>
-      </blockquote>
-      <h1 id="markdown-syntax">Markdown: Syntax</h1>
+      <h1 id="markdown-syntax">HTML Test (Markdown Content)</h1>
+      <p>This is to test the default presentation of tags, when left unstyled.</p>
       <ul>
         <li>
           <p>
@@ -117,10 +113,6 @@ const MarkdownGenerated = () => {
           </ul>
         </li>
       </ul>
-      <p>
-        <strong>Note:</strong> This document is itself written using Markdown; it&#039;s a
-        modified version of the original Markdown documentation.
-      </p>
       <hr />
       <h2 id="overview">
         <strong>Overview</strong>
@@ -852,28 +844,6 @@ equivalent of <code>&amp;mdash;</code>.</p>`}</code>
       <pre>
         <code>{`<a href="http://example.com/">http://example.com/</a>`}</code>
       </pre>
-      <p>
-        Automatic links for email addresses work similarly, except that Markdown will also
-        perform a bit of randomized decimal and hex entity-encoding to help obscure your
-        address from address-harvesting spambots. For example, Markdown will turn this:
-      </p>
-      <pre>
-        <code>{`<address@example.com>`}</code>
-      </pre>
-      <p>into something like this:</p>
-      <pre>
-        <code>{`<a href="&#x6D;&#x61;i&#x6C;&#x74;&#x6F;:&#x61;&#x64;&#x64;&#x72;&#x65;
-&#115;&#115;&#64;&#101;&#120;&#x61;&#109;&#x70;&#x6C;e&#x2E;&#99;&#111;
-&#109;">&#x61;&#x64;&#x64;&#x72;&#x65;&#115;&#115;&#64;&#101;&#120;&#x61;
-&#109;&#x70;&#x6C;e&#x2E;&#99;&#111;&#109;</a>`}</code>
-      </pre>
-      <p>which will render in a browser as a clickable link to "address@example.com".</p>
-      <p>
-        (This sort of entity-encoding trick will indeed fool many, if not most,
-        address-harvesting bots, but it definitely won&#039;t fool all of them. It&#039;s
-        better than nothing, but an address published in this way will probably eventually
-        start receiving spam.)
-      </p>
       <h3 id="backslash">Backslash Escapes</h3>
       <p>
         Markdown allows you to use backslash escapes to generate literal characters which
@@ -895,8 +865,8 @@ _   underscore
 []  square brackets
 ()  parentheses
 #   hash mark
-+	plus sign
--	minus sign (hyphen)
++   plus sign
+-   minus sign (hyphen)
 .   dot
 !   exclamation mark`}</code>
       </pre>
@@ -904,4 +874,4 @@ _   underscore
   );
 };
 
-export default MarkdownGenerated;
+export default HTMLTest;

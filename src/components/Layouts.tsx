@@ -37,8 +37,8 @@ const MENU_ITEMS: Item[] = [
     itemId: "/list",
   },
   {
-    title: "Markdown Generated",
-    itemId: "/markdown-generated",
+    title: "HTML Test",
+    itemId: "/html-test",
   },
   {
     title: "CSS Utilities",

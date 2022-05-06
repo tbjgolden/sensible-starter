@@ -21,10 +21,11 @@ TODOs:
 - [x] remove markdown logic, causing other issues
 - [x] env variables
 - [x] improved scripts logic to allow writing scripts in ts
-- [ ] fix markdown page copy
-- [ ] remove `_c` paths
-- [ ] investigate cause of large bundle on :) app
-  - [ ] unused dependencies :O
+- [x] fix markdown page copy
+- [x] remove `_c` paths
+- [x] package.json engines
+- [x] investigate cause of large bundle on :) app
+  - [x] unused dependencies, but no easy fix
 - [ ] find better alternative to nivo
   - [ ] chart.js for simple
   - [ ] react > requestAnimationFrame > svg for complex

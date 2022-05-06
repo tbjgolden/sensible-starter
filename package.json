@@ -2,6 +2,15 @@
   "name": "hackathon-starter",
   "private": true,
   "version": "0.0.0",
+  "engines": {
+    "node": "^16.15.0",
+    "npm": ">5.2.0",
+    "yarn": "0.0.0-use-npm"
+  },
+  "os": [
+    "linux",
+    "darwin"
+  ],
   "scripts": {
     "help": "ts-node ./.scripts/help.ts",
     "dev:help": "echo 'Start development environment'",
@@ -15,14 +24,16 @@
     "prepare:help": "echo 'Install (or reinstall) git hooks'",
     "prepare": "husky install && rm -rf .git/hooks && ln -s ../.husky .git/hooks"
   },
-  "dependencies": {
+  "devDependencies": {
     "@apollo/client": "^3.6.0",
     "@keystone-6/auth": "^2.0.0",
     "@keystone-6/core": "^1.1.0",
     "@keystone-6/fields-document": "^2.0.0",
     "@nivo/core": "^0.79.0",
     "@nivo/geo": "^0.79.1",
+    "@types/compression": "^1.7.2",
     "@types/dedent": "^0.7.0",
+    "@types/morgan": "^1.9.3",
     "@types/node": "^16.11.0",
     "@types/react": "^17.0.33",
     "@types/react-dom": "^17.0.10",
@@ -69,9 +80,5 @@
     "vite-plugin-html": "^3.2.0",
     "vite-plugin-pages": "^0.22.0",
     "vite-tsconfig-paths": "^3.3.17"
-  },
-  "devDependencies": {
-    "@types/compression": "^1.7.2",
-    "@types/morgan": "^1.9.3"
   }
 }

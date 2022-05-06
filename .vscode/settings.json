@@ -21,7 +21,7 @@
     // ".lintstagedrc.cjs": true,
     // ".prettierignore": true,
     // ".prettierrc.cjs": true,
-    // // ".scripts": true,
+    // ".scripts": true,
     // ".stylelintrc.json": true,
     // "dist": true,
     // "keystone.db": true,
