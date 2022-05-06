@@ -6,7 +6,7 @@
   to the main copy font
 */
 .D-L {
-  font-family: GDS, sans-serif;
+  font-family: DisplayFontName, sans-serif;
   font-size: 64px;
   font-weight: 500;
   line-height: 1.15;
@@ -14,29 +14,29 @@
 
 .D-M,
 .D {
-  font-family: GDS, sans-serif;
+  font-family: DisplayFontName, sans-serif;
   font-size: 40px;
   font-weight: 500;
   line-height: 1.15;
 }
 
 .D-S {
-  font-family: GDS, sans-serif;
+  font-family: DisplayFontName, sans-serif;
   font-size: 32px;
   font-weight: 500;
   line-height: 1.2;
 }
 
 .D-XS {
-  font-family: GDS, sans-serif;
+  font-family: DisplayFontName, sans-serif;
   font-size: 27px;
   font-weight: 500;
   line-height: 1.2;
 }
 
 @font-face {
-  font-family: GDS;
-  src: url("/GDS.woff2") format("woff2");
+  font-family: DisplayFontName;
+  src: url("/DisplayFontName.woff2") format("woff2");
 }
 
 /**

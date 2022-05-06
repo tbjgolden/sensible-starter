@@ -26,6 +26,11 @@ TODOs:
 - [x] package.json engines
 - [x] investigate cause of large bundle on :) app
   - [x] unused dependencies, but no easy fix
+- [ ] add documentation - inspired by cra and nuxt3
 - [ ] find better alternative to nivo
   - [ ] chart.js for simple
   - [ ] react > requestAnimationFrame > svg for complex
+
+Long-term:
+
+- [ ] add file upload example

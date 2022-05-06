@@ -9,7 +9,10 @@ const Index = () => {
 
   return (
     <MenuLayout>
-      <h1 className="D">Starter</h1>
+      <h1 className="D">React with Batteries</h1>
+
+      <p>The name...</p>
+
       <p className="PL-L">This starter uses:</p>
       <ul>
         <li>

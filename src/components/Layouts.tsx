@@ -25,8 +25,8 @@ const MENU_WIDTH = 240;
 const MENU_ITEMS: Item[] = [
   { title: "Home", itemId: "/" },
   {
-    title: "Nivo Chart",
-    itemId: "/map",
+    title: "Chart",
+    itemId: "/chart",
   },
   {
     title: "Components",
