@@ -29,8 +29,8 @@ const main = async () => {
     } = JSON.parse(await fs.readFile(path.join(projectRoot, "package.json"), "utf8"));
     const map = new Map();
     for (const [k, v] of Object.entries(packageJSON.scripts)) {
-      const isHelp = k.startsWith("help:");
-      const kTrimmed = isHelp ? k.slice(5) : k;
+      const isHelp = k.endsWith(":help");
+      const kTrimmed = isHelp ? k.slice(0, -5) : k;
       const pair = map.get(kTrimmed) ?? [null, null];
       pair[isHelp ? 0 : 1] = isHelp ? v.slice(6, -1) : v;
       map.set(kTrimmed, pair);
@@ -43,7 +43,7 @@ const main = async () => {
         })
         .map(([script, [help, command]]) => {
           return `  ${bold(yellow(script))}\n    ${
-            help ? help : red(`Missing help text; add "help:${script}" to package.json`)
+            help ? help : red(`Missing help text; add "${script}:help" to package.json`)
           }\n    ${
             command
               ? faded(command.split(" && ").join("\n      && "))

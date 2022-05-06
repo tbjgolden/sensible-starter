@@ -18,9 +18,13 @@ TODOs:
   - [x] send the errors to keystone
   - [x] only in prod
 - [x] convert scripts to ts
-- [ ] remove markdown logic, causing other issues
+- [x] remove markdown logic, causing other issues
 - [x] env variables
 - [x] improved scripts logic to allow writing scripts in ts
+- [ ] fix markdown page copy
+- [ ] remove `_c` paths
+- [ ] investigate cause of large bundle on :) app
+  - [ ] unused dependencies :O
 - [ ] find better alternative to nivo
   - [ ] chart.js for simple
   - [ ] react > requestAnimationFrame > svg for complex
