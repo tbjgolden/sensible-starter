@@ -15,6 +15,32 @@ export const EmptyLayout = ({ children }: { children?: ReactNode }) => {
 const MENU_ITEMS: Item[] = [
   { title: "Home", itemId: "/" },
   {
+    title: "Docs",
+    itemId: "/docs",
+    subNav: [
+      {
+        title: "Chart",
+        itemId: "/docs/chart",
+      },
+      {
+        title: "Components",
+        itemId: "/docs/components",
+      },
+      {
+        title: "List w/ API",
+        itemId: "/docs/list",
+      },
+      {
+        title: "HTML Test",
+        itemId: "/docs/html-test",
+      },
+      {
+        title: "CSS Utilities",
+        itemId: "/docs/css-utilities",
+      },
+    ],
+  },
+  {
     title: "Test Pages",
     itemId: "/test",
     subNav: [

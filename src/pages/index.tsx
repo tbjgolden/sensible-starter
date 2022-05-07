@@ -9,9 +9,38 @@ const Index = () => {
 
   return (
     <MenuLayout>
-      <h1 className="D">React with Batteries</h1>
+      <h1 className="D">Sensible Starter</h1>
 
-      <p>The name...</p>
+      <p className="P-L">A sensible starter for a web app.</p>
+
+      <p className="PL-L">The guiding principles used to group these tools together:</p>
+
+      <ul className="P-M">
+        <li>
+          Include tools that boost performance{" "}
+          <strong>if, and only if, they don't require compromises</strong>, i.e.
+          <ul>
+            <li>bundling only the code for a specific page does count</li>
+            <li>
+              static pre-rendering does not count (compromise: unable to use browser APIs
+              on initial render)
+            </li>
+          </ul>
+        </li>
+        <li>Avoid flaky/dead dependencies</li>
+        <li>
+          Try to <strong>pre-include common features</strong> that will be used in at
+          least 1 in 3 web apps
+        </li>
+        <li>
+          Expose the internals to make tinkering easy, but hide them from the editor's
+          file tree explorer
+        </li>
+        <li>
+          Embrace <strong>graceful degradation</strong> to improve functionality and
+          performance
+        </li>
+      </ul>
 
       <p className="PL-L">This starter uses:</p>
       <ul>
@@ -64,7 +93,7 @@ const Index = () => {
       </ul>
 
       <p>
-        <img src={getPublicURL("roll-safe-clever.gif")} />
+        <img src={getPublicURL("images/roll-safe-clever.gif")} />
       </p>
 
       <p className="P-L">
@@ -101,8 +130,8 @@ const Index = () => {
           you.
         </li>
         <li>
-          Default HTML styles are active; meaning HTML should look good out of the box.
-          Adding <code>className="reset"</code> will make tags completely unstyled.
+          Default semantic HTML styles are active; meaning HTML should look good out of
+          the box.
         </li>
       </ol>
 

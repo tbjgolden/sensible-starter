@@ -1,6 +1,6 @@
 import React, { ReactNode, Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, useRoutes } from "react-router-dom";
+import { BrowserRouter as Router, Navigate, useRoutes } from "react-router-dom";
 import { Client as Styletron } from "styletron-engine-monolithic";
 import { Provider as StyletronProvider } from "styletron-react";
 import { BaseProvider } from "baseui";
@@ -76,11 +76,14 @@ const App = () => {
         ...routes,
         {
           path: "*",
-          element: (
-            <MenuLayout>
-              <h1 style={{ color: "var(--mono600)" }}>Page Not Found</h1>
-            </MenuLayout>
-          ),
+          element:
+            routes.length === 0 ? (
+              <MenuLayout>
+                <h1 style={{ color: "var(--mono600)" }}>Page Not Found</h1>
+              </MenuLayout>
+            ) : (
+              <Navigate to="/" />
+            ),
         },
       ])}
     </Suspense>

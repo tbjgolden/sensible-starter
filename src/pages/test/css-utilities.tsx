@@ -1,5 +1,6 @@
 import { MenuLayout } from "_/components/Layouts";
 import { Link } from "_/components/Link";
+import { getPublicURL } from "_/utilities/urls";
 
 const CssUtilities = () => {
   return (
@@ -38,10 +39,10 @@ const CssUtilities = () => {
           <code>{`*, *::before, *::after { flex-shrink: 0 }`}</code>
         </p>
         <p>
-          This changes flexbox&#039;s default behaviour. Many people expect
-          flex-shrink&#039;s default value to be <code>{`0`}</code> (because
-          flex-grow&#039;s default is), but in fact it is <code>{`1`}</code>, which often
-          causes bugs with flex layouts to squash.
+          This changes flexbox's default behaviour. Many people expect flex-shrink's
+          default value to be <code>{`0`}</code> (because flex-grow's default is), but in
+          fact it is <code>{`1`}</code>, which often causes bugs with flex layouts to
+          squash.
         </p>
         <p>
           This makes it more obvious to the dev when something is broken and makes it
@@ -50,7 +51,7 @@ const CssUtilities = () => {
       </blockquote>
       <h2 id="tags">Tags</h2>
       <p>This file changes/normalises the default styling of semantic HTML tags.</p>
-      <p>That&#039;s all.</p>
+      <p>That's all.</p>
       <h2 id="typography">Typography</h2>
       <p>This file changes the default styling of text block HTML tags.</p>
       <p>It also provides a type scale:</p>
@@ -98,8 +99,8 @@ C  | Caption         | M`}</code>
       </blockquote>
       <blockquote>
         <p>
-          By default, this type scale doesn&#039;t affect text colour. To force-add the
-          default colour for a tag, add the <code>{`.c`}</code> class.
+          By default, this type scale doesn't affect text colour. To force-add the default
+          colour for a tag, add the <code>{`.c`}</code> class.
         </p>
         <p>
           <code>{`<span style={{ color: "red" }}>A <span className="C">Caption</span></span>`}</code>
@@ -121,7 +122,7 @@ C  | Caption         | M`}</code>
       <h2 id="spacing-defaults">Spacing defaults</h2>
       <p>
         This contains rules that ensure that plain HTML tags have sensible margins and
-        appear as you&#039;d hope they would.
+        appear as you'd hope they would.
       </p>
       <p>To achieve this, though, a blanket rule was needed:</p>
       <pre>
@@ -148,7 +149,7 @@ C  | Caption         | M`}</code>
           </p>
         </li>
       </ul>
-      <p>This can become annoying, but it&#039;s still well worth the trade-off.</p>
+      <p>This can become annoying, but it's still well worth the trade-off.</p>
       <h2 id="spacing-scale">Spacing scale</h2>
       <h3 id="utility-scalar-spacing-margin-padding-classes">
         Utility scalar spacing (margin + padding) classes
@@ -310,7 +311,7 @@ C  | Caption         | M`}</code>
       </p>
       <blockquote>
         <p>
-          Used to provide the max-width for the copy you&#039;re reading right now:
+          Used to provide the max-width for the copy you're reading right now:
           <br />
           <code>{`.mw-copy { max-width: 600px }`}</code>
         </p>
@@ -324,7 +325,10 @@ C  | Caption         | M`}</code>
         <p>
           e.g. the BBC News website
           <br />
-          <img src="bbc-example.png" alt="BBC News website max width visualisation" />
+          <img
+            src={getPublicURL("images/bbc-example.png")}
+            alt="BBC News website max width visualisation"
+          />
         </p>
       </blockquote>
       <blockquote>
