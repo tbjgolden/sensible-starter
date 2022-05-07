@@ -4,10 +4,18 @@ import { FormControl } from "baseui/form-control";
 import { Input } from "baseui/input";
 import { Table } from "baseui/table-semantic";
 import { RadioGroup, Radio } from "baseui/radio";
+import {
+  Modal,
+  ModalBody,
+  ModalButton,
+  ModalFooter,
+  ModalHeader,
+} from "_/components/Modal";
 import { Slider } from "baseui/slider";
 import { MenuLayout } from "_/components/Layouts";
 import { Grid, GridAlign } from "_/components/Grid";
 import { useState } from "react";
+import { Button } from "baseui/button";
 
 const COLUMNS = ["Name", "Age", "Address"];
 const DATA = [
@@ -20,6 +28,7 @@ const HTMLTest = () => {
   const [gridAlign, setGridAlign] = useState<GridAlign | "auto">("auto");
   const [gridGap, setGridGap] = useState([16]);
   const [gridCellWidth, setGridCellWidth] = useState([240]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <MenuLayout>
@@ -202,6 +211,32 @@ const HTMLTest = () => {
         Use this to emphasize a quote
         <footer>— Author Name, Publication</footer>
       </blockquote>
+      <h4>Modal</h4>
+      <Button
+        onClick={() => {
+          setIsModalOpen(true);
+        }}
+      >
+        Open Modal
+      </Button>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => {
+          setIsModalOpen(false);
+        }}
+      >
+        <ModalHeader>Modal Header</ModalHeader>
+        <ModalBody>Modal Body</ModalBody>
+        <ModalFooter>
+          <ModalButton
+            onClick={() => {
+              setIsModalOpen(false);
+            }}
+          >
+            Modal Footer &gt; Modal Button (Close Modal)
+          </ModalButton>
+        </ModalFooter>
+      </Modal>
       <h4>Keyboard</h4>
       <p>
         <kbd>ctrl + l</kbd>

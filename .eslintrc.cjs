@@ -56,6 +56,14 @@ module.exports = {
             importNames: ["Link"],
             message: "Use \"import { Link } from '_/components/Link'\" instead.",
           },
+          {
+            name: "baseui/modal",
+            message: "Use \"import { Modal } from '_/components/Modal'\" instead.",
+          },
+          {
+            name: "baseui/drawer",
+            message: "Use \"import { Drawer } from '_/components/Drawer'\" instead.",
+          },
         ],
       },
     ],

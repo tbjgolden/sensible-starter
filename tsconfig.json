@@ -29,5 +29,5 @@
     "allowSyntheticDefaultImports": true,
     "importHelpers": true
   },
-  "include": ["src", "src/vite-env.d.ts", ".scripts"]
+  "include": ["src", "src/vite-env.d.ts", ".scripts", "src/components/.tsx"]
 }

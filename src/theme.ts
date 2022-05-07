@@ -70,10 +70,18 @@ export const primitives: ThemePrimitives = {
     '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
 };
 
+const mono = <T extends Record<string, unknown>>(
+  styles: T
+): T & { fontFamily: string } => {
+  return {
+    ...styles,
+    fontFamily: 'Menlo, "Lucida Console", Monaco, Consolas, "Courier New", monospace',
+  };
+};
 const DisplayLineHeight = { lineHeight: 1.2 };
 const HeadingLineHeight = { lineHeight: 1.2 };
 const LabelLineHeight = { lineHeight: 1.3 };
-const CaptionLineHeight = { lineHeight: 1.4 };
+// const CaptionLineHeight = { lineHeight: 1.4 };
 const ParagraphLineHeight = { lineHeight: 1.45 };
 
 export const theme = createTheme(primitives, {
@@ -96,7 +104,32 @@ export const theme = createTheme(primitives, {
     ParagraphMedium: ParagraphLineHeight,
     ParagraphSmall: ParagraphLineHeight,
     ParagraphXSmall: ParagraphLineHeight,
-    Caption1: CaptionLineHeight,
-    Caption2: CaptionLineHeight,
+    MonoDisplayLarge: mono(DisplayLineHeight),
+    MonoDisplayMedium: mono(DisplayLineHeight),
+    MonoDisplaySmall: mono(DisplayLineHeight),
+    MonoDisplayXSmall: mono(DisplayLineHeight),
+    MonoHeadingXXLarge: mono(HeadingLineHeight),
+    MonoHeadingXLarge: mono(HeadingLineHeight),
+    MonoHeadingLarge: mono(HeadingLineHeight),
+    MonoHeadingMedium: mono(HeadingLineHeight),
+    MonoHeadingSmall: mono(HeadingLineHeight),
+    MonoHeadingXSmall: mono(HeadingLineHeight),
+    MonoLabelLarge: mono(LabelLineHeight),
+    MonoLabelMedium: mono(LabelLineHeight),
+    MonoLabelSmall: mono(LabelLineHeight),
+    MonoLabelXSmall: mono(LabelLineHeight),
+    MonoParagraphLarge: mono(ParagraphLineHeight),
+    MonoParagraphMedium: mono(ParagraphLineHeight),
+    MonoParagraphSmall: mono(ParagraphLineHeight),
+    MonoParagraphXSmall: mono(ParagraphLineHeight),
+  },
+  Modal: {
+    overrides: {
+      DialogContainer: {
+        style: {
+          backgroundColor: "yellow",
+        },
+      },
+    },
   },
 });

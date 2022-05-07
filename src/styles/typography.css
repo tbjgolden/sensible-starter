@@ -4,8 +4,8 @@
   --font-family: inter, -apple-system, system-ui, blinkmacsystemfont, "Helvetica Neue",
     helvetica, arial, sans-serif;
 }
-
 @supports (font-variation-settings: "wdth" 150) {
+  /* use a variable font if the browser supports it */
   :root {
     --font-family: "Inter Variable", inter, -apple-system, system-ui, blinkmacsystemfont,
       "Helvetica Neue", helvetica, arial, sans-serif;
@@ -36,39 +36,47 @@
   font-weight: 600;
   font-style: normal;
 }
+@font-face {
+  font-family: inter;
+  src: local("Inter Black"), url("/fonts/Inter900.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+}
 
 body {
   font-family: var(--font-family);
+
+  /* tell browsers they can force italic, but not bold */
   font-synthesis: style;
 }
 
 /**
   D = Display [L,M,S,XS]
   Display text is often shown in a different font to provide contrast
-  to the main copy font
+  to the main copy font d
 */
 .D-L {
   font-size: 64px;
-  font-weight: 500;
+  font-weight: 900;
   line-height: 1.15;
 }
 
 .D-M,
 .D {
   font-size: 40px;
-  font-weight: 500;
+  font-weight: 900;
   line-height: 1.15;
 }
 
 .D-S {
   font-size: 32px;
-  font-weight: 500;
+  font-weight: 900;
   line-height: 1.2;
 }
 
 .D-XS {
   font-size: 27px;
-  font-weight: 500;
+  font-weight: 900;
   line-height: 1.2;
 }
 

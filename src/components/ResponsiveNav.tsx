@@ -8,7 +8,7 @@ import {
   StyledNavigationList,
   StyledNavigationItem,
 } from "baseui/header-navigation";
-import { Drawer } from "baseui/drawer";
+import { Drawer } from "_/components/Drawer";
 import { Button } from "baseui/button";
 
 const isBigMQ = matchMedia("(min-width: 720px)");
@@ -179,15 +179,15 @@ export const ResponsiveNav = ({
         </div>
       )}
       <div
-        className={mainContentPaddingClass}
         style={{
           flex: "0 0 auto",
           width: "100%",
           overflowY: "hidden",
           position: "relative",
+          paddingTop: isSmall ? 56 : 0,
         }}
       >
-        {children}
+        <div className={mainContentPaddingClass}>{children}</div>
       </div>
     </div>
   );
