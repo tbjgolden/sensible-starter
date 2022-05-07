@@ -1,12 +1,6 @@
 import { createTheme } from "baseui";
 import { ThemePrimitives } from "baseui/theme";
 
-const DisplayLineHeight = { lineHeight: 1.2 };
-const HeadingLineHeight = { lineHeight: 1.2 };
-const LabelLineHeight = { lineHeight: 1.3 };
-const CaptionLineHeight = { lineHeight: 1.4 };
-const ParagraphLineHeight = { lineHeight: 1.45 };
-
 export const primitives: ThemePrimitives = {
   // Primary Palette
   primaryA: "#000000",
@@ -75,6 +69,12 @@ export const primitives: ThemePrimitives = {
   primaryFontFamily:
     '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
 };
+
+const DisplayLineHeight = { lineHeight: 1.2 };
+const HeadingLineHeight = { lineHeight: 1.2 };
+const LabelLineHeight = { lineHeight: 1.3 };
+const CaptionLineHeight = { lineHeight: 1.4 };
+const ParagraphLineHeight = { lineHeight: 1.45 };
 
 export const theme = createTheme(primitives, {
   typography: {

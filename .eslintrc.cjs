@@ -111,7 +111,7 @@ module.exports = {
       },
     },
     {
-      files: "src/pages/*.tsx",
+      files: "src/pages/**/*.tsx",
       rules: {
         "unicorn/filename-case": [
           "error",

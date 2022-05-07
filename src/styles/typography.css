@@ -1,12 +1,53 @@
 /* stylelint-disable selector-class-pattern */
 
+:root {
+  --font-family: inter, -apple-system, system-ui, blinkmacsystemfont, "Helvetica Neue",
+    helvetica, arial, sans-serif;
+}
+
+@supports (font-variation-settings: "wdth" 150) {
+  :root {
+    --font-family: "Inter Variable", inter, -apple-system, system-ui, blinkmacsystemfont,
+      "Helvetica Neue", helvetica, arial, sans-serif;
+  }
+}
+
+@font-face {
+  font-family: "Inter Variable";
+  src: url("/fonts/InterVariable.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-style: oblique 0deg 20deg;
+}
+@font-face {
+  font-family: inter;
+  src: local("Inter Regular"), url("/fonts/Inter400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: inter;
+  src: local("Inter Medium"), url("/fonts/Inter500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: inter;
+  src: local("Inter Semi Bold"), url("/fonts/Inter600.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+
+body {
+  font-family: var(--font-family);
+  font-synthesis: style;
+}
+
 /**
   D = Display [L,M,S,XS]
   Display text is often shown in a different font to provide contrast
   to the main copy font
 */
 .D-L {
-  font-family: DisplayFontName, sans-serif;
   font-size: 64px;
   font-weight: 500;
   line-height: 1.15;
@@ -14,29 +55,21 @@
 
 .D-M,
 .D {
-  font-family: DisplayFontName, sans-serif;
   font-size: 40px;
   font-weight: 500;
   line-height: 1.15;
 }
 
 .D-S {
-  font-family: DisplayFontName, sans-serif;
   font-size: 32px;
   font-weight: 500;
   line-height: 1.2;
 }
 
 .D-XS {
-  font-family: DisplayFontName, sans-serif;
   font-size: 27px;
   font-weight: 500;
   line-height: 1.2;
-}
-
-@font-face {
-  font-family: DisplayFontName;
-  src: url("/DisplayFontName.woff2") format("woff2");
 }
 
 /**
@@ -257,5 +290,5 @@ p {
 .b,
 b,
 strong {
-  font-weight: 600 !please;
+  font-weight: 600 !important;
 }
