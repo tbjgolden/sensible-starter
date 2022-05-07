@@ -17,28 +17,28 @@ const MENU_ITEMS: Item[] = [
   {
     title: "Docs",
     itemId: "/docs",
-    subNav: [
-      {
-        title: "Chart",
-        itemId: "/docs/chart",
-      },
-      {
-        title: "Components",
-        itemId: "/docs/components",
-      },
-      {
-        title: "List w/ API",
-        itemId: "/docs/list",
-      },
-      {
-        title: "HTML Test",
-        itemId: "/docs/html-test",
-      },
-      {
-        title: "CSS Utilities",
-        itemId: "/docs/css-utilities",
-      },
-    ],
+    // subNav: [
+    //   {
+    //     title: "Chart",
+    //     itemId: "/docs/chart",
+    //   },
+    //   {
+    //     title: "Components",
+    //     itemId: "/docs/components",
+    //   },
+    //   {
+    //     title: "List w/ API",
+    //     itemId: "/docs/list",
+    //   },
+    //   {
+    //     title: "HTML Test",
+    //     itemId: "/docs/html-test",
+    //   },
+    //   {
+    //     title: "CSS Utilities",
+    //     itemId: "/docs/css-utilities",
+    //   },
+    // ],
   },
   {
     title: "Test Pages",

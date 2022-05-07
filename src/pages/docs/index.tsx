@@ -19,9 +19,10 @@ const Documentation = () => {
   return (
     <MenuLayout>
       <h1 className="D">Documentation</h1>
-      <p className="PL-L">
-        Every single library and tool in this starter was considered for its pros and
-        cons.
+      <p className="P-L">
+        Every single library and tool in this starter was assessed for inclusion via its
+        pros and cons. Here's what's included (plus why!) - it should all make sense by
+        the end.
       </p>
       <h2>React</h2>
       <p className="PL-L">React as fast as possible:</p>
@@ -148,7 +149,7 @@ const Documentation = () => {
       <h3>Utility Classes / BYO-CSS</h3>
       <p>
         CSS doesn't really have a best option yet; I'd argue the best (Tailwind,
-        styled-components) are still B-tier solutions. As such, I've popped just enough
+        styled-components) are still B-tier solutions. As such, I've popped just enough{" "}
         <Link to="https://tachyons.io/">tachyons</Link>-inspired utility classes in here
         in some (Post-)CSS files and left it off there.
       </p>
