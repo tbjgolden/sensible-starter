@@ -8,7 +8,12 @@ import { theme, primitives } from "_/theme";
 import { MenuLayout } from "_/components/Layouts";
 import routes from "~react-pages";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
-import "_/global.css";
+import "_/styles/reset.css";
+import "_/styles/tags.css";
+import "_/styles/typography.css";
+import "_/styles/spacing-defaults.css";
+import "_/styles/spacing-scale.css";
+import "_/styles/custom.css";
 
 const client = new ApolloClient({
   uri: `${import.meta.env.VITE_KEYSTONE_HOST ?? "http://localhost:3001"}/api/graphql`,

@@ -6,7 +6,13 @@ import { gql, useMutation, useQuery } from "@apollo/client";
 import { ChangeEvent, useState } from "react";
 import { Link } from "_/components/Link";
 import { Button } from "baseui/button";
-import { Modal, ModalHeader, ModalBody, ModalFooter, ModalButton } from "baseui/modal";
+import {
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  ModalButton,
+} from "_/components/Modal";
 
 const LIST_ITEMS_QUERY = gql`
   {

@@ -26,10 +26,17 @@ TODOs:
 - [x] package.json engines
 - [x] investigate cause of large bundle on :) app
   - [x] unused dependencies, but no easy fix
-- [ ] add documentation - inspired by cra and nuxt3
-- [ ] find better alternative to nivo
-  - [ ] chart.js for simple
-  - [ ] react > requestAnimationFrame > svg for complex
+- [ ] add documentation
+  - [x] nuxt3 filesystem
+  - [ ] cra common questions
+- [ ] add an example custom hook - useDeepState?
+- [ ] prevent committing comments in .vscode/settings.json
+
+---
+
+- Better alternatives to nivo graphs:
+  - chart.js for simple
+  - react > requestAnimationFrame > svg for complex
 
 Long-term:
 

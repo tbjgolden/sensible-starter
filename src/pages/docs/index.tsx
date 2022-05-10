@@ -11,6 +11,9 @@ const Video = ({ src }: { src: string }) => {
       frameBorder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
+      style={{
+        backgroundColor: "#ccc",
+      }}
     />
   );
 };
@@ -90,13 +93,13 @@ const Documentation = () => {
       <p className="PL-L">Vite as fast as possible:</p>
       <Video src="https://www.youtube.com/embed/KCrXgy8qtjM" />
       <p className="PL-L">Why Vite (instead of Next)?</p>
-      <p>
+      <p className="P-L">
         It's able to do everything that Next can do through plugins, plus has a much
         faster live-reload.
       </p>
       <hr />
       <h2>Baseweb</h2>
-      <p>
+      <p className="P-L">
         Baseweb is a React component library, and is the open-source library that Uber
         uses to product its own user interfaces. It seems to be under the radar - possibly
         because Uber isn't well known for its open source tech. When benchmarking React
@@ -141,7 +144,7 @@ const Documentation = () => {
         solved.
       </p>
       <h3>React Router</h3>
-      <p className="P-L">
+      <p>
         Routing is handled by <strong>vite-plugin-pages</strong> +{" "}
         <strong>React Router</strong>. Like Next, this builds each page separately,
         handles page transitions client-side and code-splitting.

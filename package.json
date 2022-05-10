@@ -59,6 +59,7 @@
     "helmet": "^5.0.2",
     "husky": "^7.0.2",
     "lint-staged": "^11.2.3",
+    "lucide-react": "^0.44.0",
     "morgan": "^1.10.0",
     "postcss-nested": "^5.0.6",
     "prettier": "2.4.1",

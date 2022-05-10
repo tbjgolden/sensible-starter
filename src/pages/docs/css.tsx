@@ -2,17 +2,13 @@ import { MenuLayout } from "_/components/Layouts";
 import { Link } from "_/components/Link";
 import { getPublicURL } from "_/utilities/urls";
 
-const CssUtilities = () => {
+const CSSDocumentation = () => {
   return (
     <MenuLayout>
-      <h1 id="css-utilities">CSS Utilities</h1>
+      <h1 id="css-utilities">CSS</h1>
       <p>This project starts with some lightweight utility classes.</p>
       <p>These classes are documented both inside their source files and here.</p>
       <h2 id="overview">Overview</h2>
-      <p>
-        <code>{`src/global.css`}</code> - the global CSS entrypoint; imports the
-        following:
-      </p>
       <p>
         <Link to="#reset">#</Link> <code>{`src/styles/reset.css`}</code> - normalise
         browser styles and fix bad defaults
@@ -344,4 +340,4 @@ C  | Caption         | M`}</code>
   );
 };
 
-export default CssUtilities;
+export default CSSDocumentation;

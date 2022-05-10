@@ -17,52 +17,40 @@ const MENU_ITEMS: Item[] = [
   {
     title: "Docs",
     itemId: "/docs",
-    // subNav: [
-    //   {
-    //     title: "Chart",
-    //     itemId: "/docs/chart",
-    //   },
-    //   {
-    //     title: "Components",
-    //     itemId: "/docs/components",
-    //   },
-    //   {
-    //     title: "List w/ API",
-    //     itemId: "/docs/list",
-    //   },
-    //   {
-    //     title: "HTML Test",
-    //     itemId: "/docs/html-test",
-    //   },
-    //   {
-    //     title: "CSS Utilities",
-    //     itemId: "/docs/css-utilities",
-    //   },
-    // ],
+    subNav: [
+      {
+        title: "Directory Structure",
+        itemId: "/docs/structure",
+      },
+      {
+        title: "CSS",
+        itemId: "/docs/css",
+      },
+    ],
   },
   {
     title: "Test Pages",
-    itemId: "/test",
+    itemId: "/test-pages",
     subNav: [
       {
         title: "Chart",
-        itemId: "/test/chart",
+        itemId: "/test-pages/chart",
       },
       {
         title: "Components",
-        itemId: "/test/components",
+        itemId: "/test-pages/components",
       },
       {
         title: "List w/ API",
-        itemId: "/test/list",
+        itemId: "/test-pages/list",
       },
       {
         title: "HTML Test",
-        itemId: "/test/html-test",
+        itemId: "/test-pages/html-test",
       },
       {
         title: "CSS Utilities",
-        itemId: "/test/css-utilities",
+        itemId: "/test-pages/css-utilities",
       },
     ],
   },
