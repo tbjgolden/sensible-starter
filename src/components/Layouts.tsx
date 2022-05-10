@@ -23,8 +23,8 @@ const MENU_ITEMS: Item[] = [
         itemId: "/docs/structure",
       },
       {
-        title: "CSS",
-        itemId: "/docs/css",
+        title: "CSS Guide",
+        itemId: "/docs/css-guide",
       },
     ],
   },

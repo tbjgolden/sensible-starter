@@ -7,6 +7,7 @@ import {
   FolderPlus as FolderPlusIcon,
   FolderMinus as FolderMinusIcon,
 } from "lucide-react";
+import { Link } from "_/components/Link";
 
 interface File {
   name: string;
@@ -211,7 +212,7 @@ const fileData = [
             name: "docs",
             description: `Contains pages that act as documentation for this starter\n→ ${HOME_URL}/docs/**`,
             children: [
-              { name: "css.tsx", description: `→ ${HOME_URL}/docs/css` },
+              { name: "css-guide.tsx", description: `→ ${HOME_URL}/docs/css-guide` },
               { name: "index.tsx", description: `→ ${HOME_URL}/docs` },
             ],
           },
@@ -425,6 +426,9 @@ const Structure = () => {
       <h1 className="D">Directory Structure</h1>
       <p className="H-S">(i.e. what each file is for)</p>
       <FileTreeView />
+      <p className="H-S">
+        <Link to="/docs/css-guide">Docs: CSS Guide</Link>
+      </p>
     </MenuLayout>
   );
 };
