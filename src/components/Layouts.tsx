@@ -26,6 +26,10 @@ const MENU_ITEMS: Item[] = [
         title: "CSS",
         itemId: "/docs/css",
       },
+      {
+        title: "CRA",
+        itemId: "/docs/cra",
+      },
     ],
   },
   {
