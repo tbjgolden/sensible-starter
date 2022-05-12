@@ -5,29 +5,54 @@ import { getPublicURL } from "_/utilities/urls";
 const CSSDocumentation = () => {
   return (
     <MenuLayout>
-      <h1 id="css-utilities">CSS</h1>
+      <h1 id="css-utilities">CSS Guide</h1>
       <p>This project starts with some lightweight utility classes.</p>
       <p>These classes are documented both inside their source files and here.</p>
       <h2 id="overview">Overview</h2>
-      <p>
-        <Link to="#reset">#</Link> <code>{`src/styles/reset.css`}</code> - normalise
-        browser styles and fix bad defaults
-        <br />
-        <Link to="#tags">#</Link> <code>{`src/styles/tags.css`}</code> - tweak defaults
-        for ugly unstyled HTML tags
-        <br />
-        <Link to="#typography">#</Link> <code>{`src/styles/typography.css`}</code> - type
-        scale and related utility classes
-        <br />
-        <Link to="#spacing-defaults">#</Link>{" "}
-        <code>{`src/styles/spacing-defaults.css`}</code> - spacing defaults
-        <br />
-        <Link to="#spacing-scale">
-          #
-        </Link> <code>{`src/styles/spacing-scale.css`}</code> - spacing scale
-        <br />
-        <Link to="#custom">#</Link> <code>{`src/styles/custom.css`}</code> - custom styles
-      </p>
+      <ul>
+        <li>
+          <Link to="#reset">
+            <code>{`src/styles/reset.css`}</code>
+            <br />
+            normalise browser styles and fix bad defaults
+          </Link>
+        </li>
+        <li>
+          <Link to="#tags">
+            <code>{`src/styles/tags.css`}</code>
+            <br />
+            tweak defaults for ugly unstyled HTML tags
+          </Link>
+        </li>
+        <li>
+          <Link to="#typography">
+            <code>{`src/styles/typography.css`}</code>
+            <br />
+            type scale and related utility classes
+          </Link>
+        </li>
+        <li>
+          <Link to="#spacing-defaults">
+            <code>{`src/styles/spacing-defaults.css`}</code>
+            <br />
+            spacing defaults, default margin tweaks
+          </Link>
+        </li>
+        <li>
+          <Link to="#spacing-scale">
+            <code>{`src/styles/spacing-scale.css`}</code>
+            <br />
+            spacing scale with utility classes
+          </Link>
+        </li>
+        <li>
+          <Link to="#custom">
+            <code>{`src/styles/custom.css`}</code>
+            <br />
+            your custom styles
+          </Link>
+        </li>
+      </ul>
       <h2 id="reset">Reset</h2>
       <p>Similar to common normalise stylesheets, but with one major difference:</p>
       <blockquote>
@@ -86,8 +111,8 @@ C  | Caption         | M`}</code>
       <p>Extra utility classes:</p>
       <blockquote>
         <p>
-          Use this instead of <code>{`font-weight: bold`}</code>. (CSS thinks bold = 700,
-          but bold looks better at 600.)
+          Use this instead of <code>{`font-weight: bold`}</code>. CSS thinks bold = 700,
+          but bold looks better at 600 in most sans-serif fonts.
         </p>
         <p>
           <code>{`.b, b, strong { font-weight: 600 }`}</code>
@@ -99,19 +124,19 @@ C  | Caption         | M`}</code>
           colour for a tag, add the <code>{`.c`}</code> class.
         </p>
         <p>
-          <code>{`<span style={{ color: "red" }}>A <span className="C">Caption</span></span>`}</code>
+          <code>{`<span style={{ color: "red" }}>A <span className="H">Header</span></span>`}</code>
         </p>
         <div>
           <span style={{ color: "red" }}>
-            A <span className="C">Caption</span>
+            A <span className="H">Header</span>
           </span>
         </div>
         <p>
-          <code>{`<span style={{ color: "red" }}>A <span className="C c">Caption</span></span>`}</code>
+          <code>{`<span style={{ color: "red" }}>A <span className="H c">Header</span></span>`}</code>
         </p>
         <div>
           <span style={{ color: "red" }}>
-            A <span className="C c">Caption</span>
+            A <span className="H c">Header</span>
           </span>
         </div>
       </blockquote>
@@ -335,7 +360,7 @@ C  | Caption         | M`}</code>
         </p>
       </blockquote>
       <h2 id="custom">Custom</h2>
-      <p>You can use this file for custom CSS.</p>
+      <p>You can use this file for custom global CSS.</p>
     </MenuLayout>
   );
 };
