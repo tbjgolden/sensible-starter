@@ -24,8 +24,7 @@ const Index = () => {
         </li>
         <li>Avoid flaky/dead dependencies</li>
         <li>
-          Try to <strong>pre-include common features</strong> that will be used in at
-          least 1 in 3 web apps
+          Try to <strong>pre-include popular features</strong> - as many as possible
         </li>
         <li>
           Expose the internals to make tinkering easy, but hide them from the editor's

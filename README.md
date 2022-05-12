@@ -31,6 +31,7 @@ TODOs:
   - [ ] cra common questions
 - [ ] add an example custom hook - useDeepState?
 - [ ] prevent committing comments in .vscode/settings.json
+- [ ] Put a seed.db file in version control
 
 ---
 

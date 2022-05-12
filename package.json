@@ -21,6 +21,8 @@
     "lint": "eslint .",
     "types:help": "echo 'Typecheck all TS files, output to stdout'",
     "types": "tsc && echo 'Type-checking passed'",
+    "view-bundle:help": "echo 'Creates a chart showing each dependencies effect on the bundle'",
+    "view-bundle": "vite build --sourcemap && source-map-explorer ./dist/assets/index.*.js --no-border-checks && rm ./dist/assets/*.js.map",
     "prepare:help": "echo 'Install (or reinstall) git hooks'",
     "prepare": "husky install && rm -rf .git/hooks && ln -s ../.husky .git/hooks"
   },
@@ -68,6 +70,7 @@
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.3.0",
     "sass": "^1.49.11",
+    "source-map-explorer": "^2.5.2",
     "stylelint": "^14.6.1",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^25.0.0",

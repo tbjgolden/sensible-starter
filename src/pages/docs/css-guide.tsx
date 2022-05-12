@@ -5,7 +5,7 @@ import { getPublicURL } from "_/utilities/urls";
 const CSSDocumentation = () => {
   return (
     <MenuLayout>
-      <h1 id="css-utilities">CSS Guide</h1>
+      <h1 className="D">CSS Utilities Guide</h1>
       <p>This project starts with some lightweight utility classes.</p>
       <p>These classes are documented both inside their source files and here.</p>
       <h2 id="overview">Overview</h2>

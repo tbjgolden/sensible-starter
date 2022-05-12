@@ -163,10 +163,6 @@ const Documentation = () => {
         <li>Inline style objects</li>
         <li>CSS-in-JS (via Styletron, which is already bundled via Baseweb)</li>
       </ul>
-
-      <p className="H-S">
-        <Link to="/docs/structure">Docs: Directory Structure</Link>
-      </p>
     </MenuLayout>
   );
 };

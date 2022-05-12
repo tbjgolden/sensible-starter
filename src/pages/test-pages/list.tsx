@@ -92,12 +92,13 @@ const List = () => {
           </TableBuilder>
         ) : (
           <h6>
+            Working but empty &ndash;{" "}
             <Link
               to={`${
                 import.meta.env.VITE_KEYSTONE_HOST ?? "http://localhost:3001"
               }/list-items`}
             >
-              Working, but looks like you need to add some test data
+              add some test data
             </Link>
           </h6>
         )}

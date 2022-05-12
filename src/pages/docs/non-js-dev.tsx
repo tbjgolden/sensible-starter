@@ -48,7 +48,7 @@ const NonJSDev = () => {
           Obviously, if you're going to be spending plenty of time in the front-end,
           you'll need way more than this cheatsheet. This at least should give you enough
           context to know what to search. If you've tried searching and can't find the
-          answer, then reach out for help on Slack.
+          answer, then reach out for help.
         </p>
       </blockquote>
 
@@ -89,10 +89,6 @@ const NonJSDev = () => {
         </Help>{" "}
         code, and relies on semi-recent CSS features). (what if IE11 needed?) (iOS Safari
         note, caniuse note)
-      </p>
-
-      <p className="H-S">
-        <Link to="/docs/structure">Docs: Directory Structure</Link>
       </p>
     </MenuLayout>
   );

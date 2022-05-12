@@ -27,7 +27,7 @@ export const Modal = ({ overrides, ...props }: ModalProps | Readonly<ModalProps>
         Root: {
           ...overrides?.Root,
           style: {
-            zIndex: 99,
+            zIndex: 999,
           },
         },
         DialogContainer: {

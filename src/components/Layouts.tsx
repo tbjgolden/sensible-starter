@@ -23,12 +23,16 @@ const MENU_ITEMS: Item[] = [
         itemId: "/docs/structure",
       },
       {
-        title: "CSS Guide",
-        itemId: "/docs/css-guide",
+        title: "How-To Mini Guides",
+        itemId: "/docs/mini-guides",
       },
       {
-        title: "CRA",
-        itemId: "/docs/cra",
+        title: "Components Guide",
+        itemId: "/docs/components",
+      },
+      {
+        title: "CSS Utilities Guide",
+        itemId: "/docs/css-guide",
       },
     ],
   },
@@ -37,24 +41,20 @@ const MENU_ITEMS: Item[] = [
     itemId: "/test-pages",
     subNav: [
       {
-        title: "Chart",
-        itemId: "/test-pages/chart",
+        title: "Basic Tests",
+        itemId: "/test-pages/basics",
       },
       {
-        title: "Components",
-        itemId: "/test-pages/components",
-      },
-      {
-        title: "List w/ API",
+        title: "Keystone List Test",
         itemId: "/test-pages/list",
       },
       {
-        title: "HTML Test",
-        itemId: "/test-pages/html-test",
+        title: "Chart.js Test",
+        itemId: "/test-pages/chart",
       },
       {
-        title: "CSS Utilities",
-        itemId: "/test-pages/css-utilities",
+        title: "CSS Defaults Test",
+        itemId: "/test-pages/html-test",
       },
     ],
   },
