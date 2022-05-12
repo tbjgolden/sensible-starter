@@ -322,17 +322,17 @@ const options = [
         In practice, at a minimum you'd want to do a few extra things:
         <ul>
           <li>
-            Use <strong>ufw</strong> as a firewall (Guide)
+            Use <strong>ufw</strong> as a firewall
           </li>
           <li>
-            Use <strong>nginx</strong> as a reverse proxy (Guide)
+            Use <strong>nginx</strong> as a reverse proxy
           </li>
           <li>
-            Use <strong>certbot</strong> to set up automatic SSL with nginx (Guide)
+            Use <strong>certbot</strong> to set up automatic SSL with nginx
           </li>
           <li>
             Use <strong>pm2</strong> to daemonise <code>npm run prod</code> to restart the
-            app if something crashes (Guide)
+            app if something crashes
           </li>
           <li>
             Finally, create a Keystone admin user if you haven't already, and verify that
@@ -340,9 +340,9 @@ const options = [
             API calls, perhaps verify that a runtime error appears in Admin).
           </li>
         </ul>
-        <p className="H" style={{ color: "red" }}>
-          ^ Add the guide links to this, and update the keystone version
-        </p>
+        <Link to="https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-20-04">
+          Full Guide
+        </Link>
       </>
     ),
   },
