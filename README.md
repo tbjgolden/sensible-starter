@@ -1,3 +1,5 @@
+<!-- Edit me: start -->
+
 # Sensible Starter
 
 A tried and tested TypeScript toolchain for building a full-stack app in as little as a day.
@@ -9,6 +11,20 @@ Designed to scale to thousands of users and be easy to iterate on.
 - integrations with linters, formatters and git hooks
 - easy to chop and change config and tools
 - thorough documentation
+
+<!--
+Starter: notes
+
+- Better alternatives to nivo graphs:
+  - chart.js for simple
+  - react > requestAnimationFrame > svg for complex
+
+Long-term:
+
+- [ ] add file upload example
+-->
+
+<!-- Edit me: end -->
 
 ## First-time setup
 
@@ -41,22 +57,3 @@ To run in prod mode:
 ```sh
 npm run prod
 ```
-
-<!--
-TODOs:
-
-- [ ] Create READMEs
-  - [ ] for starter
-  - [ ] for user
-- [ ] Put a seed.db file in version control
-
----
-
-- Better alternatives to nivo graphs:
-  - chart.js for simple
-  - react > requestAnimationFrame > svg for complex
-
-Long-term:
-
-- [ ] add file upload example
--->
