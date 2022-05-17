@@ -2,13 +2,13 @@
 
 A tried and tested TypeScript toolchain for building a full-stack app in as little as a day.
 
-Designed to scale to thousands of users.
+Designed to scale to thousands of users and be easy to iterate on.
 
-- Each inclusion evaluated against alternatives.
-- Sensible choices enabled by default.
-- Integrations with linters, formatters and git hooks.
-- Thorough documentation.
-- Easy to chop and change config and tools.
+- each inclusion evaluated against alternatives
+- sensible choices enabled by default
+- integrations with linters, formatters and git hooks
+- easy to chop and change config and tools
+- thorough documentation
 
 ## First-time setup
 
