@@ -30,7 +30,7 @@ TODOs:
   - [x] nuxt3 filesystem
   - [x] cra common questions
 - [x] add an example custom hook - useDeepState?
-- [ ] prevent committing comments in .vscode/settings.json
+- [x] prevent committing comments in .vscode/settings.json
 - [ ] Put a seed.db file in version control
 
 ---
