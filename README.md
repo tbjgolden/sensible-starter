@@ -1,36 +1,53 @@
+# Sensible Starter
+
+A tried and tested TypeScript toolchain for building a full-stack app in as little as a day.
+
+Designed to scale to thousands of users.
+
+- Each inclusion evaluated against alternatives.
+- Sensible choices enabled by default.
+- Integrations with linters, formatters and git hooks.
+- Thorough documentation.
+- Easy to chop and change config and tools.
+
+## First-time setup
+
+```sh
+git clone https://github.com/tbjgolden/sensible-starter.git project-name
+cd project-name
+npm install
+git init                          # reinits git repo
+npm run prepare                   # installs git hooks
+git add .
+git commit -m 'Initial commit'
+```
+
+## Usage
+
+For all commands run:
+
+```sh
+npm run help
+```
+
+To run in dev mode:
+
+```sh
+npm run dev
+```
+
+To run in prod mode:
+
+```sh
+npm run prod
+```
+
+<!--
 TODOs:
 
-- [x] ...
-- [x] create standardised theme file
-- [x] add a Layout component
-- [x] create padding and margin utility classes
-- [x] create responsive grid component
-- [x] reads markdown page files and converts them to tsx files
-- [x] integrate keystone.js
-- [x] cleanup scripts
-- [x] 404
-- [x] css utils docs
-- [x] add proxy server and devise a way to reuse in prod
-- [x] hide schema files
-- [x] sort out unused var eslint rules
-- [x] unicorn/no-new-array is annoying
-- [x] error boundary around whole app would be nice
-  - [x] send the errors to keystone
-  - [x] only in prod
-- [x] convert scripts to ts
-- [x] remove markdown logic, causing other issues
-- [x] env variables
-- [x] improved scripts logic to allow writing scripts in ts
-- [x] fix markdown page copy
-- [x] remove `_c` paths
-- [x] package.json engines
-- [x] investigate cause of large bundle on :) app
-  - [x] unused dependencies, but no easy fix
-- [x] add documentation
-  - [x] nuxt3 filesystem
-  - [x] cra common questions
-- [x] add an example custom hook - useDeepState?
-- [x] prevent committing comments in .vscode/settings.json
+- [ ] Create READMEs
+  - [ ] for starter
+  - [ ] for user
 - [ ] Put a seed.db file in version control
 
 ---
@@ -42,3 +59,4 @@ TODOs:
 Long-term:
 
 - [ ] add file upload example
+-->
