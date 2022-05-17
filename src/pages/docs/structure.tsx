@@ -32,7 +32,7 @@ const Label = ({ entry }: { entry: Folder | File }): JSX.Element => {
         alignItems: "center",
       }}
     >
-      <div style={{ flex: "1 1 1px" }}>
+      <div style={{ flex: "1 1 1px", userSelect: "none" }}>
         <div className="PL-S">{entry.name}</div>
         {entry.description ? (
           <div className="C" style={{ whiteSpace: "pre-wrap" }}>
