@@ -16,6 +16,7 @@ import { MenuLayout } from "_/components/Layouts";
 import { Grid, GridAlign } from "_/components/Grid";
 import { useState } from "react";
 import { Button } from "baseui/button";
+import { useDeepState } from "_/hooks/useDeepState";
 
 const COLUMNS = ["Name", "Age", "Address"];
 const DATA = [
@@ -26,8 +27,8 @@ const DATA = [
 
 const HTMLTest = () => {
   const [gridAlign, setGridAlign] = useState<GridAlign | "auto">("auto");
-  const [gridGap, setGridGap] = useState([16]);
-  const [gridCellWidth, setGridCellWidth] = useState([240]);
+  const [gridGap, setGridGap] = useDeepState([16]);
+  const [gridCellWidth, setGridCellWidth] = useDeepState([240]);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (

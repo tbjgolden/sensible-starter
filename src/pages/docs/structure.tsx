@@ -7,6 +7,7 @@ import {
   FolderPlus as FolderPlusIcon,
   FolderMinus as FolderMinusIcon,
 } from "lucide-react";
+import { useDeepState } from "_/hooks/useDeepState";
 
 interface File {
   name: string;
@@ -23,13 +24,22 @@ interface Folder {
 
 const Label = ({ entry }: { entry: Folder | File }): JSX.Element => {
   return (
-    <div style={{ flex: "1 1 1px" }}>
-      <div className="PL-S">{entry.name}</div>
-      {entry.description ? (
-        <div className="C" style={{ whiteSpace: "pre-wrap" }}>
-          {entry.description}
-        </div>
-      ) : null}
+    <div
+      style={{
+        flex: "1 1 1px",
+        minHeight: "2em",
+        display: "flex",
+        alignItems: "center",
+      }}
+    >
+      <div style={{ flex: "1 1 1px" }}>
+        <div className="PL-S">{entry.name}</div>
+        {entry.description ? (
+          <div className="C" style={{ whiteSpace: "pre-wrap" }}>
+            {entry.description}
+          </div>
+        ) : null}
+      </div>
     </div>
   );
 };
@@ -362,7 +372,7 @@ const treeDataFiltered = toTreeViewData(removeHidden(fileData));
 
 export const FileTreeView = () => {
   const [showInternalFiles, setShowInternalFiles] = useState(false);
-  const [treeData, setTreeData] = useState(treeDataFiltered);
+  const [treeData, setTreeData] = useDeepState(treeDataFiltered);
 
   useEffect(() => {
     if (showInternalFiles) {
@@ -370,6 +380,7 @@ export const FileTreeView = () => {
     } else {
       setTreeData(treeDataFiltered);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [showInternalFiles]);
 
   return (

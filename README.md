@@ -26,10 +26,10 @@ TODOs:
 - [x] package.json engines
 - [x] investigate cause of large bundle on :) app
   - [x] unused dependencies, but no easy fix
-- [ ] add documentation
+- [x] add documentation
   - [x] nuxt3 filesystem
-  - [ ] cra common questions
-- [ ] add an example custom hook - useDeepState?
+  - [x] cra common questions
+- [x] add an example custom hook - useDeepState?
 - [ ] prevent committing comments in .vscode/settings.json
 - [ ] Put a seed.db file in version control
 
