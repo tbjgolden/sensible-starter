@@ -31,8 +31,9 @@ Long-term:
 ```sh
 git clone https://github.com/tbjgolden/sensible-starter.git project-name
 cd project-name
+rm -rf .git                       # wipes starter repo git
 npm install
-git init                          # reinits git repo
+git init                          # inits new repo
 npm run prepare                   # installs git hooks
 git add .
 git commit -m 'Initial commit'
