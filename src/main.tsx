@@ -14,14 +14,12 @@ import "_/styles/typography.css";
 import "_/styles/spacing-defaults.css";
 import "_/styles/spacing-scale.css";
 import "_/styles/custom.css";
+import { Spinner } from "baseui/spinner";
 
 const client = new ApolloClient({
   uri: `${import.meta.env.VITE_KEYSTONE_HOST ?? "http://localhost:3001"}/api/graphql`,
   cache: new InMemoryCache(),
 });
-
-// eslint-disable-next-line baseui/deprecated-component-api
-import { Spinner } from "baseui/spinner";
 
 // Make baseweb primitives available as CSS properties
 const styleEl = document.createElement("style");
