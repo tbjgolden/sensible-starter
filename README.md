@@ -15,6 +15,24 @@ Designed to scale to thousands of users and be easy to iterate on.
 <!--
 Starter: notes
 
+- [ ] remove error catcher plugin and come up with something better
+- [ ] attempt to set up vite legacy mode?
+- [ ] get the sample husky scripts installed? or gitignored?
+- [ ] fix NODE_ENV variable, and create getEnv fn
+- [ ] remove keystone script
+- [ ] upgrade deps
+- [ ] fix flex-shrink issues on baseweb components
+- [ ] revisit typography (esp font weights etc)
+- [ ] remove defaults and rely entirely on env vars
+  - [ ] compare against .env.example to achieve this
+- [ ] replace postcss with sass
+
+---
+
+- [ ] git repo root vs package root
+- [ ] load utilities with common use cases
+- [ ] form starter hooks
+
 - Better alternatives to nivo graphs:
   - chart.js for simple
   - react > requestAnimationFrame > svg for complex

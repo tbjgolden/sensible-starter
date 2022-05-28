@@ -20,7 +20,7 @@
     "lint:help": "echo 'Lint all files, output to stdout'",
     "lint": "eslint .",
     "types:help": "echo 'Typecheck all TS files, output to stdout'",
-    "types": "tsc && echo 'Type-checking passed'",
+    "types": "tsc && tsc --noEmit ./src/inline/index.ts && echo 'Type-checking passed'",
     "view-bundle:help": "echo 'Creates a chart showing each dependencies effect on the bundle'",
     "view-bundle": "vite build --sourcemap && source-map-explorer ./dist/assets/index.*.js --no-border-checks && rm ./dist/assets/*.js.map",
     "prepare:help": "echo 'Install (or reinstall) git hooks'",
@@ -79,7 +79,6 @@
     "ts-node": "^10.7.0",
     "typescript": "^4.5.4",
     "vite": "^2.9.5",
-    "vite-plugin-html": "^3.2.0",
     "vite-plugin-pages": "^0.22.0",
     "vite-tsconfig-paths": "^3.3.17"
   }
