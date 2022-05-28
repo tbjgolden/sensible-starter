@@ -16,7 +16,7 @@ Designed to scale to thousands of users and be easy to iterate on.
 Starter: notes
 
 - [x] remove error catcher plugin and come up with something better
-- [ ] attempt to set up vite legacy mode?
+- [x] attempt to set up vite legacy mode?
 - [ ] get the sample husky scripts installed? or gitignored?
 - [ ] fix NODE_ENV variable, and create getEnv fn
   - [ ] remove defaults and rely entirely on env vars
