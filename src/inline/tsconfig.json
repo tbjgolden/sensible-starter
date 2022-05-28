@@ -9,5 +9,5 @@
     "noImplicitAny": true,
     "noEmit": true
   },
-  "include": ["src/inline.ts"]
+  "include": ["index.ts"]
 }

@@ -131,6 +131,7 @@ module.exports = {
     {
       files: "src/inline/index.ts",
       rules: {
+        "no-var": "off",
         "no-restricted-imports": [
           "error",
           {

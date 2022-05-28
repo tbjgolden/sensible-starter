@@ -11,6 +11,7 @@
     "linux",
     "darwin"
   ],
+  "browserslist": "> .1% in GB",
   "scripts": {
     "help": "ts-node ./.scripts/help.ts",
     "dev:help": "echo 'Start development environment'",
@@ -20,7 +21,7 @@
     "lint:help": "echo 'Lint all files, output to stdout'",
     "lint": "eslint .",
     "types:help": "echo 'Typecheck all TS files, output to stdout'",
-    "types": "tsc && tsc ./src/inline/index.ts && echo 'Type-checking passed'",
+    "types": "tsc && tsc --noEmit ./src/inline/index.ts && echo 'Type-checking passed'",
     "view-bundle:help": "echo 'Creates a chart showing each dependencies effect on the bundle'",
     "view-bundle": "vite build --sourcemap && source-map-explorer ./dist/assets/index.*.js --no-border-checks && rm ./dist/assets/*.js.map",
     "prepare:help": "echo 'Install (or reinstall) git hooks'",
@@ -42,6 +43,7 @@
     "@types/styletron-react": "^5.0.3",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
+    "@vitejs/plugin-legacy": "^1.8.2",
     "@vitejs/plugin-react": "^1.3.0",
     "baseui": "^11.0.1",
     "body-parser": "^1.20.0",
