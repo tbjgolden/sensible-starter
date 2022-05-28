@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
-    "target": "ES3",
+    "target": "ES5",
     "lib": ["DOM", "DOM.Iterable", "ES5", "ScriptHost"],
     "allowJs": false,
     "skipLibCheck": true,
     "strict": true,
     "module": "none",
-    "noImplicitAny": true
+    "noImplicitAny": true,
+    "noEmit": true
   },
   "include": ["src/inline.ts"]
 }

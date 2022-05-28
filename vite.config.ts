@@ -1,14 +1,19 @@
 import "dotenv/config";
 
 import react from "@vitejs/plugin-react";
+import fs from "node:fs";
 import path from "node:path";
+import { execSync } from "node:child_process";
 import { defineConfig } from "vite";
 import pages from "vite-plugin-pages";
-import { parseHost } from "./.scripts/lib/url";
+import { minify } from "terser";
 
-const frontEndHost = parseHost(process.env.VITE_FRONTEND_HOST ?? "http://localhost:3000");
+const compiledInlineJS = getCompiledJS("src/inline/index");
 
-// https://vitejs.dev/config/
+const frontEndHost = {
+  port: 3000,
+};
+
 export default defineConfig({
   server: {
     watch: {
@@ -21,19 +26,41 @@ export default defineConfig({
   },
   plugins: [
     react(),
-    // needed for filesystem routing / bundling
     pages(),
-    // inject an error catch and report tool into index.html
     {
-      name: "html-transform",
-      transformIndexHtml(html) {
-        return html.replace(
-          "<script ",
-          `<script>var e=20;function t(e){return JSON.stringify(JSON.stringify(e)).slice(1,-1)}var r=Object.create(null),n=Object.create(null);window.addEventListener("error",(function(i){try{if(!i.message.includes("ResizeObserver loop")){var a=i.message||"",s=i.filename||"",o=i.lineno||0,c=i.colno||0,l=JSON.stringify([s,o,c,a]);if(n[l]!==r&&e-- >0){n[l]=r;var u=window.XMLHttpRequest?new XMLHttpRequest:new ActiveXObject("Microsoft.XMLHTTP");u.open("POST","//localhost:3001/api/graphql"),u.setRequestHeader("Content-Type","application/json"),u.send('{"query":"mutation{createError(data:{message:'+t(a)+",stack:"+t((i.error&&i.error.stack||"").split("\\n").slice(0,3).join("\\n"))+",userAgent:"+t(navigator.userAgent||"")+",fileName:"+t(s)+",lineNum:"+o+",colNum:"+c+'}){id}}","variables":{}}')}}}catch(e){}}))</script>\n    <script `
-        );
+      name: "add-inline-to-html",
+      transformIndexHtml: async (html: string): Promise<string> => {
+        let minifiedJS = compiledInlineJS;
+        try {
+          const minifiedJSResult = await minify(compiledInlineJS, {
+            format: { ascii_only: true },
+            ecma: 5,
+            ie8: true,
+            safari10: true,
+          });
+          minifiedJS = minifiedJSResult?.code ?? compiledInlineJS;
+        } catch {
+          //
+        }
+        return html.replace("<script ", `<script>${minifiedJS}</script>\n    <script `);
       },
       enforce: "post",
       apply: "build",
     },
   ],
 });
+
+function getCompiledJS(filePath: string): string {
+  const outputJSPath = path.join(process.cwd(), `${filePath}.js`);
+  try {
+    execSync(`npx tsc ./${filePath}.ts`);
+  } catch {
+    //
+  }
+  if (!fs.existsSync(outputJSPath)) {
+    throw new Error(`Failed to generate ${outputJSPath}`);
+  }
+  const compiledJS = fs.readFileSync(outputJSPath, "utf8");
+  fs.unlinkSync(outputJSPath);
+  return compiledJS;
+}
