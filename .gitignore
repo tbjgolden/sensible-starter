@@ -7,6 +7,7 @@ coverage
 .eslintcache
 .nvmrc
 *.code-workspace
+.husky/*.sample
 .keystone/admin
 keystone.db
 *.log
