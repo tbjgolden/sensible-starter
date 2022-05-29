@@ -15,9 +15,9 @@ Designed to scale to thousands of users and be easy to iterate on.
 <!--
 Starter: notes
 
-- [x] remove error catcher plugin and come up with something better
+- [x] remove error catcher plugin and come [](https://www.bbc.co.uk/sport)up with something better
 - [x] attempt to set up vite legacy mode?
-- [ ] get the sample husky scripts installed? or gitignored?
+- [x] get the sample husky scripts installed? or gitignored?
 - [ ] fix NODE_ENV variable, and create getEnv fn
   - [ ] remove defaults and rely entirely on env vars
     - [ ] compare against .env.example to achieve this

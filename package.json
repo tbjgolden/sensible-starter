@@ -17,7 +17,7 @@
     "dev:help": "echo 'Start development environment'",
     "dev": "concurrently --raw \"vite\" \"keystone dev\"",
     "prod:help": "echo 'Start production environment'",
-    "prod": "NODE_ENV=production concurrently --kill-others-on-fail \"npm run types\" \"npm run lint\" \"vite build\" \"keystone build\" && concurrently -k \"ts-node ./.scripts/prod.ts\" \"keystone start\"",
+    "prod": "concurrently --kill-others-on-fail \"npm run types\" \"npm run lint\" \"vite build\" \"keystone build\" && concurrently -k \"ts-node ./.scripts/prod.ts\" \"keystone start\"",
     "lint:help": "echo 'Lint all files, output to stdout'",
     "lint": "eslint .",
     "types:help": "echo 'Typecheck all TS files, output to stdout'",

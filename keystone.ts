@@ -4,15 +4,24 @@ import { config, list } from "@keystone-6/core";
 import { text, password, timestamp, checkbox, integer } from "@keystone-6/core/fields";
 import { createAuth } from "@keystone-6/auth";
 import { statelessSessions } from "@keystone-6/core/session";
-import { URL } from "node:url";
+import { getEnv } from "./.scripts/env";
+import { parseURL } from "./.scripts/lib/url";
 
-const DEV_SECRET = "---------- DEV SECRET ----------";
-const sessionSecret = process.env.SESSION_SECRET || DEV_SECRET;
-if (process.env.NODE_ENV === "production" && sessionSecret === DEV_SECRET) {
-  throw new Error("The SESSION_SECRET environment variable must be set in production");
+const ENV = getEnv();
+if (
+  ENV.NODE_ENV === "production" &&
+  ENV.SESSION_SECRET === "---------- DEV SECRET ----------"
+) {
+  throw new Error(
+    "The SESSION_SECRET environment variable must be changed for production"
+  );
 }
 
-const keystoneHost = parseHost(process.env.VITE_KEYSTONE_HOST ?? "http://localhost:3001");
+const { host, port } = parseURL(ENV.VITE_KEYSTONE_BASE_URL);
+const keystonePort =
+  ENV.LOCALHOST_KEYSTONE_PORT === "auto"
+    ? port
+    : Number.parseInt(ENV.LOCALHOST_KEYSTONE_PORT);
 
 export default createAuth({
   listKey: "User",
@@ -24,16 +33,8 @@ export default createAuth({
   },
 }).withAuth(
   config({
-    db: {
-      provider: "sqlite",
-      url: "file:./keystone.db",
-    },
-    server: {
-      cors: {
-        origin: process.env.VITE_FRONTEND_HOST ?? "http://localhost:3000",
-      },
-      port: keystoneHost.port,
-    },
+    db: { provider: "sqlite", url: "file:./keystone.db" },
+    server: { port: keystonePort, cors: { origin: host } },
     ui: {
       isAccessAllowed: (context) => {
         return Boolean(context.session?.data);
@@ -49,8 +50,6 @@ export default createAuth({
             isFilterable: true,
           }),
           password: password({ validation: { isRequired: true } }),
-          // relationships can also be added to keystone
-          // listItems: relationship({ ref: "ListItem.author", many: true }),
         },
       }),
       ListItem: list({
@@ -59,19 +58,11 @@ export default createAuth({
           checked: checkbox(),
           updatedAt: timestamp({
             defaultValue: { kind: "now" },
-            ui: {
-              createView: {
-                fieldMode: "hidden",
-              },
-            },
+            ui: { createView: { fieldMode: "hidden" } },
           }),
           createdAt: timestamp({
             defaultValue: { kind: "now" },
-            ui: {
-              createView: {
-                fieldMode: "hidden",
-              },
-            },
+            ui: { createView: { fieldMode: "hidden" } },
           }),
         },
       }),
@@ -85,55 +76,14 @@ export default createAuth({
           colNum: integer({ validation: { isRequired: true } }),
           createdAt: timestamp({
             defaultValue: { kind: "now" },
-            ui: {
-              createView: {
-                fieldMode: "hidden",
-              },
-            },
+            ui: { createView: { fieldMode: "hidden" } },
           }),
         },
       }),
     },
     session: statelessSessions({
       maxAge: 60 * 60 * 24 * 30,
-      secret: sessionSecret,
+      secret: ENV.SESSION_SECRET,
     }),
   })
 );
-
-function parseHost(
-  host: string,
-  ensureNoPath = true
-): {
-  origin: string;
-  protocol: string;
-  host: string;
-  pathname: string;
-  search: string;
-  hash: string;
-  port: number;
-} {
-  let url: URL;
-  try {
-    url = new URL(host);
-  } catch (error) {
-    console.error(`${host} is not a complete/valid host url`);
-    throw error;
-  }
-  const port =
-    Number.parseInt(url.port || (url.protocol === "https:" ? "443" : "80")) || 80;
-
-  if (ensureNoPath && url.pathname !== "/") {
-    throw new Error(`${host} must not include a path`);
-  }
-
-  return {
-    origin: url.origin,
-    protocol: url.protocol,
-    host: url.host,
-    pathname: url.pathname,
-    search: url.search,
-    hash: url.hash,
-    port,
-  };
-}
