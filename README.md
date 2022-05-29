@@ -20,7 +20,7 @@ Starter: notes
 - [x] get the sample husky scripts installed? or gitignored?
 - [x] fix NODE_ENV variable
 - [x] create getEnv fn
-  - [ ] remove defaults and rely entirely on env vars
+  - [x] remove defaults and rely entirely on env vars
   - [x] compare against .env.example to achieve this
 - [ ] remove keystone script
 - [ ] upgrade deps
