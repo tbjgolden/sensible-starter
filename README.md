@@ -21,7 +21,7 @@ Starter: notes
 - [x] fix NODE_ENV variable
 - [x] create getEnv fn
   - [ ] remove defaults and rely entirely on env vars
-    - [ ] compare against .env.example to achieve this
+  - [x] compare against .env.example to achieve this
 - [ ] remove keystone script
 - [ ] upgrade deps
 - [ ] fix flex-shrink issues on baseweb components

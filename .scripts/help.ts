@@ -2,7 +2,7 @@
 /* eslint-disable no-console */
 import fs from "node:fs/promises";
 import path from "node:path";
-import { getProjectRoot } from "./lib/project";
+import { getPackageRoot } from "./lib/package";
 
 const bold = (str: string): string => {
   return `\u001B[1m${str}\u001B[0m`;
@@ -18,7 +18,7 @@ const faded = (str: string): string => {
 };
 
 const main = async () => {
-  const projectRoot = await getProjectRoot();
+  const packageRoot = await getPackageRoot();
 
   try {
     const packageJSON: {
@@ -26,7 +26,7 @@ const main = async () => {
         [key: string]: string;
       };
       [key: string]: unknown;
-    } = JSON.parse(await fs.readFile(path.join(projectRoot, "package.json"), "utf8"));
+    } = JSON.parse(await fs.readFile(path.join(packageRoot, "package.json"), "utf8"));
     const map = new Map();
     for (const [k, v] of Object.entries(packageJSON.scripts)) {
       const isHelp = k.endsWith(":help");
@@ -54,7 +54,7 @@ const main = async () => {
     );
 
     try {
-      const statNodeModules = await fs.stat(path.join(projectRoot, "node_modules"));
+      const statNodeModules = await fs.stat(path.join(packageRoot, "node_modules"));
       if (!statNodeModules.isDirectory()) {
         throw new Error("node_modules is not a directory");
       }
@@ -67,7 +67,7 @@ const main = async () => {
     }
 
     try {
-      const linkPath = await fs.readlink(path.join(projectRoot, ".git/hooks"));
+      const linkPath = await fs.readlink(path.join(packageRoot, ".git/hooks"));
       if (linkPath !== "../.husky") {
         throw new Error("git hooks not correctly set up");
       }

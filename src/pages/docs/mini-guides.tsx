@@ -305,7 +305,7 @@ const options = [
           <code>
             {dedent`
               # copy this directory or clone into a new directory to a machine
-              cd <projectRootDir>
+              cd <packageRootDir>
               # install dependencies
               npm install
               # create your prod .env file

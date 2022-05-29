@@ -1,5 +1,3 @@
-import "dotenv/config";
-
 import react from "@vitejs/plugin-react";
 import legacy from "@vitejs/plugin-legacy";
 import path from "node:path";

@@ -5,4 +5,5 @@ module.exports = {
   ],
   "*.{pcss,css,js,json,html}": ["prettier --write"],
   ".vscode/settings.json": ["ts-node ./.scripts/vscCheck.ts"],
+  ".env.example": ["ts-node ./.scripts/updateModuleTypes.ts"],
 };

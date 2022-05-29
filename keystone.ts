@@ -1,5 +1,4 @@
 /* eslint-disable no-console */
-import "dotenv/config";
 import { config, list } from "@keystone-6/core";
 import { text, password, timestamp, checkbox, integer } from "@keystone-6/core/fields";
 import { createAuth } from "@keystone-6/auth";

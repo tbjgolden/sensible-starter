@@ -44,7 +44,7 @@ const Label = ({ entry }: { entry: Folder | File }): JSX.Element => {
   );
 };
 
-const HOME_URL = import.meta.env.VITE_FRONTEND_HOST ?? "http://localhost:3000";
+const HOME_URL = import.meta.env.VITE_FRONTEND_BASE_URL;
 
 const toTreeViewData = (
   entries: Folder["children"],
@@ -156,7 +156,7 @@ const fileData = [
   {
     name: "public",
     description:
-      "Contains assets passed straight through to the root output directory\ne.g. <projectRoot>/public/a.png => https://i.ai/a.png",
+      "Contains assets passed straight through to the root output directory\ne.g. <packageRoot>/public/a.png => https://i.ai/a.png",
     children: [
       {
         name: "fonts",

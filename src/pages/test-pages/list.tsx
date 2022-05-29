@@ -93,11 +93,7 @@ const List = () => {
         ) : (
           <h6>
             Working but empty &ndash;{" "}
-            <Link
-              to={`${
-                import.meta.env.VITE_KEYSTONE_HOST ?? "http://localhost:3001"
-              }/list-items`}
-            >
+            <Link to={`${import.meta.env.VITE_KEYSTONE_BASE_URL}/list-items`}>
               add some test data
             </Link>
           </h6>
@@ -109,10 +105,7 @@ const List = () => {
         </p>
         <p>
           You can modify the data{" "}
-          <Link
-            to={import.meta.env.VITE_KEYSTONE_HOST ?? "http://localhost:3001"}
-            target="_blank"
-          >
+          <Link to={import.meta.env.VITE_KEYSTONE_BASE_URL} target="_blank">
             here
           </Link>
           .
