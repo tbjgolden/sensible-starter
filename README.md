@@ -18,7 +18,8 @@ Starter: notes
 - [x] remove error catcher plugin and come [](https://www.bbc.co.uk/sport)up with something better
 - [x] attempt to set up vite legacy mode?
 - [x] get the sample husky scripts installed? or gitignored?
-- [ ] fix NODE_ENV variable, and create getEnv fn
+- [x] fix NODE_ENV variable
+- [x] create getEnv fn
   - [ ] remove defaults and rely entirely on env vars
     - [ ] compare against .env.example to achieve this
 - [ ] remove keystone script
