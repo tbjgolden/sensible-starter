@@ -8,12 +8,12 @@ import { theme, primitives } from "_/theme";
 import { MenuLayout } from "_/components/Layouts";
 import routes from "~react-pages";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
-import "_/styles/reset.css";
-import "_/styles/tags.css";
-import "_/styles/typography.css";
-import "_/styles/spacing-defaults.css";
-import "_/styles/spacing-scale.css";
-import "_/styles/custom.css";
+import "_/styles/reset.scss";
+import "_/styles/tags.scss";
+import "_/styles/typography.scss";
+import "_/styles/spacing-defaults.scss";
+import "_/styles/spacing-scale.scss";
+import "_/styles/custom.scss";
 import { Spinner } from "baseui/spinner";
 
 const client = new ApolloClient({

@@ -67,7 +67,7 @@ export const primitives: ThemePrimitives = {
   mono1000: "#000000",
   // Font Family
   primaryFontFamily:
-    '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
+    '"Inter Variable", inter, -apple-system, system-ui, blinkmacsystemfont, "Helvetica Neue", helvetica, arial, sans-serif',
 };
 
 const mono = <T extends Record<string, unknown>>(

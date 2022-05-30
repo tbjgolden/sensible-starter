@@ -15,8 +15,8 @@ const { port: autoPort, host: HOST } = parseURL(ENV.VITE_FRONTEND_BASE_URL);
 
 const PORT =
   ENV.LOCALHOST_FRONTEND_PORT === "auto"
-    ? Number.parseInt(ENV.LOCALHOST_FRONTEND_PORT)
-    : autoPort;
+    ? autoPort
+    : Number.parseInt(ENV.LOCALHOST_FRONTEND_PORT);
 
 const main = async () => {
   const packageRoot = await getPackageRoot();

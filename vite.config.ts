@@ -21,7 +21,9 @@ export default defineConfig({
     alias: [{ find: "_", replacement: path.resolve(process.cwd(), "src") }],
   },
   plugins: [
-    react(),
+    react({
+      jsxRuntime: "classic",
+    }),
     pages(),
     {
       name: "add-inline-to-html",
