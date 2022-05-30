@@ -7,8 +7,8 @@
 
 var MAX_ERRORS = 20;
 var errorCount = 0;
-function escapeString(xx: string): string {
-  return JSON.stringify(JSON.stringify(xx)).slice(1, -1);
+function escapeString(str: string): string {
+  return JSON.stringify(JSON.stringify(str)).slice(1, -1);
 }
 
 function isFalsePositive(errorEvent: ErrorEvent): boolean {

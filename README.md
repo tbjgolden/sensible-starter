@@ -22,10 +22,10 @@ Starter: notes
 - [x] create getEnv fn
   - [x] remove defaults and rely entirely on env vars
   - [x] compare against .env.example to achieve this
-- [ ] remove keystone script
-- [ ] upgrade deps
 - [ ] fix flex-shrink issues on baseweb components
 - [ ] revisit typography (esp font weights etc)
+- [ ] remove keystone script
+- [ ] upgrade deps
 - [ ] replace postcss with sass
 
 ---

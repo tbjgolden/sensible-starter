@@ -11,6 +11,13 @@
   margin-right: auto;
 }
 
+.pv-var {
+  padding-top: 48px;
+  padding-top: clamp(32px, 10vh, 64px);
+  padding-bottom: 48px;
+  padding-bottom: clamp(32px, 10vh, 64px);
+}
+
 /*
 Utility classes for margin and padding.
 

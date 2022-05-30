@@ -54,22 +54,7 @@ const CSSDocumentation = () => {
         </li>
       </ul>
       <h2 id="reset">Reset</h2>
-      <p>Similar to common normalise stylesheets, but with one major difference:</p>
-      <blockquote>
-        <p>
-          <code>{`*, *::before, *::after { flex-shrink: 0 }`}</code>
-        </p>
-        <p>
-          This changes flexbox's default behaviour. Many people expect flex-shrink's
-          default value to be <code>{`0`}</code> (because flex-grow's default is), but in
-          fact it is <code>{`1`}</code>, which often causes bugs with flex layouts to
-          squash.
-        </p>
-        <p>
-          This makes it more obvious to the dev when something is broken and makes it
-          easier to debug broken flexbox code.
-        </p>
-      </blockquote>
+      <p>Similar to common normalising stylesheets.</p>
       <h2 id="tags">Tags</h2>
       <p>This file changes/normalises the default styling of semantic HTML tags.</p>
       <p>That's all.</p>

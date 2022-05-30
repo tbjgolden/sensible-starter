@@ -31,9 +31,7 @@ export const ResponsiveNav = ({
   const [isSmall, setIsSmall] = useState(!isBigMQ.matches);
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
-  const mainContentPaddingClass = hasDefaultPadding
-    ? `phx ${isSmall ? "pv32" : "pv64"}`
-    : "";
+  const mainContentPaddingClass = hasDefaultPadding ? `phx pv-var` : "";
 
   useEffect(() => {
     const onChange = () => {
@@ -151,9 +149,10 @@ export const ResponsiveNav = ({
         </div>
       ) : (
         <div
-          className="pv64"
+          className="pv-var"
           style={{
             width,
+            flex: "0 1 auto",
             height: "100vh",
             background: "#fff",
             borderRight: "1px solid var(--mono500)",
@@ -164,7 +163,10 @@ export const ResponsiveNav = ({
           }}
         >
           {title ? (
-            <div className="H-M ph24 pv12" style={{ border: "2px solid transparent" }}>
+            <div
+              className="H-M ph24 pb12 pt4"
+              style={{ border: "2px solid transparent" }}
+            >
               {title}
             </div>
           ) : null}

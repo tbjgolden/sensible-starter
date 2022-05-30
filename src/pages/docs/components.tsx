@@ -28,7 +28,7 @@ const DATA = [
 const HTMLTest = () => {
   const [gridAlign, setGridAlign] = useState<GridAlign | "auto">("auto");
   const [gridGap, setGridGap] = useDeepState([16]);
-  const [gridCellWidth, setGridCellWidth] = useDeepState([240]);
+  const [gridCellWidth, setGridCellWidth] = useDeepState([256]);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (

@@ -3,7 +3,6 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  flex-shrink: 0;
 }
 
 /* Set core body defaults */

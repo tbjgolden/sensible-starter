@@ -16,11 +16,14 @@ if (
   );
 }
 
-const { host, port } = parseURL(ENV.VITE_KEYSTONE_BASE_URL);
+const { port } = parseURL(ENV.VITE_KEYSTONE_BASE_URL);
 const keystonePort =
   ENV.LOCALHOST_KEYSTONE_PORT === "auto"
     ? port
     : Number.parseInt(ENV.LOCALHOST_KEYSTONE_PORT);
+
+const frontend = parseURL(ENV.VITE_FRONTEND_BASE_URL);
+const origin = `${frontend.origin}`;
 
 export default createAuth({
   listKey: "User",
@@ -33,7 +36,10 @@ export default createAuth({
 }).withAuth(
   config({
     db: { provider: "sqlite", url: "file:./keystone.db" },
-    server: { port: keystonePort, cors: { origin: host } },
+    server: {
+      port: keystonePort,
+      cors: { origin },
+    },
     ui: {
       isAccessAllowed: (context) => {
         return Boolean(context.session?.data);
